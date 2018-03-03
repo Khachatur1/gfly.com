@@ -2,11 +2,12 @@
 SQLyog Ultimate v11.5 (64 bit)
 MySQL - 5.7.21-log : Database - gfly
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
-/*!40101 SET SQL_MODE=''*/;
+/*!40101 S ET SQL_MODE=''*/;
 
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
