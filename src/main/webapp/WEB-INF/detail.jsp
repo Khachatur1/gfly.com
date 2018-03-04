@@ -48,21 +48,31 @@
                 <ul class="list-inline d-flex flex-row">
                     <li class="list-inline-item">
                         <div class="dropdown">
-                            <button id="currency" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">USD</button>
-                            <div aria-labelledby="currency" class="dropdown-menu"><a href="#" class="dropdown-item">EUR</a><a href="#" class="dropdown-item">EGP</a><a href="#" class="dropdown-item">AUD</a></div>
+                            <button id="currency" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false" class="dropdown-toggle">USD
+                            </button>
+                            <div aria-labelledby="currency" class="dropdown-menu"><a href="#"
+                                                                                     class="dropdown-item">EUR</a><a
+                                    href="#" class="dropdown-item">EGP</a><a href="#" class="dropdown-item">AUD</a>
+                            </div>
                         </div>
                     </li>
                     <li class="list-inline-item">
                         <div class="dropdown">
-                            <button id="lang" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">English</button>
-                            <div aria-labelledby="lang" class="dropdown-menu"><a href="#" class="dropdown-item">French</a><a href="#" class="dropdown-item">Spanish</a><a href="#" class="dropdown-item">Arabic</a></div>
+                            <button id="lang" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false" class="dropdown-toggle">English
+                            </button>
+                            <div aria-labelledby="lang" class="dropdown-menu"><a href="#"
+                                                                                 class="dropdown-item">French</a><a
+                                    href="#" class="dropdown-item">Spanish</a><a href="#"
+                                                                                 class="dropdown-item">Arabic</a></div>
                         </div>
                     </li>
                 </ul>
             </div>
             <div class="col-sm-8 col-md-9 text-right account-details">
                 <ul class="list-inline">
-                    <li class="list-inline-item"> <a href="#">My Account</a></li>
+                    <li class="list-inline-item"><a href="#">My Account</a></li>
                     <li class="list-inline-item"><a href="#">Order History</a></li>
                     <li class="list-inline-item"><a href="#">Login</a></li>
                 </ul>
@@ -73,10 +83,14 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-md">
     <div class="container"><a href="/home" class="navbar-brand"> <img src="../static/img/logo.png" alt="logo"></a>
-        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right">Menu <i class="fa fa-bars"></i></button>
+        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler navbar-toggler-right">Menu <i class="fa fa-bars"></i></button>
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto d-md-flex flex-md-row align-items-md-center">
-                <li class="nav-item active"><a id="navbarDropdown1" data-target="#" href="/home" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">Home<i class="fa fa-caret-down"></i></a>
+                <li class="nav-item active"><a id="navbarDropdown1" data-target="#" href="/home" data-toggle="dropdown"
+                                               aria-haspopup="true" aria-expanded="false" class="nav-link">Home<i
+                        class="fa fa-caret-down"></i></a>
                     <ul aria-labelledby="navbarDropdown1" class="dropdown-menu">
                         <li><a href="/home" class="dropdown-item">Homepage 1</a></li>
                         <li><a href="/home" class="dropdown-item">Homepage 2</a></li>
@@ -84,7 +98,9 @@
                 </li>
                 <li class="nav-item"><a href="/category" class="nav-link">Category</a></li>
                 <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a id="navbarDropdown2" data-target="#" href="http://example.com/" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">Template content<i class="fa fa-caret-down"></i></a>
+                <li class="nav-item"><a id="navbarDropdown2" data-target="#" href="http://example.com/"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="nav-link">Template content<i class="fa fa-caret-down"></i></a>
                     <ul aria-labelledby="navbarDropdown2" class="dropdown-menu">
                         <li><a href="/home" class="dropdown-item">Homepage 1</a></li>
                         <li><a href="/home" class="dropdown-item">Homepage 2</a></li>
@@ -97,11 +113,15 @@
                         <li><a href="/text" class="dropdown-item">Text page</a></li>
                         <li><a href="/contact" class="dropdown-item">Contact</a></li>
                         <!-- Multilevel dropdown    -->
-                        <li class="dropdown dropdown-submenu"><a id="multileveldropdown1" data-target="#" href="http://example.com/" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item">Multilevel dropdown<i class="fa fa-caret-right ml-2"></i></a>
+                        <li class="dropdown dropdown-submenu"><a id="multileveldropdown1" data-target="#"
+                                                                 href="http://example.com/" data-toggle="dropdown"
+                                                                 aria-haspopup="true" aria-expanded="false"
+                                                                 class="dropdown-item">Multilevel dropdown<i
+                                class="fa fa-caret-right ml-2"></i></a>
                             <ul aria-labelledby="multileveldropdown1" class="dropdown-menu">
                                 <li><a href="#" class="dropdown-item">Item 1</a></li>
                                 <li><a href="#" class="dropdown-item">Item 2</a></li>
-                                <li><a href="#" class="dropdown-item">Item 3         </a></li>
+                                <li><a href="#" class="dropdown-item">Item 3 </a></li>
                             </ul>
                         </li>
                     </ul>
@@ -110,9 +130,11 @@
                 <li class="nav-item">
                     <ul class="list-inline">
                         <li class="list-inline-item"><a id="search" href="#" class="nav-link">
-                            <div class="icon search"><i class="icon-magnifying-glass"></i></div></a></li>
+                            <div class="icon search"><i class="icon-magnifying-glass"></i></div>
+                        </a></li>
                         <li class="list-inline-item"><a href="/cart" class="nav-link">
-                            <div class="icon cart"><i class="icon-cart"></i></div><span class="d-md-none d-lg-inline"><span class="no">2</span>items</span></a></li>
+                            <div class="icon cart"><i class="icon-cart"></i></div>
+                            <span class="d-md-none d-lg-inline"><span class="no">2</span>items</span></a></li>
                     </ul>
                 </li>
             </ul>
@@ -123,8 +145,8 @@
     <!-- Breadcrumb -->
     <div class="container">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item text-uppercase"> <a href="/home" class="text-primary">Home</a></li>
-            <li class="breadcrumb-item text-uppercase"> <a href="/category" class="text-primary">Lenses</a></li>
+            <li class="breadcrumb-item text-uppercase"><a href="/home" class="text-primary">Home</a></li>
+            <li class="breadcrumb-item text-uppercase"><a href="/category" class="text-primary">Lenses</a></li>
             <li class="breadcrumb-item active text-uppercase">Fast telephoto zoom lense</li>
         </ol>
     </div>
@@ -134,10 +156,10 @@
             <div class="row">
                 <div class="col-md-6">
                     <div data-slider-id="1" class="owl-carousel item-slider">
-                        <div class="item"> <img src="../static/img/detail-2.jpg" alt="lens"></div>
-                        <div class="item"> <img src="../static/img/detail-1.jpg" alt="lens"></div>
-                        <div class="item"> <img src="../static/img/detail-3.jpg" alt="lens"></div>
-                        <div class="item"> <img src="../static/img/detail-4.jpg" alt="lens"></div>
+                        <div class="item"><img src="../static/img/detail-2.jpg" alt="lens"></div>
+                        <div class="item"><img src="../static/img/detail-1.jpg" alt="lens"></div>
+                        <div class="item"><img src="../static/img/detail-3.jpg" alt="lens"></div>
+                        <div class="item"><img src="../static/img/detail-4.jpg" alt="lens"></div>
                     </div>
                     <div data-slider-id="1" class="owl-thumbs">
                         <button class="owl-thumb-item"><img src="../static/img/detail-2-small.jpg" alt="lens"></button>
@@ -146,8 +168,12 @@
                         <button class="owl-thumb-item"><img src="../static/img/detail-4-small.jpg" alt="lens"></button>
                     </div>
                     <div class="brief">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore eligendi, hic illo, debitis similique maxime molestias voluptates sunt. Natus asperiores, unde dolorem nemo reprehenderit totam consequatur eos. Ipsa, voluptatibus, laborum.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore eligendi, hic illo, debitis similique maxime molestias voluptates sunt. Natus asperiores, unde dolorem nemo reprehenderit totam consequatur eos. Ipsa, voluptatibus, laborum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore eligendi, hic illo,
+                            debitis similique maxime molestias voluptates sunt. Natus asperiores, unde dolorem nemo
+                            reprehenderit totam consequatur eos. Ipsa, voluptatibus, laborum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore eligendi, hic illo,
+                            debitis similique maxime molestias voluptates sunt. Natus asperiores, unde dolorem nemo
+                            reprehenderit totam consequatur eos. Ipsa, voluptatibus, laborum.</p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -160,7 +186,8 @@
                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                            </ul><span>No Reviews</span>
+                            </ul>
+                            <span>No Reviews</span>
                         </div>
                     </div>
                     <div class="model">
@@ -171,7 +198,9 @@
                         </ul>
                     </div>
                     <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                     <form action="#" method="get">
                         <div class="row d-flex justify-content-between">
@@ -201,7 +230,8 @@
                                 <li class="list-inline-item">
                                     <button href="#" class="btn btn-unique">Add To Cart</button>
                                 </li>
-                                <li class="list-inline-item"><a href="#" class="btn btn-dark">Add to wishlist<i class="fa fa-heart"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="btn btn-dark">Add to wishlist<i
+                                        class="fa fa-heart"></i></a></li>
                             </ul>
                         </div>
                     </form>
@@ -220,7 +250,8 @@
                         </ul>
                         <ul class="property list-unstyled">
                             <li class="title">Lens Construction</li>
-                            <li class="value">21 element in 16 groups (with 7 ED and some Nano Crystal lens elements)</li>
+                            <li class="value">21 element in 16 groups (with 7 ED and some Nano Crystal lens elements)
+                            </li>
                         </ul>
                         <ul class="property list-unstyled">
                             <li class="title">Weight</li>
@@ -253,8 +284,9 @@
                                     <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
                                 </ul>
                             </div>
-                        </div><a href="/detail" class="item-name">
-                        <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
+                        </div>
+                        <a href="/detail" class="item-name">
+                            <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
                         <ul class="list-inline rate text-primary">
                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -262,23 +294,27 @@
                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                         </ul>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas possimus magnam.</p>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas possimus
+                            magnam.</p>
                         <ul class="price list-inline">
-                            <li class="list-inline-item"> <span class="price">$1.299</span></li>
+                            <li class="list-inline-item"><span class="price">$1.299</span></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="item text-center">
-                        <div class="product-image"><span class="new badge badge-pill badge-info text-uppercase">new</span><img src="../static/img/detail-related-2.jpg" alt="camera">
+                        <div class="product-image"><span
+                                class="new badge badge-pill badge-info text-uppercase">new</span><img
+                                src="../static/img/detail-related-2.jpg" alt="camera">
                             <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
                                 <ul class="list-unstyled">
                                     <li><a href="#" class="btn btn-unique">View Details</a></li>
                                     <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
                                 </ul>
                             </div>
-                        </div><a href="/detail" class="item-name">
-                        <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
+                        </div>
+                        <a href="/detail" class="item-name">
+                            <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
                         <ul class="list-inline rate text-primary">
                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -286,33 +322,10 @@
                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                         </ul>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas possimus magnam.</p>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas possimus
+                            magnam.</p>
                         <ul class="price list-inline">
-                            <li class="list-inline-item"> <span class="price">$1.299</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="item text-center">
-                        <div class="product-image"><img src="../static/img/detail-related-3.jpg" alt="camera">
-                            <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="#" class="btn btn-unique">View Details</a></li>
-                                    <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
-                                </ul>
-                            </div>
-                        </div><a href="/detail" class="item-name">
-                        <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
-                        <ul class="list-inline rate text-primary">
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        </ul>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas possimus magnam.</p>
-                        <ul class="price list-inline">
-                            <li class="list-inline-item"> <span class="price">$1.299</span></li>
+                            <li class="list-inline-item"><span class="price">$1.299</span></li>
                         </ul>
                     </div>
                 </div>
@@ -325,8 +338,9 @@
                                     <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
                                 </ul>
                             </div>
-                        </div><a href="/detail" class="item-name">
-                        <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
+                        </div>
+                        <a href="/detail" class="item-name">
+                            <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
                         <ul class="list-inline rate text-primary">
                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -334,9 +348,36 @@
                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                         </ul>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas possimus magnam.</p>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas possimus
+                            magnam.</p>
                         <ul class="price list-inline">
-                            <li class="list-inline-item"> <span class="price">$1.299</span></li>
+                            <li class="list-inline-item"><span class="price">$1.299</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="item text-center">
+                        <div class="product-image"><img src="../static/img/detail-related-3.jpg" alt="camera">
+                            <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="btn btn-unique">View Details</a></li>
+                                    <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="/detail" class="item-name">
+                            <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
+                        <ul class="list-inline rate text-primary">
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        </ul>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas possimus
+                            magnam.</p>
+                        <ul class="price list-inline">
+                            <li class="list-inline-item"><span class="price">$1.299</span></li>
                         </ul>
                     </div>
                 </div>
@@ -366,31 +407,31 @@
                 <div class="col-lg-3 col-sm-6">
                     <h3>Site Map</h3>
                     <ul class="list-unstyled">
-                        <li> <a href="#">Home</a></li>
-                        <li> <a href="#">About Us</a></li>
-                        <li> <a href="#">Categories</a></li>
-                        <li> <a href="#">Privacy policy</a></li>
-                        <li> <a href="#">Contact Us</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <h3>Our Services</h3>
                     <ul class="list-unstyled">
-                        <li> <a href="#">Footer Link</a></li>
-                        <li> <a href="#">Footer Link</a></li>
-                        <li> <a href="#">Footer Link</a></li>
-                        <li> <a href="#">Footer Link</a></li>
-                        <li> <a href="#">Footer Link</a></li>
+                        <li><a href="#">Footer Link</a></li>
+                        <li><a href="#">Footer Link</a></li>
+                        <li><a href="#">Footer Link</a></li>
+                        <li><a href="#">Footer Link</a></li>
+                        <li><a href="#">Footer Link</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-sm-6">
                     <h3>Extras</h3>
                     <ul class="list-unstyled">
-                        <li> <a href="#">Footer Link</a></li>
-                        <li> <a href="#">Footer Link</a></li>
-                        <li> <a href="#">Footer Link</a></li>
-                        <li> <a href="#">Footer Link</a></li>
-                        <li> <a href="#">Footer Link</a></li>
+                        <li><a href="#">Footer Link</a></li>
+                        <li><a href="#">Footer Link</a></li>
+                        <li><a href="#">Footer Link</a></li>
+                        <li><a href="#">Footer Link</a></li>
+                        <li><a href="#">Footer Link</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-sm-6 details js-pull">
@@ -448,13 +489,14 @@
         </select>
     </form>
     <p><img src="../static/img/template-mac.png" alt="" class="img-fluid"></p>
-    <p class="text-muted text-small">Stylesheet switching is done via JavaScript and can cause a blink while page loads. This will not happen in your production code.</p>
+    <p class="text-muted text-small">Stylesheet switching is done via JavaScript and can cause a blink while page loads.
+        This will not happen in your production code.</p>
 </div>
 <!-- JavaScript files-->
 <script src="../static/vendor/jquery/jquery.min.js"></script>
-<script src="../static/vendor/popper.js/umd/popper.min.js"> </script>
+<script src="../static/vendor/popper.js/umd/popper.min.js"></script>
 <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="../static/vendor/jquery.cookie/jquery.cookie.js"> </script>
+<script src="../static/vendor/jquery.cookie/jquery.cookie.js"></script>
 <script src="../static/vendor/owl.carousel/owl.carousel.min.js"></script>
 <script src="../static/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
 <script src="../static/vendor/jquery-validation/jquery.validate.min.js"></script>
