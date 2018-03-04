@@ -77,30 +77,30 @@
                 class="navbar-toggler navbar-toggler-right">Menu <i class="fa fa-bars"></i></button>
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto d-md-flex flex-md-row align-items-md-center">
-                <li class="nav-item active"><a id="navbarDropdown1" data-target="#" href="index-2.html"
+                <li class="nav-item active"><a id="navbarDropdown1" data-target="#" href="/home"
                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                                class="nav-link">Home<i class="fa fa-caret-down"></i></a>
                     <ul aria-labelledby="navbarDropdown1" class="dropdown-menu">
-                        <li><a href="index-2.html" class="dropdown-item">Homepage 1</a></li>
-                        <li><a href="index2.html" class="dropdown-item">Homepage 2</a></li>
+                        <li><a href="/home" class="dropdown-item">Homepage 1</a></li>
+                        <li><a href="/home" class="dropdown-item">Homepage 2</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a href="/category" class="nav-link">Category</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a id="navbarDropdown2" data-target="#" href="http://example.com/"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         class="nav-link">Template content<i class="fa fa-caret-down"></i></a>
                     <ul aria-labelledby="navbarDropdown2" class="dropdown-menu">
-                        <li><a href="index-2.html" class="dropdown-item">Homepage 1</a></li>
-                        <li><a href="index2.html" class="dropdown-item">Homepage 2</a></li>
+                        <li><a href="/home" class="dropdown-item">Homepage 1</a></li>
+                        <li><a href="/home" class="dropdown-item">Homepage 2</a></li>
                         <li><a href="/category" class="dropdown-item">Category</a></li>
-                        <li><a href="detail.html" class="dropdown-item">Product</a></li>
-                        <li><a href="cart.html" class="dropdown-item">Shopping cart</a></li>
+                        <li><a href="/detail" class="dropdown-item">Product</a></li>
+                        <li><a href="/cart" class="dropdown-item">Shopping cart</a></li>
                         <li class="dropdown-divider"></li>
-                        <li><a href="blog.html" class="dropdown-item">Blog</a></li>
-                        <li><a href="post.html" class="dropdown-item">Blog Post</a></li>
-                        <li><a href="text.html" class="dropdown-item">Text page</a></li>
-                        <li><a href="contact.html" class="dropdown-item">Contact</a></li>
+                        <li><a href="/blog" class="dropdown-item">Blog</a></li>
+                        <li><a href="/post" class="dropdown-item">Blog Post</a></li>
+                        <li><a href="/text" class="dropdown-item">Text page</a></li>
+                        <li><a href="/contact" class="dropdown-item">Contact</a></li>
                         <!-- Multilevel dropdown    -->
                         <li class="dropdown dropdown-submenu"><a id="multileveldropdown1" data-target="#"
                                                                  href="http://example.com/" data-toggle="dropdown"
@@ -115,13 +115,13 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link">Contact Us</a></li>
                 <li class="nav-item">
                     <ul class="list-inline">
                         <li class="list-inline-item"><a id="search" href="#" class="nav-link">
                             <div class="icon search"><i class="icon-magnifying-glass"></i></div>
                         </a></li>
-                        <li class="list-inline-item"><a href="cart.html" class="nav-link">
+                        <li class="list-inline-item"><a href="/cart" class="nav-link">
                             <div class="icon cart"><i class="icon-cart"></i></div>
                             <span class="d-md-none d-lg-inline"><span class="no">2</span>items</span></a></li>
                     </ul>
@@ -278,7 +278,7 @@
                                     src="../static/img/camera-1.jpg" alt="camera"
                                     class="img-fluid">
                                 <div class="overlay d-flex align-items-center justify-content-center"><a
-                                        href="detail.html" class="btn btn-unique">View Details</a></div>
+                                        href="/detail" class="btn btn-unique">View Details</a></div>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -288,7 +288,7 @@
                                     src="../static/img/cat-cam.jpg" alt="camera"
                                     class="img-fluid">
                                 <div class="overlay d-flex align-items-center justify-content-center"><a
-                                        href="detail.html" class="btn btn-unique">View Details</a></div>
+                                        href="/detail" class="btn btn-unique">View Details</a></div>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -308,7 +308,7 @@
                                     src="../static/img/camera-2.jpg" alt="camera"
                                     class="img-fluid">
                                 <div class="overlay d-flex align-items-center justify-content-center"><a
-                                        href="detail.html" class="btn btn-unique">View Details</a></div>
+                                        href="/detail" class="btn btn-unique">View Details</a></div>
                             </div>
                         </div>
                     </div>
@@ -348,7 +348,7 @@
                                     src="../static/img/lens-1.jpg" alt="lens"
                                     class="img-fluid">
                                 <div class="overlay d-flex align-items-center justify-content-center"><a
-                                        href="detail.html" class="btn btn-unique">View Details</a></div>
+                                        href="/detail" class="btn btn-unique">View Details</a></div>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -358,7 +358,7 @@
                                     src="../static/img/lens-2.jpg" alt="lens"
                                     class="img-fluid">
                                 <div class="overlay d-flex align-items-center justify-content-center"><a
-                                        href="detail.html" class="btn btn-unique">View Details</a></div>
+                                        href="/detail" class="btn btn-unique">View Details</a></div>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -368,7 +368,7 @@
                                     src="../static/img/lens-3.jpg" alt="lens"
                                     class="img-fluid">
                                 <div class="overlay d-flex align-items-center justify-content-center"><a
-                                        href="detail.html" class="btn btn-unique">View Details</a></div>
+                                        href="/detail" class="btn btn-unique">View Details</a></div>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -378,7 +378,7 @@
                                     src="../static/img/lens-4.jpg" alt="lens"
                                     class="img-fluid">
                                 <div class="overlay d-flex align-items-center justify-content-center"><a
-                                        href="detail.html" class="btn btn-unique">View Details</a></div>
+                                        href="/detail" class="btn btn-unique">View Details</a></div>
                             </div>
                         </div>
                     </div>

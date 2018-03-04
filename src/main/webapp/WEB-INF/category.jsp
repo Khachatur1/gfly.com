@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 
-<!-- Mirrored from demo.bootstrapious.com/photo/1-3/category.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Feb 2018 17:04:05 GMT -->
+<!-- Mirrored from demo.bootstrapious.com/photo/1-3//category by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Feb 2018 17:04:05 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -80,37 +80,37 @@
 </div>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-md">
-    <div class="container"><a href="index-2.html" class="navbar-brand"> <img
-            src="img/logo.png" alt="logo"></a>
+    <div class="container"><a href="/home" class="navbar-brand"> <img
+            src="../static/img/logo.png" alt="logo"></a>
         <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                 class="navbar-toggler navbar-toggler-right">Menu <i class="fa fa-bars"></i></button>
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto d-md-flex flex-md-row align-items-md-center">
-                <li class="nav-item active"><a id="navbarDropdown1" data-target="#" href="index-2.html"
+                <li class="nav-item active"><a id="navbarDropdown1" data-target="#" href="/home"
                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                                class="nav-link">Home<i class="fa fa-caret-down"></i></a>
                     <ul aria-labelledby="navbarDropdown1" class="dropdown-menu">
-                        <li><a href="index-2.html" class="dropdown-item">Homepage 1</a></li>
-                        <li><a href="index2.html" class="dropdown-item">Homepage 2</a></li>
+                        <li><a href="/home" class="dropdown-item">Homepage 1</a></li>
+                        <li><a href="/home" class="dropdown-item">Homepage 2</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="category.html" class="nav-link">Category</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="/category" class="nav-link">Category</a></li>
+                <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a id="navbarDropdown2" data-target="#" href="http://example.com/"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         class="nav-link">Template content<i class="fa fa-caret-down"></i></a>
                     <ul aria-labelledby="navbarDropdown2" class="dropdown-menu">
-                        <li><a href="index-2.html" class="dropdown-item">Homepage 1</a></li>
-                        <li><a href="index2.html" class="dropdown-item">Homepage 2</a></li>
-                        <li><a href="category.html" class="dropdown-item">Category</a></li>
-                        <li><a href="detail.html" class="dropdown-item">Product</a></li>
-                        <li><a href="cart.html" class="dropdown-item">Shopping cart</a></li>
+                        <li><a href="/home" class="dropdown-item">Homepage 1</a></li>
+                        <li><a href="/home" class="dropdown-item">Homepage 2</a></li>
+                        <li><a href="/category" class="dropdown-item">Category</a></li>
+                        <li><a href="/detail" class="dropdown-item">Product</a></li>
+                        <li><a href="/cart" class="dropdown-item">Shopping cart</a></li>
                         <li class="dropdown-divider"></li>
-                        <li><a href="blog.html" class="dropdown-item">Blog</a></li>
-                        <li><a href="post.html" class="dropdown-item">Blog Post</a></li>
-                        <li><a href="text.html" class="dropdown-item">Text page</a></li>
-                        <li><a href="contact.html" class="dropdown-item">Contact</a></li>
+                        <li><a href="/blog" class="dropdown-item">Blog</a></li>
+                        <li><a href="/post" class="dropdown-item">Blog Post</a></li>
+                        <li><a href="/text" class="dropdown-item">Text page</a></li>
+                        <li><a href="/contact" class="dropdown-item">Contact</a></li>
                         <!-- Multilevel dropdown    -->
                         <li class="dropdown dropdown-submenu"><a id="multileveldropdown1" data-target="#"
                                                                  href="http://example.com/" data-toggle="dropdown"
@@ -125,13 +125,13 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link">Contact Us</a></li>
                 <li class="nav-item">
                     <ul class="list-inline">
                         <li class="list-inline-item"><a id="search" href="#" class="nav-link">
                             <div class="icon search"><i class="icon-magnifying-glass"></i></div>
                         </a></li>
-                        <li class="list-inline-item"><a href="cart.html" class="nav-link">
+                        <li class="list-inline-item"><a href="/cart" class="nav-link">
                             <div class="icon cart"><i class="icon-cart"></i></div>
                             <span class="d-md-none d-lg-inline"><span class="no">2</span>items</span></a></li>
                     </ul>
@@ -144,7 +144,7 @@
     <!-- Breadcrumb -->
     <div class="container">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item text-uppercase"><a href="index-2.html" class="text-primary">Home</a></li>
+            <li class="breadcrumb-item text-uppercase"><a href="/home" class="text-primary">Home</a></li>
             <li class="breadcrumb-item active text-uppercase">Cameras</li>
         </ol>
     </div>
@@ -179,16 +179,16 @@
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="item text-center">
                             <div class="product-image"><img
-                                    src="img/product-1.jpg"
+                                    src="../static/img/product-1.jpg"
                                     alt="camera">
                                 <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
                                     <ul class="list-unstyled">
-                                        <li><a href="detail.html" class="btn btn-unique">View Detail</a></li>
+                                        <li><a href="/detail" class="btn btn-unique">View Detail</a></li>
                                         <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <a href="detail.html" class="item-name">
+                            <a href="/detail" class="item-name">
                                 <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
                             <ul class="list-inline rate text-primary">
                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
@@ -208,16 +208,16 @@
                         <div class="item text-center">
                             <div class="product-image"><span
                                     class="new badge badge-pill badge-info text-uppercase">new</span><img
-                                    src="img/product-2.jpg"
+                                    src="../static/img/product-2.jpg"
                                     alt="camera">
                                 <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
                                     <ul class="list-unstyled">
-                                        <li><a href="detail.html" class="btn btn-unique">View Detail</a></li>
+                                        <li><a href="/detail" class="btn btn-unique">View Detail</a></li>
                                         <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <a href="detail.html" class="item-name">
+                            <a href="/detail" class="item-name">
                                 <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
                             <ul class="list-inline rate text-primary">
                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
@@ -236,16 +236,16 @@
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="item text-center">
                             <div class="product-image"><img
-                                    src="img/product-3.jpg"
+                                    src="../static/img/product-3.jpg"
                                     alt="camera">
                                 <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
                                     <ul class="list-unstyled">
-                                        <li><a href="detail.html" class="btn btn-unique">View Detail</a></li>
+                                        <li><a href="/detail" class="btn btn-unique">View Detail</a></li>
                                         <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <a href="detail.html" class="item-name">
+                            <a href="/detail" class="item-name">
                                 <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
                             <ul class="list-inline rate text-primary">
                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
@@ -264,16 +264,16 @@
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="item text-center">
                             <div class="product-image"><span class="sale badge badge-pill badge-primary text-uppercase">sale</span><img
-                                    src="img/product-4.jpg"
+                                    src="../static/img/product-4.jpg"
                                     alt="camera">
                                 <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
                                     <ul class="list-unstyled">
-                                        <li><a href="undefined.html" class="btn btn-unique">View Detail</a></li>
+                                        <li><a href="/undefined" class="btn btn-unique">View Detail</a></li>
                                         <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <a href="undefined.html" class="item-name">
+                            <a href="/undefined" class="item-name">
                                 <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
                             <ul class="list-inline rate text-primary">
                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
@@ -293,16 +293,16 @@
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="item text-center">
                             <div class="product-image"><img
-                                    src="img/product-5.jpg"
+                                    src="../static/img/product-5.jpg"
                                     alt="camera">
                                 <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
                                     <ul class="list-unstyled">
-                                        <li><a href="detail.html" class="btn btn-unique">View Detail</a></li>
+                                        <li><a href="/detail" class="btn btn-unique">View Detail</a></li>
                                         <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <a href="detail.html" class="item-name">
+                            <a href="/detail" class="item-name">
                                 <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
                             <ul class="list-inline rate text-primary">
                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
@@ -321,16 +321,16 @@
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="item text-center">
                             <div class="product-image"><img
-                                    src="img/product-6.jpg"
+                                    src="../static/img/product-6.jpg"
                                     alt="camera">
                                 <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
                                     <ul class="list-unstyled">
-                                        <li><a href="detail.html" class="btn btn-unique">View Detail</a></li>
+                                        <li><a href="/detail" class="btn btn-unique">View Detail</a></li>
                                         <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <a href="detail.html" class="item-name">
+                            <a href="/detail" class="item-name">
                                 <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
                             <ul class="list-inline rate text-primary">
                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
@@ -349,16 +349,16 @@
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="item text-center">
                             <div class="product-image"><img
-                                    src="img/product-7.jpg"
+                                    src="../static/img/product-7.jpg"
                                     alt="camera">
                                 <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
                                     <ul class="list-unstyled">
-                                        <li><a href="detail.html" class="btn btn-unique">View Detail</a></li>
+                                        <li><a href="/detail" class="btn btn-unique">View Detail</a></li>
                                         <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <a href="detail.html" class="item-name">
+                            <a href="/detail" class="item-name">
                                 <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
                             <ul class="list-inline rate text-primary">
                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
@@ -377,16 +377,16 @@
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="item text-center">
                             <div class="product-image"><img
-                                    src="img/product-2.jpg"
+                                    src="../static/img/product-2.jpg"
                                     alt="camera">
                                 <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
                                     <ul class="list-unstyled">
-                                        <li><a href="detail.html" class="btn btn-unique">View Detail</a></li>
+                                        <li><a href="/detail" class="btn btn-unique">View Detail</a></li>
                                         <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <a href="detail.html" class="item-name">
+                            <a href="/detail" class="item-name">
                                 <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
                             <ul class="list-inline rate text-primary">
                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
@@ -541,5 +541,5 @@
 <script src="../static/js/front.js"></script>
 </body>
 
-<!-- Mirrored from demo.bootstrapious.com/photo/1-3/category.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Feb 2018 17:04:07 GMT -->
+<!-- Mirrored from demo.bootstrapious.com/photo/1-3//category by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Feb 2018 17:04:07 GMT -->
 </html>
