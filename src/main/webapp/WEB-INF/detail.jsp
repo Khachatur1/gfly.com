@@ -88,14 +88,7 @@
                 class="navbar-toggler navbar-toggler-right">Menu <i class="fa fa-bars"></i></button>
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto d-md-flex flex-md-row align-items-md-center">
-                <li class="nav-item active"><a id="navbarDropdown1" data-target="#" href="/home" data-toggle="dropdown"
-                                               aria-haspopup="true" aria-expanded="false" class="nav-link">Home<i
-                        class="fa fa-caret-down"></i></a>
-                    <ul aria-labelledby="navbarDropdown1" class="dropdown-menu">
-                        <li><a href="/home" class="dropdown-item">Homepage 1</a></li>
-                        <li><a href="/home" class="dropdown-item">Homepage 2</a></li>
-                    </ul>
-                </li>
+                <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="/category" class="nav-link">Category</a></li>
                 <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a id="navbarDropdown2" data-target="#" href="http://example.com/"
