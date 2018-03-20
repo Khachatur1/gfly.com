@@ -28,9 +28,6 @@ public class GflyApplication extends WebMvcConfigurerAdapter {
         return bean;
 
 
-
-
-
     }
 
     @Override
