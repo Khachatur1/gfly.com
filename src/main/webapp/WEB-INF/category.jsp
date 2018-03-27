@@ -19,16 +19,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <link rel="stylesheet"
-          href="../static/vendor/bootstrap/css/bootstrap.min.css">
+          href="../static/js/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet"
-          href="../static/vendor/font-awesome/css/font-awesome.min.css">
+          href="../static/js/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../static/css/custom-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700">
     <link rel="stylesheet"
-          href="../static/vendor/owl.carousel/assets/owl.carousel.min.css">
+          href="../static/js/owl.carousel/assets/owl.carousel.min.css">
     <link rel="stylesheet"
-          href="../static/vendor/owl.carousel/assets/owl.theme.default.min.css">
+          href="../static/js/owl.carousel/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="../static/css/style.default.css"
           id="theme-stylesheet">
     <link rel="stylesheet" href="../static/css/custom.css">
@@ -524,14 +524,14 @@
         This will not happen in your production code.</p>
 </div>
 <!-- JavaScript files-->
-<script src="../static/vendor/jquery/jquery.min.js"></script>
-<script src="../static/vendor/popper.js/umd/popper.min.js"></script>
-<script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="../static/vendor/jquery.cookie/jquery.cookie.js"></script>
-<script src="../static/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="../static/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
-<script src="../static/vendor/jquery-validation/jquery.validate.min.js"></script>
-<script src="../static/js/front.js"></script>
+<script src="../static/js/jquery/jquery.min.js"></script>
+<script src="../static/js/popper.js/umd/popper.min.js"></script>
+<script src="../static/js/bootstrap/js/bootstrap.min.js"></script>
+<script src="../static/js/jquery.cookie/jquery.cookie.js"></script>
+<script src="../static/js/owl.carousel/owl.carousel.min.js"></script>
+<script src="../static/js/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
+<script src="../static/js/jquery-validation/jquery.validate.min.js"></script>
+<script src="../static/js/front/front.js"></script>
 </body>
 
 <!-- Mirrored from demo.bootstrapious.com/photo/1-3//category by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Feb 2018 17:04:07 GMT -->
