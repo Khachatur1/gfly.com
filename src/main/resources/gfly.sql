@@ -90,6 +90,7 @@ CREATE TABLE `video` (
   CONSTRAINT `video_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
 /*Data for the table `video` */
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
