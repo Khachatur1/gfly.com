@@ -249,7 +249,7 @@
                         manor happy. Without farther she exposed saw man led. Along on happy could cease green oh. </p>
                     <div class="social">
                         <ul class="list-inline">
-                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <li class="list-inline-item"><a href="https://web.facebook.com/Aviamodelizm1Gyumri/?timeline_context_item_type=intro_card_work&timeline_context_item_source=100003461520899&pnref=lhc" target="_blank"><i class="fa fa-facebook"></i></a>
                             </li>
                             <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
                             </li>

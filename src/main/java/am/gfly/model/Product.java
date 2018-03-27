@@ -25,8 +25,8 @@ public class Product {
     private Category category;
     @Column
     private String description;
-    @Column(name = "video_url")
-    private String videoUrl;
+    @Column(name = "pic_url")
+    private String picUrl;
 
 
 }

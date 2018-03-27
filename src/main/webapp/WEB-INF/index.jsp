@@ -231,7 +231,7 @@
                         <div class="col-md-4 item"><a href="/category">
                             <h4>${category.name.toUpperCase()}</h4>
                             <p>Lorem ipsum dolor sit amet</p>
-                            <div class="image"><img src="../static/img/cat-cam.jpg"
+                            <div class="image"><img  src="/category/image?fileName=${category.picUrl}"
                                                     alt="camera" class="img-fluid"></div>
                         </a></div>
                     </c:forEach>
@@ -261,46 +261,19 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="row">
+                        <c:forEach items="${products}" var="product">
                         <div class="col-md-6">
                             <div class="item">
-                                <h4>EOS Digital SLR</h4>
+                                <h4>${product.name}</h4>
                                 <p class="text-primary">$1.299</p><img
-                                    src="../static/img/camera-1.jpg" alt="camera"
+                                    src="/product/image?fileName=${product.picUrl}" alt="camera"
                                     class="img-fluid">
                                 <div class="overlay d-flex align-items-center justify-content-center"><a
-                                        href="/detail" class="btn btn-unique">View Details</a></div>
+                                        href="/detail/product?id=${product.id}" class="btn btn-unique">View Details</a></div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="item">
-                                <h4>EOS Digital SLR</h4>
-                                <p class="text-primary">$1.299</p><img
-                                    src="../static/img/cat-cam.jpg" alt="camera"
-                                    class="img-fluid">
-                                <div class="overlay d-flex align-items-center justify-content-center"><a
-                                        href="/detail" class="btn btn-unique">View Details</a></div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="item">
-                                <h4>EOS Digital SLR</h4>
-                                <p class="text-primary">$1.299</p><img
-                                    src="../static/img/camera-3.jpg" alt="camera"
-                                    class="img-fluid">
-                                <div class="overlay outStock d-flex align-items-center justify-content-center"><strong
-                                        class="text-primary">Sold Out</strong></div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="item">
-                                <h4>EOS Digital SLR</h4>
-                                <p class="text-primary">$1.299</p><img
-                                    src="../static/img/camera-2.jpg" alt="camera"
-                                    class="img-fluid">
-                                <div class="overlay d-flex align-items-center justify-content-center"><a
-                                        href="/detail" class="btn btn-unique">View Details</a></div>
-                            </div>
-                        </div>
+                        </c:forEach>
+
                     </div>
                 </div>
             </div>
@@ -417,7 +390,7 @@
                         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores laborum nesciunt
                             cu.</p>
                         <ul class="list-inline">
-                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <li class="list-inline-item"><a href="https://web.facebook.com/Aviamodelizm1Gyumri/?timeline_context_item_type=intro_card_work&timeline_context_item_source=100003461520899&pnref=lhc" target="_blank"><i class="fa fa-facebook"></i></a>
                             </li>
                             <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
                             </li>

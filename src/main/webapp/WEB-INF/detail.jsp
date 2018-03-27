@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Karo
@@ -170,7 +171,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <h1 class="h2">Fast Telephoto Zoom Lens Nano Crystal</h1>
+                    <h1 class="h2">${product.name}</h1>
                     <div class="price d-flex justify-content-between align-items-center text-primary">$599.00
                         <div class="d-flex justify-content-center">
                             <ul class="rate list-inline">

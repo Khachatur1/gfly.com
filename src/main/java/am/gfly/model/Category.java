@@ -19,4 +19,7 @@ public class Category {
     private int id;
     @Column
     private String name;
+    @Column(name = "pic_url")
+    private String picUrl;
+
 }
