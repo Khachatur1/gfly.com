@@ -16,7 +16,6 @@ import java.io.InputStream;
 @Controller
 public class ImageController {
 
-
     @Value("${gfly.category.upload.path}")
     private String categoryImageUploadPath;
 
