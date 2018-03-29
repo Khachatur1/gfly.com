@@ -25,4 +25,5 @@ public class Post {
     private String picUrl;
     @ManyToOne
     private User user;
+
 }
