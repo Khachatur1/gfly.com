@@ -16,10 +16,10 @@ import java.io.InputStream;
 @Controller
 public class ImageController {
 
-    @Value("${gfly.category.upload.path}")
+    @Value("${gfly.category.image.upload.path}")
     private String categoryImageUploadPath;
 
-    @Value("${gfly.product.upload.path}")
+    @Value("${gfly.product.image.upload.path}")
     private String productImageUploadPath;
 
 
