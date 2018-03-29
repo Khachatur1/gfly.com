@@ -15,14 +15,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.List;
 
 
 @Controller
 public class MainController {
-
-    @Value("${id.latest.products}")
-    private int idLatestProducts;
-
 
     @Autowired
     private CategoryRepository categoryRepository;
@@ -41,9 +38,10 @@ public class MainController {
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String homePage(ModelMap map) {
+        List<Product> allproducts = productRepository.findAll();
         map.addAttribute("categories", categoryRepository.findAll());
-        map.addAttribute("products", productRepository.findAll());
-        map.addAttribute("oneProduct", productRepository.findOne(idLatestProducts));
+        map.addAttribute("products", allproducts.subList(allproducts.size()-4,allproducts.size()));
+        map.addAttribute("oneProduct", productRepository.findOne(allproducts.size()));
         return "index";
     }
 

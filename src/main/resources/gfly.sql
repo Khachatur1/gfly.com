@@ -25,7 +25,7 @@ CREATE TABLE `category` (
   `name` varchar(255) NOT NULL,
   `pic_url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 /*Data for the table `category` */
 
@@ -54,6 +54,24 @@ CREATE TABLE `image` (
 
 /*Data for the table `image` */
 
+/*Table structure for table `post` */
+
+DROP TABLE IF EXISTS `post`;
+
+CREATE TABLE `post` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `pic_url` varchar(255) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `post_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `post` */
+
 /*Table structure for table `product` */
 
 DROP TABLE IF EXISTS `product`;
@@ -68,14 +86,32 @@ CREATE TABLE `product` (
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`),
   CONSTRAINT `product_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 /*Data for the table `product` */
 
 insert  into `product`(`id`,`name`,`item_number`,`category_id`,`description`,`pic_url`) values 
 (1,'ebab','adbfb',1,'sbb','1.png'),
 (2,'roirjo','oapbo',2,'opdb','1.png'),
-(3,'oepbtob','opbog',3,'opgbgo','1.png');
+(3,'oepbtob','opbog',3,'opgbgo','1.png'),
+(4,'br','rgn',6,'bent','airplane-club-logo-emblem-of-airlift-company-vector-4606284.jpg'),
+(5,'tm','rnn',4,'nryny','favicon.png'),
+(6,'eekqhu','ieoheoui',5,'bjptibj','homep_mainbanner.jpg');
+
+/*Table structure for table `user` */
+
+DROP TABLE IF EXISTS `user`;
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `surname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `user` */
 
 /*Table structure for table `video` */
 
@@ -89,7 +125,6 @@ CREATE TABLE `video` (
   KEY `product_id` (`product_id`),
   CONSTRAINT `video_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
 /*Data for the table `video` */
 
