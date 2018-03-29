@@ -14,7 +14,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Photo - Bootstrap 4 E-commerce Template</title>
+    <title>Category</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="../static/css/style.default.css"
           id="theme-stylesheet">
     <link rel="stylesheet" href="../static/css/custom.css">
-    <link rel="shortcut icon" href="../static/favicon.png">
+    <link rel="shortcut icon" href="../static/favicon.jpg">
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->

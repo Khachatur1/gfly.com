@@ -20,6 +20,7 @@ import java.io.*;
 @Controller
 public class MainController {
 
+
     @Value("${gfly.category.upload.path}")
     private String categoryImageUploadPath;
 
@@ -45,6 +46,7 @@ public class MainController {
     public String homePage(ModelMap map) {
         map.addAttribute("categories", categoryRepository.findAll());
         map.addAttribute("products", productRepository.findAll());
+        map.addAttribute("oneProduct", productRepository.findOne(new AdminController().getIdLatestProducts()));
         return "index";
     }
 
@@ -102,7 +104,18 @@ public class MainController {
     public void getProductImageAsByteArray(HttpServletResponse response,
                                     @RequestParam("fileName") String fileName) {
         try {
-            InputStream in = new FileInputStream(productImageUploadPath + fileName);
+            InputStream in = new FileInputStream(productImageUploadPath +"/"+ fileName);
+            response.setContentType(MediaType.IMAGE_JPEG_VALUE);
+            IOUtils.copy(in, response.getOutputStream());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+ @RequestMapping(value = "/products/image", method = RequestMethod.GET)
+    public void getProductImageAsByteArr(HttpServletResponse response,
+                                    @RequestParam("fileName") String fileName) {
+        try {
+            InputStream in = new FileInputStream(productImageUploadPath +"/"+ fileName);
             response.setContentType(MediaType.IMAGE_JPEG_VALUE);
             IOUtils.copy(in, response.getOutputStream());
         } catch (IOException e) {

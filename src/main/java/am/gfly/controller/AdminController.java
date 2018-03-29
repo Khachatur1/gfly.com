@@ -28,6 +28,10 @@ import java.io.InputStream;
 @Controller
 public class AdminController {
 
+    @Value("${id.latest.products}")
+    private int idLatestProducts;
+
+
     @Value("${gfly.category.upload.path}")
     private String categoryImageUploadPath;
 @Value("${gfly.product.upload.path}")
@@ -78,6 +82,10 @@ public class AdminController {
         return "addProduct";
     }
 
+    public int getIdLatestProducts() {
+        return idLatestProducts;
+    }
+
     @RequestMapping(value = "/saveProduct", method = RequestMethod.POST)
     public String saveProductPage(@ModelAttribute(name = "product") Product product,
                                   @RequestParam(value = "image") MultipartFile file) {
@@ -91,6 +99,8 @@ public class AdminController {
         }
         product.setPicUrl(picName);
         productRepository.save(product);
+        idLatestProducts++;
+
 //        Image image = new Image();
 //        image.setName(picName);
 //        image.setProduct(product);
