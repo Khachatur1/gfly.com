@@ -28,13 +28,11 @@ import java.io.InputStream;
 @Controller
 public class AdminController {
 
-    @Value("${id.latest.products}")
-    private int idLatestProducts;
-
 
     @Value("${gfly.category.upload.path}")
     private String categoryImageUploadPath;
-@Value("${gfly.product.upload.path}")
+
+    @Value("${gfly.product.upload.path}")
     private String productImageUploadPath;
 
     @Autowired
@@ -82,30 +80,23 @@ public class AdminController {
         return "addProduct";
     }
 
-    public int getIdLatestProducts() {
-        return idLatestProducts;
-    }
-
     @RequestMapping(value = "/saveProduct", method = RequestMethod.POST)
     public String saveProductPage(@ModelAttribute(name = "product") Product product,
                                   @RequestParam(value = "image") MultipartFile file) {
         String picName = file.getOriginalFilename();
-        File picture = new File(productImageUploadPath + "/" + picName);
+        File picture = new File(productImageUploadPath + picName);
         try {
             file.transferTo(picture);
         } catch (IOException e) {
-            System.out.println(productImageUploadPath + "/" + picture.getName());
+            System.out.println(productImageUploadPath + picture.getName());
             return "redirect:/addProduct";
         }
         product.setPicUrl(picName);
         productRepository.save(product);
-        idLatestProducts++;
-
 //        Image image = new Image();
 //        image.setName(picName);
 //        image.setProduct(product);
-
-        //imageRepository.save(image);
+//        imageRepository.save(image);
         return "redirect:/addProduct";
     }
 

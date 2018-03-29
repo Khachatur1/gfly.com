@@ -20,12 +20,9 @@ import java.io.*;
 @Controller
 public class MainController {
 
+    @Value("${id.latest.products}")
+    private int idLatestProducts;
 
-    @Value("${gfly.category.upload.path}")
-    private String categoryImageUploadPath;
-
-    @Value("${gfly.product.upload.path}")
-    private String productImageUploadPath;
 
     @Autowired
     private CategoryRepository categoryRepository;
@@ -46,7 +43,7 @@ public class MainController {
     public String homePage(ModelMap map) {
         map.addAttribute("categories", categoryRepository.findAll());
         map.addAttribute("products", productRepository.findAll());
-        map.addAttribute("oneProduct", productRepository.findOne(new AdminController().getIdLatestProducts()));
+        map.addAttribute("oneProduct", productRepository.findOne(idLatestProducts));
         return "index";
     }
 
@@ -88,46 +85,10 @@ public class MainController {
     }
 
 
-    @RequestMapping(value = "/category/image", method = RequestMethod.GET)
-    public void getCategoryImageAsByteArray(HttpServletResponse response,
-                                    @RequestParam("fileName") String fileName) {
-        try {
-            InputStream in = new FileInputStream(categoryImageUploadPath + fileName);
-            response.setContentType(MediaType.IMAGE_JPEG_VALUE);
-            IOUtils.copy(in, response.getOutputStream());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
- @RequestMapping(value = "/product/image", method = RequestMethod.GET)
-    public void getProductImageAsByteArray(HttpServletResponse response,
-                                    @RequestParam("fileName") String fileName) {
-        try {
-            InputStream in = new FileInputStream(productImageUploadPath +"/"+ fileName);
-            response.setContentType(MediaType.IMAGE_JPEG_VALUE);
-            IOUtils.copy(in, response.getOutputStream());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
- @RequestMapping(value = "/products/image", method = RequestMethod.GET)
-    public void getProductImageAsByteArr(HttpServletResponse response,
-                                    @RequestParam("fileName") String fileName) {
-        try {
-            InputStream in = new FileInputStream(productImageUploadPath +"/"+ fileName);
-            response.setContentType(MediaType.IMAGE_JPEG_VALUE);
-            IOUtils.copy(in, response.getOutputStream());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String getProduct(@PathVariable("id") int productId, ModelMap modelMap, HttpServletRequest request) {
         Product one = productRepository.findOne(productId);
-        if (one ==null){
+        if (one == null) {
             return "redirect:/home";
         }
         modelMap.addAttribute("product", one);

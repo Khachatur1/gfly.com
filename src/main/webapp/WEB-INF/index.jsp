@@ -231,7 +231,7 @@
                         <div class="col-md-4 item"><a href="/category">
                             <h4>${category.name.toUpperCase()}</h4>
                             <p>Lorem ipsum dolor sit amet</p>
-                            <div class="image"><img  src="/category/image?fileName=${category.picUrl}"
+                            <div class="image"><img src="/category/image?fileName=${category.picUrl}"
                                                     alt="camera" class="img-fluid"></div>
                         </a></div>
                     </c:forEach>
@@ -262,16 +262,16 @@
                 <div class="col-lg-6">
                     <div class="row">
                         <c:forEach items="${products}" var="product">
-                        <div class="col-md-6">
-                            <div class="item">
-                                <h4>${product.name}</h4>
-                                <p class="text-primary">$1.299</p><img
-                                    src="/product/image?fileName=${product.picUrl}" alt="camera"
-                                    class="img-fluid">
-                                <div class="overlay d-flex align-items-center justify-content-center"><a
-                                        href="/${product.id}" class="btn btn-unique">View Details</a></div>
+                            <div class="col-md-6">
+                                <div class="item">
+                                    <h4>${product.name}</h4>
+                                    <p class="text-primary">$1.299</p><img
+                                        src="/product/image?fileName=${product.picUrl}" alt="camera"
+                                        class="img-fluid">
+                                    <div class="overlay d-flex align-items-center justify-content-center"><a
+                                            href="/${product.id}" class="btn btn-unique">View Details</a></div>
+                                </div>
                             </div>
-                        </div>
                         </c:forEach>
 
                     </div>
@@ -289,7 +289,7 @@
                         href="#" class="btn btn-dark shop-now">Shop Now</a>
                 </div>
                 <div class="col-md-6 d-none d-md-block">
-                    <div class="product"><img src="/products/image?fileName=${oneProduct.picUrl}"
+                    <div class="product"><img src="/product/image?fileName=${oneProduct.picUrl}"
                                               alt="camera" class="img-fluid"></div>
                 </div>
             </div>
@@ -390,7 +390,9 @@
                         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores laborum nesciunt
                             cu.</p>
                         <ul class="list-inline">
-                            <li class="list-inline-item"><a href="https://web.facebook.com/Aviamodelizm1Gyumri/?timeline_context_item_type=intro_card_work&timeline_context_item_source=100003461520899&pnref=lhc" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <li class="list-inline-item"><a
+                                    href="https://web.facebook.com/Aviamodelizm1Gyumri/?timeline_context_item_type=intro_card_work&timeline_context_item_source=100003461520899&pnref=lhc"
+                                    target="_blank"><i class="fa fa-facebook"></i></a>
                             </li>
                             <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
                             </li>
