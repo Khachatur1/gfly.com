@@ -4,17 +4,12 @@ import am.gfly.model.Product;
 import am.gfly.repository.CategoryRepository;
 import am.gfly.repository.ImageRepository;
 import am.gfly.repository.ProductRepository;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.*;
 import java.util.List;
 
 
@@ -27,9 +22,6 @@ public class MainController {
     @Autowired
     private ProductRepository productRepository;
 
-    @Autowired
-    private ImageRepository imageRepository;
-
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String mainPage() {
@@ -40,7 +32,7 @@ public class MainController {
     public String homePage(ModelMap map) {
         List<Product> allproducts = productRepository.findAll();
         map.addAttribute("categories", categoryRepository.findAll());
-        map.addAttribute("products", allproducts.subList(allproducts.size()-4,allproducts.size()));
+        map.addAttribute("products", allproducts.subList(allproducts.size() - 4, allproducts.size()));
         map.addAttribute("oneProduct", productRepository.findOne(allproducts.size()));
         return "index";
     }

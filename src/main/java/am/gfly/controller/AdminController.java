@@ -7,10 +7,8 @@ import am.gfly.model.Video;
 import am.gfly.repository.CategoryRepository;
 import am.gfly.repository.ImageRepository;
 import am.gfly.repository.ProductRepository;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,15 +17,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 
 @Controller
 public class AdminController {
-
 
     @Value("${gfly.category.image.upload.path}")
     private String categoryImageUploadPath;
