@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 
-<!-- Mirrored from demo.bootstrapious.com/photo/1-3//post by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Feb 2018 17:04:11 GMT -->
+<!-- Mirrored from demo.bootstrapious.com/photo/1-3//Post by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Feb 2018 17:04:11 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -400,5 +400,5 @@
 <script src="../static/js/front/front.js"></script>
 </body>
 
-<!-- Mirrored from demo.bootstrapious.com/photo/1-3//post by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Feb 2018 17:04:11 GMT -->
+<!-- Mirrored from demo.bootstrapious.com/photo/1-3//Post by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Feb 2018 17:04:11 GMT -->
 </html>
