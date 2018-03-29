@@ -269,7 +269,7 @@
                                     src="/product/image?fileName=${product.picUrl}" alt="camera"
                                     class="img-fluid">
                                 <div class="overlay d-flex align-items-center justify-content-center"><a
-                                        href="/detail/product?id=${product.id}" class="btn btn-unique">View Details</a></div>
+                                        href="/${product.id}" class="btn btn-unique">View Details</a></div>
                             </div>
                         </div>
                         </c:forEach>

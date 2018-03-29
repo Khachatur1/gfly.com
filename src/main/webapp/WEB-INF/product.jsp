@@ -150,16 +150,14 @@
             <div class="row">
                 <div class="col-md-6">
                     <div data-slider-id="1" class="owl-carousel item-slider">
-                        <div class="item"><img src="../static/img/detail-2.jpg" alt="lens"></div>
-                        <div class="item"><img src="../static/img/detail-1.jpg" alt="lens"></div>
-                        <div class="item"><img src="../static/img/detail-3.jpg" alt="lens"></div>
-                        <div class="item"><img src="../static/img/detail-4.jpg" alt="lens"></div>
+                        <div class="item"><img src="/product/image?fileName=${product.picUrl}" alt="lens"></div>
+
                     </div>
                     <div data-slider-id="1" class="owl-thumbs">
-                        <button class="owl-thumb-item"><img src="../static/img/detail-2-small.jpg" alt="lens"></button>
-                        <button class="owl-thumb-item"><img src="../static/img/detail-1-small.jpg" alt="lens"></button>
-                        <button class="owl-thumb-item"><img src="../static/img/detail-3-small.jpg" alt="lens"></button>
-                        <button class="owl-thumb-item"><img src="../static/img/detail-4-small.jpg" alt="lens"></button>
+                        <button class="owl-thumb-item"><img src="/product/image?fileName=${product.picUrl}" alt="lens"></button>
+                        <button class="owl-thumb-item"><img src="/product/image?fileName=${product.picUrl}" alt="lens"></button>
+                        <button class="owl-thumb-item"><img src="/product/image?fileName=${product.picUrl}" alt="lens"></button>
+                        <button class="owl-thumb-item"><img src="/product/image?fileName=${product.picUrl}" alt="lens"></button>
                     </div>
                     <div class="brief">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore eligendi, hic illo,
@@ -186,8 +184,8 @@
                     </div>
                     <div class="model">
                         <ul class="list-unstyled">
-                            <li><span class="text-uppercase">Item No: </span>AF-S NiKKOR 70-200mm f/2.8G ED</li>
-                            <li><span class="text-uppercase">Category: </span>Zoom Lenses</li>
+                            <li><span class="text-uppercase">Item No: </span>${product.itemNumber}</li>
+                            <li><span class="text-uppercase">Category: </span>${product.category.name}</li>
                             <li><span class="text-uppercase">Availability: </span>In Stock</li>
                         </ul>
                     </div>

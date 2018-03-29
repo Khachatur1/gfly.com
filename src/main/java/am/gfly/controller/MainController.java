@@ -1,6 +1,5 @@
 package am.gfly.controller;
 
-import am.gfly.model.Category;
 import am.gfly.model.Product;
 import am.gfly.repository.CategoryRepository;
 import am.gfly.repository.ImageRepository;
@@ -12,10 +11,11 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+
 
 @Controller
 public class MainController {
@@ -69,10 +69,6 @@ public class MainController {
         return "contact";
     }
 
-    @RequestMapping(value = "/detail", method = RequestMethod.GET)
-    public String detailPage() {
-        return "detail";
-    }
 
     @RequestMapping(value = "/post", method = RequestMethod.GET)
     public String postPage() {
@@ -94,7 +90,7 @@ public class MainController {
     public void getCategoryImageAsByteArray(HttpServletResponse response,
                                     @RequestParam("fileName") String fileName) {
         try {
-            InputStream in = new FileInputStream(categoryImageUploadPath + "/" + fileName);
+            InputStream in = new FileInputStream(categoryImageUploadPath + fileName);
             response.setContentType(MediaType.IMAGE_JPEG_VALUE);
             IOUtils.copy(in, response.getOutputStream());
         } catch (IOException e) {
@@ -106,7 +102,7 @@ public class MainController {
     public void getProductImageAsByteArray(HttpServletResponse response,
                                     @RequestParam("fileName") String fileName) {
         try {
-            InputStream in = new FileInputStream(productImageUploadPath + "/" + fileName);
+            InputStream in = new FileInputStream(productImageUploadPath + fileName);
             response.setContentType(MediaType.IMAGE_JPEG_VALUE);
             IOUtils.copy(in, response.getOutputStream());
         } catch (IOException e) {
@@ -115,11 +111,14 @@ public class MainController {
     }
 
 
-    @RequestMapping(value = "/detail/product/{productId}", method = RequestMethod.GET)
-    public String getProduct(@PathVariable("productId") int productId, ModelMap modelMap) {
-        modelMap.addAttribute("product", productRepository.findOne(productId));
-
-        return "detail";
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String getProduct(@PathVariable("id") int productId, ModelMap modelMap, HttpServletRequest request) {
+        Product one = productRepository.findOne(productId);
+        if (one ==null){
+            return "redirect:/home";
+        }
+        modelMap.addAttribute("product", one);
+        return "product";
     }
 
 }
