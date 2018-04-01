@@ -90,34 +90,6 @@
                 <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="/category" class="nav-link">Category</a></li>
                 <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a id="navbarDropdown2" data-target="#" href="http://example.com/"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        class="nav-link">Template content<i class="fa fa-caret-down"></i></a>
-                    <ul aria-labelledby="navbarDropdown2" class="dropdown-menu">
-                        <li><a href="/home" class="dropdown-item">Homepage 1</a></li>
-                        <li><a href="/home" class="dropdown-item">Homepage 2</a></li>
-                        <li><a href="/category" class="dropdown-item">Category</a></li>
-                        <li><a href="/detail" class="dropdown-item">Product</a></li>
-                        <li><a href="/cart" class="dropdown-item">Shopping cart</a></li>
-                        <li class="dropdown-divider"></li>
-                        <li><a href="/blog" class="dropdown-item">Blog</a></li>
-                        <li><a href="/post" class="dropdown-item">Blog Post</a></li>
-                        <li><a href="/text" class="dropdown-item">Text page</a></li>
-                        <li><a href="/contact" class="dropdown-item">Contact</a></li>
-                        <!-- Multilevel dropdown    -->
-                        <li class="dropdown dropdown-submenu"><a id="multileveldropdown1" data-target="#"
-                                                                 href="http://example.com/" data-toggle="dropdown"
-                                                                 aria-haspopup="true" aria-expanded="false"
-                                                                 class="dropdown-item">Multilevel dropdown<i
-                                class="fa fa-caret-right ml-2"></i></a>
-                            <ul aria-labelledby="multileveldropdown1" class="dropdown-menu">
-                                <li><a href="#" class="dropdown-item">Item 1</a></li>
-                                <li><a href="#" class="dropdown-item">Item 2</a></li>
-                                <li><a href="#" class="dropdown-item">Item 3 </a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
                 <li class="nav-item"><a href="/contact" class="nav-link">Contact Us</a></li>
                 <li class="nav-item">
                     <ul class="list-inline">
@@ -154,7 +126,7 @@
                             <select title="Brand" name="brand" class="filter-branselect form-control">
                                <c:forEach items="${categories}" var="category">
 
-                                <option value=""> ${category.name.toUpperCase()}</option>
+                                <option value="${category.id}"><a href="index.jsp">${category.name.toUpperCase()}</option>
                                 </c:forEach>
 
                             </select>
@@ -169,20 +141,21 @@
             </header>
             <div class="items">
                 <div class="row">
+                    <c:forEach items="${products}" var="products">
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="item text-center">
                             <div class="product-image"><img
-                                    src="../static/img/product-1.jpg"
-                                    alt="camera">
+                                    src="/product/image?fileName=${products.picUrl}"
+                                    alt="camera" width="156px" height="130px">
                                 <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
                                     <ul class="list-unstyled">
-                                        <li><a href="/detail" class="btn btn-unique">View Detail</a></li>
+                                        <li><a href="/${products.id}" class="btn btn-unique">View Detail</a></li>
                                         <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <a href="/detail" class="item-name">
-                                <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
+                                <h4>${products.name}</h4></a>
                             <ul class="list-inline rate text-primary">
                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
@@ -190,211 +163,13 @@
                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                             </ul>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas
-                                possimus magnam.</p>
+                            <p>${products.description}</p>
                             <ul class="price list-inline">
                                 <li class="list-inline-item"><span class="price">$1,299</span></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="item text-center">
-                            <div class="product-image"><span
-                                    class="new badge badge-pill badge-info text-uppercase">new</span><img
-                                    src="../static/img/product-2.jpg"
-                                    alt="camera">
-                                <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
-                                    <ul class="list-unstyled">
-                                        <li><a href="/detail" class="btn btn-unique">View Detail</a></li>
-                                        <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <a href="/detail" class="item-name">
-                                <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
-                            <ul class="list-inline rate text-primary">
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                            </ul>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas
-                                possimus magnam.</p>
-                            <ul class="price list-inline">
-                                <li class="list-inline-item"><span class="price">$1,299</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="item text-center">
-                            <div class="product-image"><img
-                                    src="../static/img/product-3.jpg"
-                                    alt="camera">
-                                <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
-                                    <ul class="list-unstyled">
-                                        <li><a href="/detail" class="btn btn-unique">View Detail</a></li>
-                                        <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <a href="/detail" class="item-name">
-                                <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
-                            <ul class="list-inline rate text-primary">
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                            </ul>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas
-                                possimus magnam.</p>
-                            <ul class="price list-inline">
-                                <li class="list-inline-item"><span class="price">$1,299</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="item text-center">
-                            <div class="product-image"><span class="sale badge badge-pill badge-primary text-uppercase">sale</span><img
-                                    src="../static/img/product-4.jpg"
-                                    alt="camera">
-                                <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
-                                    <ul class="list-unstyled">
-                                        <li><a href="/undefined" class="btn btn-unique">View Detail</a></li>
-                                        <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <a href="/undefined" class="item-name">
-                                <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
-                            <ul class="list-inline rate text-primary">
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                            </ul>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas
-                                possimus magnam.</p>
-                            <ul class="price list-inline">
-                                <li class="list-inline-item"><span class="price-old">$1,299</span></li>
-                                <li class="list-inline-item"><span class="price-new">$700</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="item text-center">
-                            <div class="product-image"><img
-                                    src="../static/img/product-5.jpg"
-                                    alt="camera">
-                                <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
-                                    <ul class="list-unstyled">
-                                        <li><a href="/detail" class="btn btn-unique">View Detail</a></li>
-                                        <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <a href="/detail" class="item-name">
-                                <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
-                            <ul class="list-inline rate text-primary">
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                            </ul>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas
-                                possimus magnam.</p>
-                            <ul class="price list-inline">
-                                <li class="list-inline-item"><span class="price">$1,299</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="item text-center">
-                            <div class="product-image"><img
-                                    src="../static/img/product-6.jpg"
-                                    alt="camera">
-                                <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
-                                    <ul class="list-unstyled">
-                                        <li><a href="/detail" class="btn btn-unique">View Detail</a></li>
-                                        <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <a href="/detail" class="item-name">
-                                <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
-                            <ul class="list-inline rate text-primary">
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                            </ul>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas
-                                possimus magnam.</p>
-                            <ul class="price list-inline">
-                                <li class="list-inline-item"><span class="price">$1,299</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="item text-center">
-                            <div class="product-image"><img
-                                    src="../static/img/product-7.jpg"
-                                    alt="camera">
-                                <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
-                                    <ul class="list-unstyled">
-                                        <li><a href="/detail" class="btn btn-unique">View Detail</a></li>
-                                        <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <a href="/detail" class="item-name">
-                                <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
-                            <ul class="list-inline rate text-primary">
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                            </ul>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas
-                                possimus magnam.</p>
-                            <ul class="price list-inline">
-                                <li class="list-inline-item"><span class="price">$1,299</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="item text-center">
-                            <div class="product-image"><img
-                                    src="../static/img/product-2.jpg"
-                                    alt="camera">
-                                <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
-                                    <ul class="list-unstyled">
-                                        <li><a href="/detail" class="btn btn-unique">View Detail</a></li>
-                                        <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <a href="/detail" class="item-name">
-                                <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
-                            <ul class="list-inline rate text-primary">
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                            </ul>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas
-                                possimus magnam.</p>
-                            <ul class="price list-inline">
-                                <li class="list-inline-item"><span class="price">$1,299</span></li>
-                            </ul>
-                        </div>
-                    </div>
+                    </c:forEach>
                 </div>
             </div>
             <!-- Pagination -->

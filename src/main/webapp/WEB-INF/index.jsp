@@ -80,34 +80,6 @@
                 <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="/category" class="nav-link">Category</a></li>
                 <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a id="navbarDropdown2" data-target="#" href="http://example.com/"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        class="nav-link">Template content<i class="fa fa-caret-down"></i></a>
-                    <ul aria-labelledby="navbarDropdown2" class="dropdown-menu">
-                        <li><a href="/home" class="dropdown-item">Homepage 1</a></li>
-                        <li><a href="/home" class="dropdown-item">Homepage 2</a></li>
-                        <li><a href="/category" class="dropdown-item">Category</a></li>
-                        <li><a href="/detail" class="dropdown-item">Product</a></li>
-                        <li><a href="/cart" class="dropdown-item">Shopping cart</a></li>
-                        <li class="dropdown-divider"></li>
-                        <li><a href="/blog" class="dropdown-item">Blog</a></li>
-                        <li><a href="/post" class="dropdown-item">Blog Post</a></li>
-                        <li><a href="/text" class="dropdown-item">Text page</a></li>
-                        <li><a href="/contact" class="dropdown-item">Contact</a></li>
-                        <!-- Multilevel dropdown    -->
-                        <li class="dropdown dropdown-submenu"><a id="multileveldropdown1" data-target="#"
-                                                                 href="http://example.com/" data-toggle="dropdown"
-                                                                 aria-haspopup="true" aria-expanded="false"
-                                                                 class="dropdown-item">Multilevel dropdown<i
-                                class="fa fa-caret-right ml-2"></i></a>
-                            <ul aria-labelledby="multileveldropdown1" class="dropdown-menu">
-                                <li><a href="#" class="dropdown-item">Item 1</a></li>
-                                <li><a href="#" class="dropdown-item">Item 2</a></li>
-                                <li><a href="#" class="dropdown-item">Item 3 </a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
                 <li class="nav-item"><a href="/contact" class="nav-link">Contact Us</a></li>
                 <li class="nav-item">
                     <ul class="list-inline">
@@ -289,8 +261,8 @@
                         href="#" class="btn btn-dark shop-now">Shop Now</a>
                 </div>
                 <div class="col-md-6 d-none d-md-block">
-                    <div class="product"><img src="/product/image?fileName=${oneProduct.picUrl}"
-                                              alt="camera" class="img-fluid"></div>
+                    <div class="product" ><img src="/product/image?fileName=${oneProduct.picUrl}"
+                                              alt="camera" class="img-fluid" width="450px"></div>
                 </div>
             </div>
         </div>

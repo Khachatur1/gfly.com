@@ -2,7 +2,6 @@ package am.gfly.controller;
 
 import am.gfly.model.Product;
 import am.gfly.repository.CategoryRepository;
-import am.gfly.repository.ImageRepository;
 import am.gfly.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -50,6 +49,7 @@ public class MainController {
     @RequestMapping(value = "/category", method = RequestMethod.GET)
     public String categoryPage(ModelMap map) {
         map.addAttribute("categories", categoryRepository.findAll());
+        map.addAttribute("products", productRepository.findAll());
         return "category";
     }
 
@@ -84,5 +84,7 @@ public class MainController {
         modelMap.addAttribute("product", one);
         return "product";
     }
+
+
 
 }

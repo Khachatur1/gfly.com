@@ -39,6 +39,42 @@ public class AdminController {
     private ImageRepository imageRepository;
 
 
+@RequestMapping(value = "/buttons", method = RequestMethod.GET)
+    public String buttonsPage() {
+        return "admin/buttons";
+    }
+
+@RequestMapping(value = "/calendar", method = RequestMethod.GET)
+    public String calendarPage() {
+        return "admin/calendar";
+    }
+
+@RequestMapping(value = "/forms", method = RequestMethod.GET)
+    public String formsPage() {
+        return "admin/forms";
+    }
+
+@RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public String adminPage() {
+        return "admin/admin";
+    }
+
+@RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String loginPage() {
+        return "admin/login";
+    }
+
+@RequestMapping(value = "/signup", method = RequestMethod.GET)
+    public String signupPage() {
+        return "admin/signup";
+    }
+
+@RequestMapping(value = "/tables", method = RequestMethod.GET)
+    public String tablesPage() {
+        return "admin/tables";
+    }
+
+
     @RequestMapping(value = "/addCategory", method = RequestMethod.GET)
     public String addCategoryPage(ModelMap map) {
         map.addAttribute("category", new Category());

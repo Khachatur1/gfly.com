@@ -25,4 +25,9 @@ public class User {
     private String email;
     @Column
     private String password;
+    @Column
+    @Enumerated(EnumType.STRING)
+    private UserType type;
+    @Column
+    private boolean verify;
 }
