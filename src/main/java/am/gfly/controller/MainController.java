@@ -75,16 +75,25 @@ public class MainController {
     }
 
 
+//    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+//    public String getProduct(@PathVariable("id") int productId, ModelMap modelMap, HttpServletRequest request) {
+//        Product one = productRepository.findOne(productId);
+//        if (one == null) {
+//            return "redirect:/home";
+//        }
+//        modelMap.addAttribute("product", one);
+//        return "product";
+//    }
+
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getProduct(@PathVariable("id") int productId, ModelMap modelMap, HttpServletRequest request) {
-        Product one = productRepository.findOne(productId);
-        if (one == null) {
-            return "redirect:/home";
+    public String getProductByCategoryId(@PathVariable("id") int categoryId, ModelMap modelMap) {
+        List<Product> productsByCategoryId = productRepository.getProductsByCategoryId(categoryId);
+        modelMap.addAttribute("productsByCategoryId", productsByCategoryId);
+        modelMap.addAttribute("categories", categoryRepository.findAll());
+        for (Product product : productsByCategoryId) {
+            System.out.println(product);
         }
-        modelMap.addAttribute("product", one);
-        return "product";
+        return "category";
     }
-
-
-
 }

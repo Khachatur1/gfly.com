@@ -123,10 +123,11 @@
                     </div>
                     <div class="col-md-6">
                         <div class="filters d-flex justify-content-end">
-                            <select title="Brand" name="brand" class="filter-branselect form-control">
-                               <c:forEach items="${categories}" var="category">
+                            <select onselect="this.value" title="Brand" name="brand" onchange="window.location.href=this.value;" class="filter-branselect form-control">
+                                <option value="/category">ALL</option>
+                                <c:forEach items="${categories}" var="category">
 
-                                <option value="${category.id}"><a href="index.jsp">${category.name.toUpperCase()}</option>
+                                <option value="/${category.id}">${category.name.toUpperCase()}</option>
                                 </c:forEach>
 
                             </select>
