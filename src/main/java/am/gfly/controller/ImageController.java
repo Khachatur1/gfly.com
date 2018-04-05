@@ -28,7 +28,7 @@ public class ImageController {
                                             @RequestParam("fileName") String fileName) {
         try {
             InputStream in = new FileInputStream(categoryImageUploadPath + fileName);
-            response.setContentType(MediaType.IMAGE_JPEG_VALUE);
+            response.setContentType(MediaType.ALL_VALUE);
             IOUtils.copy(in, response.getOutputStream());
         } catch (IOException e) {
             e.printStackTrace();
@@ -40,7 +40,7 @@ public class ImageController {
                                            @RequestParam("fileName") String fileName) {
         try {
             InputStream in = new FileInputStream(productImageUploadPath + fileName);
-            response.setContentType(MediaType.IMAGE_JPEG_VALUE);
+            response.setContentType(MediaType.ALL_VALUE);
             IOUtils.copy(in, response.getOutputStream());
         } catch (IOException e) {
             e.printStackTrace();

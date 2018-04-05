@@ -19,14 +19,22 @@ public class Product {
     private int id;
     @Column
     private String name;
-    @Column(name = "item_number")
-    private String itemNumber;
+    @Column
+    private String wingspan;
+    @Column
+    private String weight;
+    @Column
+    @Enumerated(EnumType.STRING)
+    private Engine engine;
+    @Column
+    @Enumerated(EnumType.STRING)
+    private Material material;
     @ManyToOne
     private Category category;
-    @Column
-    private String description;
     @Column(name = "pic_url")
     private String picUrl;
+    @Column
+    private String description;
 
 
 }

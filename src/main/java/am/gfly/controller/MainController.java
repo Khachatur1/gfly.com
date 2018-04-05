@@ -32,7 +32,10 @@ public class MainController {
         List<Product> allproducts = productRepository.findAll();
         map.addAttribute("categories", categoryRepository.findAll());
         map.addAttribute("products", allproducts.subList(allproducts.size() - 4, allproducts.size()));
-        map.addAttribute("oneProduct", productRepository.findOne(allproducts.size()));
+
+        Product one = productRepository.findOne(allproducts.get(allproducts.size()-1).getId());
+        map.addAttribute("oneProduct", one);
+        System.out.println(one);
         return "index";
     }
 
@@ -75,25 +78,25 @@ public class MainController {
     }
 
 
-//    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-//    public String getProduct(@PathVariable("id") int productId, ModelMap modelMap, HttpServletRequest request) {
-//        Product one = productRepository.findOne(productId);
-//        if (one == null) {
-//            return "redirect:/home";
-//        }
-//        modelMap.addAttribute("product", one);
-//        return "product";
-//    }
-
-
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getProductByCategoryId(@PathVariable("id") int categoryId, ModelMap modelMap) {
-        List<Product> productsByCategoryId = productRepository.getProductsByCategoryId(categoryId);
-        modelMap.addAttribute("productsByCategoryId", productsByCategoryId);
-        modelMap.addAttribute("categories", categoryRepository.findAll());
-        for (Product product : productsByCategoryId) {
-            System.out.println(product);
+    public String getProduct(@PathVariable("id") int productId, ModelMap modelMap, HttpServletRequest request) {
+        Product one = productRepository.findOne(productId);
+        if (one == null) {
+            return "redirect:/home";
         }
-        return "category";
+        modelMap.addAttribute("product", one);
+        return "product";
     }
+
+
+//    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+//    public String getProductByCategoryId(@PathVariable("id") int categoryId, ModelMap modelMap) {
+//        List<Product> productsByCategoryId = productRepository.getProductsByCategoryId(categoryId);
+//        modelMap.addAttribute("productsByCategoryId", productsByCategoryId);
+//        modelMap.addAttribute("categories", categoryRepository.findAll());
+//        for (Product product : productsByCategoryId) {
+//            System.out.println(product);
+//        }
+//        return "category";
+//    }
 }

@@ -202,7 +202,7 @@
 
                         <div class="col-md-4 item"><a href="/category">
                             <h4>${category.name.toUpperCase()}</h4>
-                            <p>Lorem ipsum dolor sit amet</p>
+                            <p>${category.description}</p>
                             <div class="image"><img src="/category/image?fileName=${category.picUrl}"
                                                     alt="camera" class="img-fluid"></div>
                         </a></div>

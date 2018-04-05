@@ -1513,6 +1513,11 @@ section.item-details .brief {
     margin: 50px 0
 }
 
+iframe{
+    width: 530px;
+    height: 285px
+}
+
 section.item-details .product-quantity {
     margin-bottom: 10px
 }

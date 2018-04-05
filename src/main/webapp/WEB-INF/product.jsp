@@ -132,12 +132,9 @@
                         <button class="owl-thumb-item"><img src="/product/image?fileName=${product.picUrl}" alt="lens"></button>
                     </div>
                     <div class="brief">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore eligendi, hic illo,
-                            debitis similique maxime molestias voluptates sunt. Natus asperiores, unde dolorem nemo
-                            reprehenderit totam consequatur eos. Ipsa, voluptatibus, laborum.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore eligendi, hic illo,
-                            debitis similique maxime molestias voluptates sunt. Natus asperiores, unde dolorem nemo
-                            reprehenderit totam consequatur eos. Ipsa, voluptatibus, laborum.</p>
+
+                        <iframe width="640" height="360" src="https://www.youtube.com/embed/It9SVV5Dp-g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></iframe>
+
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -156,15 +153,13 @@
                     </div>
                     <div class="model">
                         <ul class="list-unstyled">
-                            <li><span class="text-uppercase">Item No: </span>${product.itemNumber}</li>
                             <li><span class="text-uppercase">Category: </span>${product.category.name}</li>
-                            <li><span class="text-uppercase">Availability: </span>In Stock</li>
+                            <li><span class="text-uppercase">Engine: </span>${product.engine.toString()}</li>
+                            <li><span class="text-uppercase">Material: </span>${product.material}</li>
                         </ul>
                     </div>
                     <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>${product.description}</p>
                     </div>
                     <form action="#" method="get">
                         <div class="row d-flex justify-content-between">
@@ -201,12 +196,12 @@
                     </form>
                     <div class="specifications">
                         <ul class="property list-unstyled">
-                            <li class="title">Focal Length</li>
-                            <li class="value">70-200mm</li>
+                            <li class="title">Wingspan</li>
+                            <li class="value">${product.wingspan}</li>
                         </ul>
                         <ul class="property list-unstyled">
-                            <li class="title">Maximum Apparature</li>
-                            <li class="value">F/2.8</li>
+                            <li class="title">Weight</li>
+                            <li class="value">${product.weight}</li>
                         </ul>
                         <ul class="property list-unstyled">
                             <li class="title">Minimum Apparature</li>

@@ -15,13 +15,24 @@
 <spring:form action="/saveProduct" method="post" modelAttribute="product" enctype="multipart/form-data">
     <spring:label path="name">Name:</spring:label>
     <spring:input path="name"/><br>
-    <spring:label path="itemNumber">Item Number:</spring:label>
-    <spring:textarea path="itemNumber"/><br>
+    <spring:label path="wingspan">Wingspan:</spring:label>
+    <spring:textarea path="wingspan"/><br>
+    <spring:label path="weight">Weight:</spring:label>
+    <spring:textarea path="weight"/><br>
+    <spring:select path="engine">
+        <spring:option value="NON"></spring:option>
+        <spring:option value="DVS"></spring:option>
+        <spring:option value="ELECTRO"></spring:option>
+    </spring:select><br>
+    <spring:select path="material">
+        <spring:option value="DEPRON"></spring:option>
+        <spring:option value="BALSA"></spring:option>
+    </spring:select><br>
     <spring:select path="category" items="${category}" itemLabel="name"></spring:select><br>
-    <spring:label path="description">Description:</spring:label>
-    <spring:textarea path="description"/><br>
     <label for="image">Image:</label>
     <input type="file" id="image" name="image"/><br>
+    <spring:label path="description">Description:</spring:label>
+    <spring:textarea path="description"/><br>
     <input type="submit" value="ADD">
 </spring:form>
 </body>

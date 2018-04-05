@@ -16,6 +16,8 @@
 <spring:form action="/saveCategory" method="post" modelAttribute="category" enctype="multipart/form-data">
     <spring:label path="name">Name:</spring:label>
     <spring:input path="name"/><br>
+    <spring:label path="description">Description:</spring:label>
+    <spring:input path="description"/><br>
     <label for="image">Image:</label>
     <input type="file" id="image" name="image"/><br>
     <input type="submit" value="ADD">
