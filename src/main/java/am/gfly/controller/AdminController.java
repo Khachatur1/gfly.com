@@ -49,11 +49,6 @@ public class AdminController {
         return "admin/calendar";
     }
 
-@RequestMapping(value = "/forms", method = RequestMethod.GET)
-    public String formsPage() {
-        return "admin/forms";
-    }
-
 @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String adminPage() {
         return "admin/admin";
@@ -75,12 +70,6 @@ public class AdminController {
     }
 
 
-    @RequestMapping(value = "/addCategory", method = RequestMethod.GET)
-    public String addCategoryPage(ModelMap map) {
-        map.addAttribute("category", new Category());
-        return "addCategory";
-    }
-
     @RequestMapping(value = "/saveCategory", method = RequestMethod.POST)
     public String addBrand(@ModelAttribute(name = "category") Category category,
                            @RequestParam(value = "image") MultipartFile file) {
@@ -89,25 +78,25 @@ public class AdminController {
             dir.mkdir();
         }
         String picName = file.getOriginalFilename();
-        File picture = new File(categoryImageUploadPath + "/" + picName);
+        File picture = new File(categoryImageUploadPath + picName);
         try {
             file.transferTo(picture);
         } catch (IOException e) {
-            return "redirect:/addCategory";
+            return "redirect:/forms";
         }
         category.setPicUrl(picName);
         categoryRepository.save(category);
-        return "redirect:/addCategory";
+        return "redirect:/forms";
     }
 
 
-    @RequestMapping(value = "/addProduct", method = RequestMethod.GET)
+    @RequestMapping(value = "/forms", method = RequestMethod.GET)
     public String addPruductPage(ModelMap map) {
         map.addAttribute("product", new Product());
-        map.addAttribute("images", new Image());
-        map.addAttribute("category", categoryRepository.findAll());
-        map.addAttribute("video", new Video());
-        return "addProduct";
+        map.addAttribute("image", new Image());
+        map.addAttribute("category", new Category());
+        map.addAttribute("allCategories", categoryRepository.findAll());
+        return "admin/forms";
     }
 
     @RequestMapping(value = "/saveProduct", method = RequestMethod.POST)
@@ -127,7 +116,7 @@ public class AdminController {
 //        image.setName(picName);
 //        image.setProduct(product);
 //        imageRepository.save(image);
-        return "redirect:/addProduct";
+        return "redirect:/forms";
     }
 
 

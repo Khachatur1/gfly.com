@@ -5,6 +5,8 @@
   Time: 23:46
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags/form" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -60,7 +62,8 @@
                     <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b
+                                        class="caret"></b></a>
                                 <ul class="dropdown-menu animated fadeInUp">
                                     <li><a href="profile.html">Profile</a></li>
                                     <li><a href="/login">Logout</a></li>
@@ -103,9 +106,11 @@
 
             <div class="row">
                 <div class="col-md-6">
+
+
                     <div class="content-box-large">
                         <div class="panel-heading">
-                            <div class="panel-title">Horizontal Form</div>
+                            <div class="panel-title">Add Product</div>
 
                             <div class="panel-options">
                                 <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
@@ -113,58 +118,94 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <form class="form-horizontal" role="form">
+
+
+                            <spring:form action="/saveProduct" method="post" modelAttribute="product"
+                                         enctype="multipart/form-data" class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">Text Field</label>
+                                    <spring:label path="name"
+                                                  class="col-sm-2 control-label">Name</spring:label>
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                        <spring:input path="name" class="form-control" placeholder="Name"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputPassword3" class="col-sm-2 control-label">Password Field</label>
+                                    <spring:label path="wingspan"
+                                                  class="col-sm-2 control-label">Wingspan</spring:label>
                                     <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                        <spring:input path="wingspan" class="form-control" placeholder="Wingspan"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">Textarea</label>
+                                    <spring:label path="weight"
+                                                  class="col-sm-2 control-label">Weight</spring:label>
                                     <div class="col-sm-10">
-                                        <textarea class="form-control" placeholder="Textarea" rows="3"></textarea>
+                                        <spring:input path="weight" class="form-control" placeholder="Weight"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">Readonly</label>
+                                    <spring:label path="engine"
+                                                  class="col-sm-2 control-label">Engine</spring:label>
                                     <div class="col-sm-10">
-                                        <span class="form-control">Read only text</span>
+                                        <spring:select path="engine" class="form-control">
+                                            <spring:option value="NON"></spring:option>
+                                            <spring:option value="DVS"></spring:option>
+                                            <spring:option value="ELECTRO"></spring:option>
+                                        </spring:select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <spring:label path="material"
+                                                  class="col-sm-2 control-label">Material</spring:label>
+                                    <div class="col-sm-10">
+                                        <spring:select path="material" class="form-control">
+                                            <spring:option value="DEPRON"></spring:option>
+                                            <spring:option value="BALSA"></spring:option>
+                                        </spring:select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <spring:label path="category"
+                                                  class="col-sm-2 control-label">Category</spring:label>
+                                    <div class="col-sm-10">
+                                        <spring:select path="category" items="${allCategories}" itemLabel="name"
+                                                       class="form-control"></spring:select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="image" class="col-md-2 control-label">Image</label>
+                                    <div class="col-md-10">
+                                        <input type="file" class="btn btn-default" id="image" name="image">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <spring:label path="description"
+                                                  class="col-sm-2 control-label">Description</spring:label>
+                                    <div class="col-sm-10">
+                                        <spring:textarea path="description" class="form-control"
+                                                         placeholder="Description" rows="3"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <spring:label path="videoUrl"
+                                                  class="col-sm-2 control-label">Video Url</spring:label>
+                                    <div class="col-sm-10">
+                                        <spring:input path="videoUrl" class="form-control" placeholder="Video Url"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"> Checkbox
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"> Checkbox
-                                            </label>
-                                        </div>
+                                        <button type="submit" class="btn btn-primary">Add Product</button>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-primary">Sign in</button>
-                                    </div>
-                                </div>
-                            </form>
+                            </spring:form>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="content-box-large">
                         <div class="panel-heading">
-                            <div class="panel-title">Vertical Form</div>
+                            <div class="panel-title">Add Category</div>
 
                             <div class="panel-options">
                                 <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
@@ -172,415 +213,35 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <form action="">
-                                <fieldset>
-                                    <div class="form-group">
-                                        <label>Text field</label>
-                                        <input class="form-control" placeholder="Text field" type="text">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Password field</label>
-                                        <input class="form-control" placeholder="Password" type="password" value="mypassword">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Textarea</label>
-                                        <textarea class="form-control" placeholder="Textarea" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Readonly</label>
-                                        <span class="form-control">Read only text</span>
-                                    </div>
-                                </fieldset>
-                                <div>
-                                    <div class="btn btn-primary">
-                                        <i class="fa fa-save"></i>
-                                        Submit
+                            <spring:form action="/saveCategory" method="post" modelAttribute="category"
+                                         enctype="multipart/form-data" class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <spring:label path="name"
+                                                  class="col-sm-2 control-label">Name</spring:label>
+                                    <div class="col-sm-10">
+                                        <spring:input path="name" class="form-control" placeholder="Name"/>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="content-box-header">
-                        <div class="panel-title">Inline Form</div>
-
-                        <div class="panel-options">
-                            <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
-                            <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
-                        </div>
-                    </div>
-                    <div class="content-box-large box-with-header">
-                        <form class="form-inline" role="form">
-
-                            <fieldset>
-                                <div class="form-group col-sm-3">
-                                    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+                                <div class="form-group">
+                                    <label for="image" class="col-md-2 control-label">Image</label>
+                                    <div class="col-md-10">
+                                        <input type="file" class="btn btn-default" id="image" name="image">
+                                    </div>
                                 </div>
-                                <div class="form-group  col-sm-3">
-                                    <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                                <div class="form-group">
+                                    <spring:label path="description"
+                                                  class="col-sm-2 control-label">Description</spring:label>
+                                    <div class="col-sm-10">
+                                        <spring:textarea path="description" class="form-control"
+                                                         placeholder="Description" rows="3"/>
+                                    </div>
                                 </div>
-                                <div class="checkbox col-sm-3">
-                                    <label>
-                                        <input type="checkbox" class="checkbox">
-                                        <span>Remember me </span></label>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-primary">Add Category</button>
+                                    </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary">
-                                    Sign in
-                                </button>
-                            </fieldset>
-
-                        </form>
-                    </div>
-                </div>
-
-                <div class="col-md-6 panel-warning">
-                    <div class="content-box-header  panel-heading">
-                        <div class="panel-title">Inline Form Disabled</div>
-
-                        <div class="panel-options">
-                            <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
-                            <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
-                        </div>
-                    </div>
-                    <div class="content-box-large box-with-header">
-                        <form class="form-inline" role="form">
-
-                            <fieldset>
-                                <div class="form-group col-sm-3">
-                                    <label class="sr-only">Email address</label>
-                                    <input type="email" class="form-control" disabled="disabled" placeholder="Enter email">
-                                </div>
-                                <div class="form-group col-sm-3">
-                                    <label class="sr-only">Password</label>
-                                    <input type="password" class="form-control" disabled="disabled" placeholder="Password">
-                                </div>
-                                <div class="checkbox col-sm-3">
-                                    <label>
-                                        <input type="checkbox" disabled="disabled">
-                                        Remember me </label>
-                                </div>
-                                <button type="submit" disabled="disabled" class="btn btn-primary">
-                                    Sign in
-                                </button>
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 panel-info">
-                    <div class="content-box-header panel-heading">
-                        <div class="panel-title ">Column Sizes</div>
-
-                        <div class="panel-options">
-                            <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
-                            <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
-                        </div>
-                    </div>
-                    <div class="content-box-large box-with-header">
-                        <div>
-
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <input type="text" class="form-control" placeholder=".col-sm-12">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" placeholder=".col-sm-6">
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" placeholder=".col-sm-6">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" placeholder=".col-sm-6">
-                                </div>
-                                <div class="col-sm-3">
-                                    <input type="text" class="form-control" placeholder=".col-sm-3">
-                                </div>
-                                <div class="col-sm-3">
-                                    <input type="text" class="form-control" placeholder=".col-sm-3">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <input type="text" class="form-control" placeholder=".col-sm-3">
-                                </div>
-                                <div class="col-sm-3">
-                                    <input type="text" class="form-control" placeholder=".col-sm-3">
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" placeholder=".col-sm-6">
-                                </div>
-
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" placeholder=".col-sm-4">
-                                </div>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" placeholder=".col-sm-4">
-                                </div>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" placeholder=".col-sm-4">
-                                </div>
-
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" placeholder=".col-sm-2">
-                                </div>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" placeholder=".col-sm-2">
-                                </div>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" placeholder=".col-sm-2">
-                                </div>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" placeholder=".col-sm-2">
-                                </div>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" placeholder=".col-sm-2">
-                                </div>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" placeholder=".col-sm-2">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-6 panel-default">
-                    <div class="content-box-header panel-heading">
-                        <div class="panel-title ">Right Aligned</div>
-
-                        <div class="panel-options">
-                            <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
-                            <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
-                        </div>
-                    </div>
-                    <div class="content-box-large box-with-header">
-                        <div>
-
-                            <div class="row">
-                                <div class="col-sm-2 pull-right">
-                                    <input type="text" class="form-control" placeholder=".col-sm-2">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-3 pull-right">
-                                    <input type="text" class="form-control" placeholder=".col-sm-3">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-4 pull-right">
-                                    <input type="text" class="form-control" placeholder=".col-sm-4">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-5 pull-right">
-                                    <input type="text" class="form-control" placeholder=".col-sm-5">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-6 pull-right">
-                                    <input type="text" class="form-control" placeholder=".col-sm-6">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-7 pull-right">
-                                    <input type="text" class="form-control" placeholder=".col-sm-7">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-8 pull-right">
-                                    <input type="text" class="form-control" placeholder=".col-sm-8">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-9 pull-right">
-                                    <input type="text" class="form-control" placeholder=".col-sm-9">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-10 pull-right">
-                                    <input type="text" class="form-control" placeholder=".col-sm-10">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-11 pull-right">
-                                    <input type="text" class="form-control" placeholder=".col-sm-11">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-12 pull-right">
-                                    <input type="text" class="form-control" placeholder=".col-sm-12">
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 panel-default">
-                    <div class="content-box-header panel-heading">
-                        <div class="panel-title ">Left Aligned</div>
-
-                        <div class="panel-options">
-                            <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
-                            <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
-                        </div>
-                    </div>
-                    <div class="content-box-large box-with-header">
-                        <div>
-
-                            <div class="row">
-                                <div class="col-sm-2 pull-left">
-                                    <input type="text" class="form-control" placeholder=".col-sm-2">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-3 pull-left">
-                                    <input type="text" class="form-control" placeholder=".col-sm-3">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-4 pull-left">
-                                    <input type="text" class="form-control" placeholder=".col-sm-4">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-5 pull-left">
-                                    <input type="text" class="form-control" placeholder=".col-sm-5">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-6 pull-left">
-                                    <input type="text" class="form-control" placeholder=".col-sm-6">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-7 pull-left">
-                                    <input type="text" class="form-control" placeholder=".col-sm-7">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-8 pull-left">
-                                    <input type="text" class="form-control" placeholder=".col-sm-8">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-9 pull-left">
-                                    <input type="text" class="form-control" placeholder=".col-sm-9">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-10 pull-left">
-                                    <input type="text" class="form-control" placeholder=".col-sm-10">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-11 pull-left">
-                                    <input type="text" class="form-control" placeholder=".col-sm-11">
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-12 pull-left">
-                                    <input type="text" class="form-control" placeholder=".col-sm-12">
-                                </div>
-                            </div>
-
-
+                            </spring:form>
 
                         </div>
                     </div>
@@ -609,63 +270,14 @@
                                     <div class="form-group">
                                         <label class="col-md-2 control-label" for="text-field">Auto Complete</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" placeholder="Type somethine..." type="text" list="list">
+                                            <input class="form-control" placeholder="Type somethine..." type="text"
+                                                   list="list">
                                             <datalist id="list">
                                                 <option value="Alexandra"></option>
-                                                <option value="Alice"></option>
-                                                <option value="Anastasia"></option>
-                                                <option value="Avelina"></option>
-                                                <option value="Basilia"></option>
-                                                <option value="Beatrice"></option>
-                                                <option value="Cassandra"></option>
-                                                <option value="Cecil"></option>
-                                                <option value="Clemencia"></option>
-                                                <option value="Desiderata"></option>
-                                                <option value="Dionisia"></option>
-                                                <option value="Edith"></option>
-                                                <option value="Eleanora"></option>
-                                                <option value="Elizabeth"></option>
-                                                <option value="Emma"></option>
-                                                <option value="Felicia"></option>
-                                                <option value="Florence"></option>
-                                                <option value="Galiana"></option>
-                                                <option value="Grecia"></option>
-                                                <option value="Helen"></option>
-                                                <option value="Helewisa"></option>
-                                                <option value="Idonea"></option>
-                                                <option value="Isabel"></option>
-                                                <option value="Joan"></option>
-                                                <option value="Juliana"></option>
-                                                <option value="Karla"></option>
-                                                <option value="Karyn"></option>
-                                                <option value="Kate"></option>
-                                                <option value="Lakisha"></option>
-                                                <option value="Lana"></option>
-                                                <option value="Laura"></option>
-                                                <option value="Leona"></option>
-                                                <option value="Mandy"></option>
-                                                <option value="Margaret"></option>
-                                                <option value="Maria"></option>
-                                                <option value="Nanacy"></option>
-                                                <option value="Nicole"></option>
-                                                <option value="Olga"></option>
-                                                <option value="Pamela"></option>
-                                                <option value="Patricia"></option>
-                                                <option value="Qiana"></option>
-                                                <option value="Rachel"></option>
-                                                <option value="Ramona"></option>
-                                                <option value="Samantha"></option>
-                                                <option value="Sandra"></option>
-                                                <option value="Tanya"></option>
-                                                <option value="Teresa"></option>
-                                                <option value="Ursula"></option>
-                                                <option value="Valerie"></option>
-                                                <option value="Veronica"></option>
-                                                <option value="Wilma"></option>
-                                                <option value="Yasmin"></option>
-                                                <option value="Zelma"></option>
+
                                             </datalist>
-                                            <p class="note"><strong>Note:</strong> works in Chrome, Firefox, Opera and IE10.</p>
+                                            <p class="note"><strong>Note:</strong> works in Chrome, Firefox, Opera and
+                                                IE10.</p>
                                         </div>
 
                                     </div>
@@ -673,7 +285,8 @@
                                     <div class="form-group">
                                         <label class="col-md-2 control-label">Password field</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" placeholder="Password field" type="password" value="mypassword">
+                                            <input class="form-control" placeholder="Password field" type="password"
+                                                   value="mypassword">
                                         </div>
                                     </div>
 
@@ -765,7 +378,6 @@
                                     </div>
 
 
-
                                 </fieldset>
 
                                 <fieldset>
@@ -792,24 +404,7 @@
 
                                             <select class="form-control" id="select-1">
                                                 <option>Amsterdam</option>
-                                                <option>Atlanta</option>
-                                                <option>Baltimore</option>
-                                                <option>Boston</option>
-                                                <option>Buenos Aires</option>
-                                                <option>Calgary</option>
-                                                <option>Chicago</option>
-                                                <option>Denver</option>
-                                                <option>Dubai</option>
-                                                <option>Frankfurt</option>
-                                                <option>Hong Kong</option>
-                                                <option>Honolulu</option>
-                                                <option>Houston</option>
-                                                <option>Kuala Lumpur</option>
-                                                <option>London</option>
-                                                <option>Los Angeles</option>
-                                                <option>Melbourne</option>
-                                                <option>Mexico City</option>
-                                                <option>Miami</option>
+
                                                 <option>Minneapolis</option>
                                             </select>
 
@@ -818,25 +413,9 @@
                                     <div class="form-group">
                                         <label class="col-md-2 control-label" for="multiselect1">Multiple select</label>
                                         <div class="col-md-10">
-                                            <select multiple="multiple" id="multiselect-1" class="form-control custom-scroll" title="Click to Select a City">
-                                                <option>Amsterdam</option>
-                                                <option selected="selected">Atlanta</option>
-                                                <option>Baltimore</option>
-                                                <option>Boston</option>
-                                                <option>Buenos Aires</option>
-                                                <option>Calgary</option>
-                                                <option selected="selected">Chicago</option>
-                                                <option>Denver</option>
-                                                <option>Dubai</option>
-                                                <option>Frankfurt</option>
-                                                <option>Hong Kong</option>
-                                                <option>Honolulu</option>
-                                                <option>Houston</option>
-                                                <option>Kuala Lumpur</option>
-                                                <option>London</option>
-                                                <option>Los Angeles</option>
-                                                <option>Melbourne</option>
-                                                <option>Mexico City</option>
+                                            <select multiple="multiple" id="multiselect-1"
+                                                    class="form-control custom-scroll" title="Click to Select a City">
+
                                                 <option>Miami</option>
                                                 <option>Minneapolis</option>
                                             </select>
@@ -864,7 +443,8 @@
                                         <div class="col-md-10">
                                             <div class="input-group">
                                                 <input class="form-control" type="text">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-remove-circle"></i></span>
+                                                <span class="input-group-addon"><i
+                                                        class="glyphicon glyphicon-remove-circle"></i></span>
                                             </div>
                                             <span class="help-block"><i class="fa fa-warning"></i> Please correct the error</span>
                                         </div>
@@ -920,24 +500,7 @@
                                         <label class="control-label col-md-2">Small Select</label>
                                         <div class="col-md-10">
                                             <select class="form-control input-sm">
-                                                <option>Amsterdam</option>
-                                                <option>Atlanta</option>
-                                                <option>Baltimore</option>
-                                                <option>Boston</option>
-                                                <option>Buenos Aires</option>
-                                                <option>Calgary</option>
-                                                <option>Chicago</option>
-                                                <option>Denver</option>
-                                                <option>Dubai</option>
-                                                <option>Frankfurt</option>
-                                                <option>Hong Kong</option>
-                                                <option>Honolulu</option>
-                                                <option>Houston</option>
-                                                <option>Kuala Lumpur</option>
-                                                <option>London</option>
-                                                <option>Los Angeles</option>
-                                                <option>Melbourne</option>
-                                                <option>Mexico City</option>
+
                                                 <option>Miami</option>
                                                 <option>Minneapolis</option>
                                             </select>
@@ -947,24 +510,7 @@
                                         <label class="control-label col-md-2">Default Select</label>
                                         <div class="col-md-10">
                                             <select class="form-control">
-                                                <option>Amsterdam</option>
-                                                <option>Atlanta</option>
-                                                <option>Baltimore</option>
-                                                <option>Boston</option>
-                                                <option>Buenos Aires</option>
-                                                <option>Calgary</option>
-                                                <option>Chicago</option>
-                                                <option>Denver</option>
-                                                <option>Dubai</option>
-                                                <option>Frankfurt</option>
-                                                <option>Hong Kong</option>
-                                                <option>Honolulu</option>
-                                                <option>Houston</option>
-                                                <option>Kuala Lumpur</option>
-                                                <option>London</option>
-                                                <option>Los Angeles</option>
-                                                <option>Melbourne</option>
-                                                <option>Mexico City</option>
+
                                                 <option>Miami</option>
                                                 <option>Minneapolis</option>
                                             </select>
@@ -976,22 +522,6 @@
                                             <select class="form-control input-lg">
                                                 <option>Amsterdam</option>
                                                 <option>Atlanta</option>
-                                                <option>Baltimore</option>
-                                                <option>Boston</option>
-                                                <option>Buenos Aires</option>
-                                                <option>Calgary</option>
-                                                <option>Chicago</option>
-                                                <option>Denver</option>
-                                                <option>Dubai</option>
-                                                <option>Frankfurt</option>
-                                                <option>Hong Kong</option>
-                                                <option>Honolulu</option>
-                                                <option>Houston</option>
-                                                <option>Kuala Lumpur</option>
-                                                <option>London</option>
-                                                <option>Los Angeles</option>
-                                                <option>Melbourne</option>
-                                                <option>Mexico City</option>
                                                 <option>Miami</option>
                                                 <option>Minneapolis</option>
                                             </select>
@@ -1010,7 +540,8 @@
                                                 <div class="col-sm-12">
                                                     <div class="input-group">
                                                         <span class="input-group-addon">@</span>
-                                                        <input class="form-control" id="prepend" placeholder="Username" type="text">
+                                                        <input class="form-control" id="prepend" placeholder="Username"
+                                                               type="text">
                                                     </div>
                                                 </div>
                                             </div>
@@ -1018,20 +549,21 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-2" for="prepend">W/ input &amp; radios</label>
+                                        <label class="control-label col-md-2" for="prepend">W/ input &amp;
+                                            radios</label>
                                         <div class="col-md-10">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="input-group">
-															<span class="input-group-addon">
-																<span class="onoffswitch">
-																	<input type="checkbox" name="start_interval" class="onoffswitch-checkbox" id="st3">
-																	<label class="onoffswitch-label" for="st3">
-																		<div class="onoffswitch-inner" data-swchon-text="YES" data-swchoff-text="NO"></div>
-																		<div class="onoffswitch-switch"></div>
-																	</label>
-																</span>
-															</span>
+    <span class="input-group-addon">
+    <span class="onoffswitch">
+    <input type="checkbox" name="start_interval" class="onoffswitch-checkbox" id="st3">
+    <label class="onoffswitch-label" for="st3">
+    <div class="onoffswitch-inner" data-swchon-text="YES" data-swchoff-text="NO"></div>
+    <div class="onoffswitch-switch"></div>
+    </label>
+    </span>
+    </span>
                                                         <input class="form-control" placeholder="" type="text">
                                                     </div>
                                                 </div>
@@ -1099,14 +631,20 @@
                                                     <div class="input-group">
                                                         <input type="text" class="form-control">
                                                         <div class="input-group-btn">
-                                                            <button type="button" class="btn btn-default" tabindex="-1">Action</button>
-                                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+                                                            <button type="button" class="btn btn-default" tabindex="-1">
+                                                                Action
+                                                            </button>
+                                                            <button type="button"
+                                                                    class="btn btn-default dropdown-toggle"
+                                                                    data-toggle="dropdown" tabindex="-1">
                                                                 <span class="caret"></span>
                                                             </button>
                                                             <ul class="dropdown-menu pull-right" role="menu">
                                                                 <li><a href="javascript:void(0);">Action</a></li>
-                                                                <li><a href="javascript:void(0);">Another action</a></li>
-                                                                <li><a href="javascript:void(0);">Something else here</a></li>
+                                                                <li><a href="javascript:void(0);">Another action</a>
+                                                                </li>
+                                                                <li><a href="javascript:void(0);">Something else
+                                                                    here</a></li>
                                                                 <li class="divider"></li>
                                                                 <li><a href="javascript:void(0);">Cancel</a></li>
                                                             </ul>
@@ -1126,14 +664,20 @@
 
                                                     <div class="input-group">
                                                         <div class="input-group-btn">
-                                                            <button type="button" class="btn btn-default" tabindex="-1">Action</button>
-                                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+                                                            <button type="button" class="btn btn-default" tabindex="-1">
+                                                                Action
+                                                            </button>
+                                                            <button type="button"
+                                                                    class="btn btn-default dropdown-toggle"
+                                                                    data-toggle="dropdown" tabindex="-1">
                                                                 <span class="caret"></span>
                                                             </button>
                                                             <ul class="dropdown-menu" role="menu">
                                                                 <li><a href="javascript:void(0);">Action</a></li>
-                                                                <li><a href="javascript:void(0);">Another action</a></li>
-                                                                <li><a href="javascript:void(0);">Something else here</a></li>
+                                                                <li><a href="javascript:void(0);">Another action</a>
+                                                                </li>
+                                                                <li><a href="javascript:void(0);">Something else
+                                                                    here</a></li>
                                                                 <li class="divider"></li>
                                                                 <li><a href="javascript:void(0);">Cancel</a></li>
                                                             </ul>
@@ -1343,7 +887,8 @@
                                 <div class="form-group">
                                     <label for="h-input">Date masking</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control mask-date" data-mask="99/99/9999" data-mask-placeholder="-">
+                                        <input type="text" class="form-control mask-date" data-mask="99/99/9999"
+                                               data-mask-placeholder="-">
                                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                     </div>
                                     <p class="note">
@@ -1354,7 +899,8 @@
                                 <div class="form-group">
                                     <label for="h-input">Phone masking</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" data-mask="(999) 999-9999" data-mask-placeholder="X">
+                                        <input type="text" class="form-control" data-mask="(999) 999-9999"
+                                               data-mask-placeholder="X">
                                         <span class="input-group-addon"><i class="fa fa-phone"></i></span>
                                     </div>
                                     <p class="note">
@@ -1365,7 +911,8 @@
                                 <div class="form-group">
                                     <label for="h-input">Credit card masking</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" data-mask="9999-9999-9999-9999" data-mask-placeholder="*">
+                                        <input type="text" class="form-control" data-mask="9999-9999-9999-9999"
+                                               data-mask-placeholder="*">
                                         <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
                                     </div>
                                     <p class="note">
@@ -1376,7 +923,8 @@
                                 <div class="form-group">
                                     <label for="h-input">Serial number masking</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" data-mask="***-***-***-***-***-***" data-mask-placeholder="_">
+                                        <input type="text" class="form-control" data-mask="***-***-***-***-***-***"
+                                               data-mask-placeholder="_">
                                         <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                                     </div>
                                     <p class="note">
@@ -1387,7 +935,8 @@
                                 <div class="form-group">
                                     <label for="h-input">Tax ID masking</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" data-mask="99-9999999" data-mask-placeholder="X">
+                                        <input type="text" class="form-control" data-mask="99-9999999"
+                                               data-mask-placeholder="X">
                                         <span class="input-group-addon"><i class="fa fa-briefcase"></i></span>
                                     </div>
                                     <p class="note">
@@ -1404,39 +953,58 @@
                                     <tbody>
                                     <tr>
                                         <td width="35%">Simple text field</td>
-                                        <td width="65%"><a href="#" id="username" data-type="text" data-pk="1" data-title="Enter username" class="editable editable-click" data-original-title="" title="">superuser</a></td>
+                                        <td width="65%"><a href="#" id="username" data-type="text" data-pk="1"
+                                                           data-title="Enter username" class="editable editable-click"
+                                                           data-original-title="" title="">superuser</a></td>
                                     </tr>
                                     <tr>
                                         <td>Empty text field, required</td>
-                                        <td><a href="#" id="firstname" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Enter your firstname" class="editable editable-click editable-empty">Empty</a></td>
+                                        <td><a href="#" id="firstname" data-type="text" data-pk="1"
+                                               data-placement="right" data-placeholder="Required"
+                                               data-title="Enter your firstname"
+                                               class="editable editable-click editable-empty">Empty</a></td>
                                     </tr>
                                     <tr>
                                         <td>Select, local array, custom display</td>
-                                        <td><a href="#" id="sex" data-type="select" data-pk="1" data-value="" data-title="Select sex" class="editable editable-click" style="color: gray;">not selected</a></td>
+                                        <td><a href="#" id="sex" data-type="select" data-pk="1" data-value=""
+                                               data-title="Select sex" class="editable editable-click"
+                                               style="color: gray;">not selected</a></td>
                                     </tr>
                                     <tr>
                                         <td>Select, remote array, no buttons</td>
-                                        <td><a href="#" id="group" data-type="select" data-pk="1" data-value="5" data-title="Select group" class="editable editable-click">Admin</a></td>
+                                        <td><a href="#" id="group" data-type="select" data-pk="1" data-value="5"
+                                               data-title="Select group" class="editable editable-click">Admin</a></td>
                                     </tr>
                                     <tr>
                                         <td>Select, error while loading</td>
-                                        <td><a href="#" id="status" data-type="select" data-pk="1" data-value="0" data-title="Select status" class="editable editable-click">Active</a></td>
+                                        <td><a href="#" id="status" data-type="select" data-pk="1" data-value="0"
+                                               data-title="Select status" class="editable editable-click">Active</a>
+                                        </td>
                                     </tr>
 
                                     <tr>
                                         <td>Combodate (date)</td>
-                                        <td><a href="#" id="dob" data-type="combodate" data-value="1984-05-15" data-format="YYYY-MM-DD" data-viewformat="DD/MM/YYYY" data-template="D / MMM / YYYY" data-pk="1" data-title="Select Date of birth" class="editable editable-click">15/05/1984</a></td>
+                                        <td><a href="#" id="dob" data-type="combodate" data-value="1984-05-15"
+                                               data-format="YYYY-MM-DD" data-viewformat="DD/MM/YYYY"
+                                               data-template="D / MMM / YYYY" data-pk="1"
+                                               data-title="Select Date of birth" class="editable editable-click">15/05/1984</a>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Combodate (datetime)</td>
-                                        <td><a href="#" id="event" data-type="combodate" data-template="D MMM YYYY  HH:mm" data-format="YYYY-MM-DD HH:mm" data-viewformat="MMM D, YYYY, HH:mm" data-pk="1" data-title="Setup event date and time" class="editable editable-click editable-empty">Empty</a></td>
+                                        <td><a href="#" id="event" data-type="combodate"
+                                               data-template="D MMM YYYY HH:mm" data-format="YYYY-MM-DD HH:mm"
+                                               data-viewformat="MMM D, YYYY, HH:mm" data-pk="1"
+                                               data-title="Setup event date and time"
+                                               class="editable editable-click editable-empty">Empty</a></td>
                                     </tr>
-
 
 
                                     <tr>
                                         <td>Textarea, buttons below. Submit by <i>ctrl+enter</i></td>
-                                        <td><a href="#" id="comments" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-title="Enter comments" class="editable editable-pre-wrapped editable-click">awesome
+                                        <td><a href="#" id="comments" data-type="textarea" data-pk="1"
+                                               data-placeholder="Your comments here..." data-title="Enter comments"
+                                               class="editable editable-pre-wrapped editable-click">awesome
                                             user!</a></td>
                                     </tr>
                                     </tbody>
@@ -1477,21 +1045,26 @@
                                     <div class="tab-pane active" id="tab1">
                                         <form class="form-horizontal" role="form">
                                             <div class="form-group">
-                                                <label for="inputEmail3" class="col-sm-2 control-label">Text Field</label>
+                                                <label for="inputEmail3" class="col-sm-2 control-label">Text
+                                                    Field</label>
                                                 <div class="col-sm-10">
-                                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                                    <input type="email" class="form-control" id="inputEmail3"
+                                                           placeholder="Email">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputPassword3" class="col-sm-2 control-label">Password Field</label>
+                                                <label for="inputPassword3" class="col-sm-2 control-label">Password
+                                                    Field</label>
                                                 <div class="col-sm-10">
-                                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                                    <input type="password" class="form-control" id="inputPassword3"
+                                                           placeholder="Password">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Textarea</label>
                                                 <div class="col-sm-10">
-                                                    <textarea class="form-control" placeholder="Textarea" rows="3"></textarea>
+                                                    <textarea class="form-control" placeholder="Textarea"
+                                                              rows="3"></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -1521,12 +1094,15 @@
 
                                             <fieldset>
                                                 <div class="form-group col-sm-3">
-                                                    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+                                                    <label class="sr-only" for="exampleInputEmail2">Email
+                                                        address</label>
+                                                    <input type="email" class="form-control" id="exampleInputEmail2"
+                                                           placeholder="Enter email">
                                                 </div>
-                                                <div class="form-group  col-sm-3">
+                                                <div class="form-group col-sm-3">
                                                     <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                                                    <input type="password" class="form-control"
+                                                           id="exampleInputPassword2" placeholder="Password">
                                                 </div>
                                                 <div class="checkbox col-sm-3">
                                                     <label>
@@ -1582,9 +1158,11 @@
                                         </fieldset>
                                     </div>
                                     <ul class="pager wizard">
-                                        <li class="previous first disabled" style="display:none;"><a href="javascript:void(0);">First</a></li>
+                                        <li class="previous first disabled" style="display:none;"><a
+                                                href="javascript:void(0);">First</a></li>
                                         <li class="previous disabled"><a href="javascript:void(0);">Previous</a></li>
-                                        <li class="next last" style="display:none;"><a href="javascript:void(0);">Last</a></li>
+                                        <li class="next last" style="display:none;"><a
+                                                href="javascript:void(0);">Last</a></li>
                                         <li class="next"><a href="javascript:void(0);">Next</a></li>
                                     </ul>
                                 </div>
@@ -1595,7 +1173,7 @@
             </div>
 
 
-            <!--  Page content -->
+            <!-- Page content -->
         </div>
     </div>
 </div>
@@ -1634,7 +1212,8 @@
 <script src="../../static/admin/vendors/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
 
 
-<link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css"
+      rel="stylesheet"/>
 <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 
 <script src="../../static/admin/js/custom.js"></script>

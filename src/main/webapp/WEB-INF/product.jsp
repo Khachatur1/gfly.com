@@ -126,15 +126,17 @@
 
                     </div>
                     <div data-slider-id="1" class="owl-thumbs">
-                        <button class="owl-thumb-item"><img src="/product/image?fileName=${product.picUrl}" alt="lens"></button>
-                        <button class="owl-thumb-item"><img src="/product/image?fileName=${product.picUrl}" alt="lens"></button>
-                        <button class="owl-thumb-item"><img src="/product/image?fileName=${product.picUrl}" alt="lens"></button>
-                        <button class="owl-thumb-item"><img src="/product/image?fileName=${product.picUrl}" alt="lens"></button>
+                        <button class="owl-thumb-item"><img src="/product/image?fileName=${product.picUrl}" alt="lens">
+                        </button>
+                        <button class="owl-thumb-item"><img src="/product/image?fileName=${product.picUrl}" alt="lens">
+                        </button>
+                        <button class="owl-thumb-item"><img src="/product/image?fileName=${product.picUrl}" alt="lens">
+                        </button>
+                        <button class="owl-thumb-item"><img src="/product/image?fileName=${product.picUrl}" alt="lens">
+                        </button>
                     </div>
                     <div class="brief">
-
-                        <iframe width="640" height="360" src="https://www.youtube.com/embed/It9SVV5Dp-g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></iframe>
-
+                        ${product.videoUrl}
                     </div>
                 </div>
                 <div class="col-md-6">
