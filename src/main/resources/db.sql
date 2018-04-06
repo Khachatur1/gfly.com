@@ -23,21 +23,22 @@ DROP TABLE IF EXISTS `category`;
 CREATE TABLE `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `pic_url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 /*Data for the table `category` */
 
-insert  into `category`(`id`,`name`,`pic_url`) values 
-(1,'3D','3d.jpg'),
-(2,'BIPLANE','biplane.jpg'),
-(3,'COPI','copi.jpeg'),
-(4,'FLYWING','flywing.jpg'),
-(5,'HIDROPLANE','hidroplane.gif'),
-(6,'MULTIROTOR','multirotor.jpg'),
-(7,'PLANER','planer.png'),
-(8,'TRINER','triner.jpg');
+insert  into `category`(`id`,`name`,`description`,`pic_url`) values 
+(1,'3D','դու 3դ֊ն ես','3d.jpg'),
+(2,'BIPLANE','GGRHG','biplane.jpg'),
+(3,'COPI','RHGRW','copi.jpeg'),
+(4,'FLYWING','RWEGHRW','flywing.jpg'),
+(5,'HIDROPLANE','SDGHSR<','hidroplane.gif'),
+(6,'MULTIROTOR','DSGSHS','multirotor.jpg'),
+(7,'PLANER','SDGD','planer.png'),
+(8,'TRINER','DSGSRG','triner.jpg');
 
 /*Table structure for table `image` */
 
@@ -45,15 +46,16 @@ DROP TABLE IF EXISTS `image`;
 
 CREATE TABLE `image` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
+  `pic_url` varchar(255) NOT NULL,
   `product_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `product_id` (`product_id`),
-  CONSTRAINT `image_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `image_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
-/*Data for the tab
-le `image` */
+/*Data for the table `image` */
+
+
 
 /*Table structure for table `post` */
 
@@ -80,23 +82,21 @@ DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `item_number` varchar(255) NOT NULL,
+  `wingspan` int(11) NOT NULL,
+  `weight` int(11) NOT NULL,
+  `engine` enum('DVS','ELECTRO','NON') NOT NULL,
+  `material` enum('DEPRON','BALSA') NOT NULL,
   `category_id` int(11) NOT NULL,
-  `description` text NOT NULL,
   `pic_url` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `video_url` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`),
   CONSTRAINT `product_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
 /*Data for the table `product` */
 
-insert  into `product`(`id`,`name`,`item_number`,`category_id`,`description`,`pic_url`) values 
-(1,'ebab','adbfb',1,'sbb','1.png'),
-(2,'roirjo','oapbo',2,'opdb','1.png'),
-(3,'oepbtob','opbog',3,'opgbgo','1.png'),
-(4,'br','rgn',6,'bent','airplane-club-logo-emblem-of-airlift-company-vector-4606284.jpg'),
-(5,'tm','rnn',4,'nryny','favicon.png');
 
 /*Table structure for table `user` */
 
