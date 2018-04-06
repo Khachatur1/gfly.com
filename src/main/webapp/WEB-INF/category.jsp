@@ -148,10 +148,9 @@
                             <div class="product-image"><img
                                     src="/product/image?fileName=${products.picUrl}"
                                     alt="camera" width="156px" height="130px">
-                                <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
+                                <div class="overlay">
                                     <ul class="list-unstyled">
                                         <li><a href="/${products.id}" class="btn btn-unique">View Detail</a></li>
-                                        <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
                                     </ul>
                                 </div>
                             </div>

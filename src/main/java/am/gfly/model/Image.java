@@ -17,8 +17,8 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
     private int id;
-    @Column
-    private String name;
+    @Column(name = "pic_url")
+    private String picIrl;
     @ManyToOne
     private Product product;
 }

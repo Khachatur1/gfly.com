@@ -20,9 +20,9 @@ public class Product {
     @Column
     private String name;
     @Column
-    private String wingspan;
+    private int wingspan;
     @Column
-    private String weight;
+    private int weight;
     @Column
     @Enumerated(EnumType.STRING)
     private Engine engine;

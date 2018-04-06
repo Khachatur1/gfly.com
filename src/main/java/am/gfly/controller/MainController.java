@@ -2,6 +2,7 @@ package am.gfly.controller;
 
 import am.gfly.model.Product;
 import am.gfly.repository.CategoryRepository;
+import am.gfly.repository.ImageRepository;
 import am.gfly.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,9 @@ public class MainController {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private ImageRepository imageRepository;
+
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String mainPage() {
@@ -32,10 +36,7 @@ public class MainController {
         List<Product> allproducts = productRepository.findAll();
         map.addAttribute("categories", categoryRepository.findAll());
         map.addAttribute("products", allproducts.subList(allproducts.size() - 4, allproducts.size()));
-
-        Product one = productRepository.findOne(allproducts.get(allproducts.size()-1).getId());
-        map.addAttribute("oneProduct", one);
-        System.out.println(one);
+        map.addAttribute("oneProduct", productRepository.findOne(allproducts.get(allproducts.size() - 1).getId()));
         return "index";
     }
 
@@ -85,6 +86,7 @@ public class MainController {
             return "redirect:/home";
         }
         modelMap.addAttribute("product", one);
+        modelMap.addAttribute("images", imageRepository.getImagesByProductId(productId));
         return "product";
     }
 

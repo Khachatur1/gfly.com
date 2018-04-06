@@ -122,18 +122,18 @@
             <div class="row">
                 <div class="col-md-6">
                     <div data-slider-id="1" class="owl-carousel item-slider">
-                        <div class="item"><img src="/product/image?fileName=${product.picUrl}" alt="lens"></div>
+
+                        <c:forEach items="${images}" var="images">
+                            <div class="item"><img src="/product/image?fileName=${images.picIrl}" alt="lens"></div>
+
+                        </c:forEach>
 
                     </div>
                     <div data-slider-id="1" class="owl-thumbs">
-                        <button class="owl-thumb-item"><img src="/product/image?fileName=${product.picUrl}" alt="lens">
+                        <c:forEach items="${images}" var="images">
+                        <button class="owl-thumb-item"><img src="/product/image?fileName=${images.picIrl}" alt="lens">
                         </button>
-                        <button class="owl-thumb-item"><img src="/product/image?fileName=${product.picUrl}" alt="lens">
-                        </button>
-                        <button class="owl-thumb-item"><img src="/product/image?fileName=${product.picUrl}" alt="lens">
-                        </button>
-                        <button class="owl-thumb-item"><img src="/product/image?fileName=${product.picUrl}" alt="lens">
-                        </button>
+                        </c:forEach>
                     </div>
                     <div class="brief">
                         ${product.videoUrl}

@@ -96,6 +96,7 @@ public class AdminController {
         map.addAttribute("image", new Image());
         map.addAttribute("category", new Category());
         map.addAttribute("allCategories", categoryRepository.findAll());
+        map.addAttribute("allProducts", productRepository.findAll());
         return "admin/forms";
     }
 
@@ -107,15 +108,27 @@ public class AdminController {
         try {
             file.transferTo(picture);
         } catch (IOException e) {
-            System.out.println(productImageUploadPath + picture.getName());
-            return "redirect:/addProduct";
+            return "redirect:/forms";
         }
         product.setPicUrl(picName);
         productRepository.save(product);
-//        Image image = new Image();
-//        image.setName(picName);
-//        image.setProduct(product);
-//        imageRepository.save(image);
+        Image image = new Image();
+        image.setPicIrl(picName);
+        image.setProduct(product);
+        imageRepository.save(image);
+        return "redirect:/forms";
+    }
+    @RequestMapping(value = "/saveImage", method = RequestMethod.POST)
+    public String saveImage(@ModelAttribute(name = "image") Image image, @RequestParam(value = "image") MultipartFile file) {
+        String picName = file.getOriginalFilename();
+        File picture = new File(productImageUploadPath + picName);
+        try {
+            file.transferTo(picture);
+        } catch (IOException e) {
+            return "redirect:/forms";
+        }
+        image.setPicIrl(picName);
+        imageRepository.save(image);
         return "redirect:/forms";
     }
 
