@@ -77,9 +77,9 @@
             </div>
             <div class="col-sm-8 col-md-9 text-right account-details">
                 <ul class="list-inline">
-                    <li class="list-inline-item"><a href="#">My Account</a></li>
-                    <li class="list-inline-item"><a href="#">Order History</a></li>
-                    <li class="list-inline-item"><a href="#">Login</a></li>
+                    <li class="list-inline-item"><a href="/admin">My Account</a></li>
+                    <li class="list-inline-item"><a href="/calendar">Calendar</a></li>
+                    <li class="list-inline-item"><a href="/login">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -95,7 +95,7 @@
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto d-md-flex flex-md-row align-items-md-center">
                 <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="/category" class="nav-link">Category</a></li>
+                <li class="nav-item"><a href="/models" class="nav-link">Models</a></li>
                 <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a href="/contact" class="nav-link">Contact Us</a></li>
                 <li class="nav-item">
@@ -295,10 +295,7 @@
             <option value="blue">blue</option>
         </select>
     </form>
-    <p><img src="../static/img/template-mac.png" alt="" class="img-fluid"></p>
-    <p class="text-muted text-small">Stylesheet switching is done via JavaScript and can cause a blink while page loads.
-        This will not happen in your production code.</p>
-</div>
+   </div>
 <!-- JavaScript files-->
 <script src="../static/js/jquery/jquery.min.js"></script>
 <script src="../static/js/popper.js/umd/popper.min.js"></script>

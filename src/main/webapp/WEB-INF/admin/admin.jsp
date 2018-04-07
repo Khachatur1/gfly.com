@@ -71,6 +71,7 @@
                 <ul class="nav">
                     <!-- Main menu -->
                     <li class="current"><a href="/admin"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
+                    <li><a href="/home"><i class="glyphicon glyphicon-list"></i> Home</a></li>
                     <li><a href="/calendar"><i class="glyphicon glyphicon-calendar"></i> Calendar</a></li>
                     <li><a href="/tables"><i class="glyphicon glyphicon-list"></i> Tables</a></li>
                     <li><a href="/buttons"><i class="glyphicon glyphicon-record"></i> Buttons</a></li>

@@ -1,5 +1,6 @@
 package am.gfly.controller;
 
+import am.gfly.model.Category;
 import am.gfly.model.Product;
 import am.gfly.repository.CategoryRepository;
 import am.gfly.repository.ImageRepository;
@@ -50,12 +51,17 @@ public class MainController {
         return "cart";
     }
 
-    @RequestMapping(value = "/category", method = RequestMethod.GET)
-    public String categoryPage(ModelMap map) {
-        map.addAttribute("categories", categoryRepository.findAll());
-        map.addAttribute("products", productRepository.findAll());
-        return "category";
+    @GetMapping("/models")
+    public String modelsPage() {
+        return "redirect:/all/models";
     }
+
+//    @GetMapping("/all/models")
+//    public String allModelsPage(ModelMap map) {
+//        map.addAttribute("categories", categoryRepository.findAll());
+//        map.addAttribute("products", productRepository.findAll());
+//        return "models";
+//    }
 
     @RequestMapping(value = "/contact", method = RequestMethod.GET)
     public String contactPage() {
@@ -79,26 +85,27 @@ public class MainController {
     }
 
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getProduct(@PathVariable("id") int productId, ModelMap modelMap, HttpServletRequest request) {
-        Product one = productRepository.findOne(productId);
-        if (one == null) {
-            return "redirect:/home";
-        }
-        modelMap.addAttribute("product", one);
-        modelMap.addAttribute("images", imageRepository.getImagesByProductId(productId));
+    @GetMapping("/model/{id}")
+    public String getProduct(@PathVariable("id") int id, ModelMap modelMap, HttpServletRequest request) {
+        modelMap.addAttribute("product", productRepository.findOne(id));
+        modelMap.addAttribute("images", imageRepository.getImagesByProductId(id));
         return "product";
     }
 
 
-//    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-//    public String getProductByCategoryId(@PathVariable("id") int categoryId, ModelMap modelMap) {
-//        List<Product> productsByCategoryId = productRepository.getProductsByCategoryId(categoryId);
-//        modelMap.addAttribute("productsByCategoryId", productsByCategoryId);
-//        modelMap.addAttribute("categories", categoryRepository.findAll());
-//        for (Product product : productsByCategoryId) {
-//            System.out.println(product);
-//        }
-//        return "category";
-//    }
+    @GetMapping("/{name}/models")
+    public String getProductByCategoryId(@PathVariable("name") String name, ModelMap modelMap) {
+        Category category = categoryRepository.getCategoryByName(name);
+        if (category.getName().equals("ALL")) {
+            modelMap.addAttribute("allProducts", productRepository.findAll());
+        } else {
+            modelMap.addAttribute("allProducts", productRepository.getProductsByCategoryId(category.getId()));
+
+        }
+        modelMap.addAttribute("selectCategory", category);
+        List<Category> allCategories = categoryRepository.findAll();
+        allCategories.remove(category);
+        modelMap.addAttribute("categories", allCategories);
+        return "models";
+    }
 }

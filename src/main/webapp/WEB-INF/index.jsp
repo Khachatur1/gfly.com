@@ -60,9 +60,9 @@
             </div>
             <div class="col-sm-8 col-md-9 text-right account-details">
                 <ul class="list-inline">
-                    <li class="list-inline-item"><a href="#">My Account</a></li>
-                    <li class="list-inline-item"><a href="#">Order History</a></li>
-                    <li class="list-inline-item"><a href="#">Login</a></li>
+                    <li class="list-inline-item"><a href="/admin">My Account</a></li>
+                    <li class="list-inline-item"><a href="/calendar">Calendar</a></li>
+                    <li class="list-inline-item"><a href="/login">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -78,7 +78,7 @@
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto d-md-flex flex-md-row align-items-md-center">
                 <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="/category" class="nav-link">Category</a></li>
+                <li class="nav-item"><a href="/${categories.get(0).name.toLowerCase()}/models" class="nav-link">Models</a></li>
                 <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a href="/contact" class="nav-link">Contact Us</a></li>
                 <li class="nav-item">
@@ -200,7 +200,7 @@
                 <div class="row text-center">
                     <c:forEach items="${categories}" var="category">
 
-                        <div class="col-md-4 item"><a href="/category">
+                        <div class="col-md-4 item"><a href="/${category.name.toLowerCase()}/models">
                             <h4>${category.name.toUpperCase()}</h4>
                             <p>${category.description}</p>
                             <div class="image"><img src="/category/image?fileName=${category.picUrl}"
@@ -226,7 +226,7 @@
                         <h2>
 
                             Digital <br>Cameras
-                        </h2><a href="/category" class="btn btn-unique btn-lg">Shop Now</a><img
+                        </h2><a href="/models" class="btn btn-unique btn-lg">Shop Now</a><img
                             src="../static/img/camera-big.jpg" alt="camera"
                             class="img-fluid">
                     </div>
@@ -241,7 +241,7 @@
                                         src="/product/image?fileName=${product.picUrl}" alt="camera"
                                         class="img-fluid">
                                     <div class="overlay d-flex align-items-center justify-content-center"><a
-                                            href="/${product.id}" class="btn btn-unique">View Details</a></div>
+                                            href="/model/${product.id}" class="btn btn-unique">View Details</a></div>
                                 </div>
                             </div>
                         </c:forEach>
@@ -323,7 +323,7 @@
                         <h2>
 
                             Zoom <br>Lenses
-                        </h2><a href="/category" class="btn btn-unique btn-lg">Shop Now</a><img
+                        </h2><a href="/models" class="btn btn-unique btn-lg">Shop Now</a><img
                             src="../static/img/lens-big.jpg" alt="lens"
                             class="img-fluid">
                     </div>
@@ -485,9 +485,6 @@
             <option value="blue">blue</option>
         </select>
     </form>
-    <p><img src="../static/img/template-mac.png" alt="" class="img-fluid"></p>
-    <p class="text-muted text-small">Stylesheet switching is done via JavaScript and can cause a blink while page loads.
-        This will not happen in your production code.</p>
 </div>
 <!-- JavaScript files-->
 <script src="../static/js/jquery/jquery.min.js"></script>

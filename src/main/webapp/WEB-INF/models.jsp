@@ -70,9 +70,9 @@
             </div>
             <div class="col-sm-8 col-md-9 text-right account-details">
                 <ul class="list-inline">
-                    <li class="list-inline-item"><a href="#">My Account</a></li>
-                    <li class="list-inline-item"><a href="#">Order History</a></li>
-                    <li class="list-inline-item"><a href="#">Login</a></li>
+                    <li class="list-inline-item"><a href="/admin">My Account</a></li>
+                    <li class="list-inline-item"><a href="/calendar">Calendar</a></li>
+                    <li class="list-inline-item"><a href="/login">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -88,7 +88,7 @@
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto d-md-flex flex-md-row align-items-md-center">
                 <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="/category" class="nav-link">Category</a></li>
+                <li class="nav-item"><a href="/models" class="nav-link">Models</a></li>
                 <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a href="/contact" class="nav-link">Contact Us</a></li>
                 <li class="nav-item">
@@ -123,13 +123,12 @@
                     </div>
                     <div class="col-md-6">
                         <div class="filters d-flex justify-content-end">
-                            <select onselect="this.value" title="Brand" name="brand" onchange="window.location.href=this.value;" class="filter-branselect form-control">
-                                <option value="/category">ALL</option>
+                            <select onselect="this.value" title="Brand" name="brand"
+                                    onchange="window.location.href=this.value;" class="filter-branselect form-control">
+                                    <option>${selectCategory.name.toUpperCase()}</option>
                                 <c:forEach items="${categories}" var="category">
-
-                                <option value="/${category.id}">${category.name.toUpperCase()}</option>
+                                    <option value="/${category.name.toLowerCase()}/models">${category.name.toUpperCase()}</option>
                                 </c:forEach>
-
                             </select>
                             <select title="Alphabetically A-Z" name="alphabetically"
                                     class="filter-nameselect form-control">
@@ -142,33 +141,34 @@
             </header>
             <div class="items">
                 <div class="row">
-                    <c:forEach items="${products}" var="products">
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="item text-center">
-                            <div class="product-image"><img
-                                    src="/product/image?fileName=${products.picUrl}"
-                                    alt="camera" width="156px" height="130px">
-                                <div class="overlay">
-                                    <ul class="list-unstyled">
-                                        <li><a href="/${products.id}" class="btn btn-unique">View Detail</a></li>
-                                    </ul>
+                    <c:forEach items="${allProducts}" var="products">
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="item text-center">
+                                <div class="product-image"><img
+                                        src="/product/image?fileName=${products.picUrl}"
+                                        alt="camera" width="156px" height="130px">
+                                    <div class="overlay">
+                                        <ul class="list-unstyled">
+                                            <li><a href="/model/${products.id}" class="btn btn-unique">View Detail</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
+                                <a href="/detail" class="item-name">
+                                    <h4>${products.name}</h4></a>
+                                <ul class="list-inline rate text-primary">
+                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                </ul>
+                                <p>${products.description}</p>
+                                <ul class="price list-inline">
+                                    <li class="list-inline-item"><span class="price">$1,299</span></li>
+                                </ul>
                             </div>
-                            <a href="/detail" class="item-name">
-                                <h4>${products.name}</h4></a>
-                            <ul class="list-inline rate text-primary">
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                            </ul>
-                            <p>${products.description}</p>
-                            <ul class="price list-inline">
-                                <li class="list-inline-item"><span class="price">$1,299</span></li>
-                            </ul>
                         </div>
-                    </div>
                     </c:forEach>
                 </div>
             </div>
@@ -294,9 +294,6 @@
             <option value="blue">blue</option>
         </select>
     </form>
-    <p><img src="../static/img/template-mac.png" alt="" class="img-fluid"></p>
-    <p class="text-muted text-small">Stylesheet switching is done via JavaScript and can cause a blink while page loads.
-        This will not happen in your production code.</p>
 </div>
 <!-- JavaScript files-->
 <script src="../static/js/jquery/jquery.min.js"></script>
