@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -23,6 +24,8 @@ public class Post {
     private String description;
     @Column(name = "pic_url")
     private String picUrl;
+    @Column
+    private Date timestamp;
     @ManyToOne
     private User user;
 

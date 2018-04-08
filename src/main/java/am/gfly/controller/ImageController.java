@@ -22,6 +22,9 @@ public class ImageController {
     @Value("${gfly.product.image.upload.path}")
     private String productImageUploadPath;
 
+    @Value("${gfly.post.image.upload.path}")
+    private String postImageUploadPath;
+
 
     @RequestMapping(value = "/category/image", method = RequestMethod.GET)
     public void getCategoryImageAsByteArray(HttpServletResponse response,
@@ -40,6 +43,18 @@ public class ImageController {
                                            @RequestParam("fileName") String fileName) {
         try {
             InputStream in = new FileInputStream(productImageUploadPath + fileName);
+            response.setContentType(MediaType.ALL_VALUE);
+            IOUtils.copy(in, response.getOutputStream());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @RequestMapping(value = "/post/image", method = RequestMethod.GET)
+    public void getPostImageAsByteArray(HttpServletResponse response,
+                                           @RequestParam("fileName") String fileName) {
+        try {
+            InputStream in = new FileInputStream(postImageUploadPath + fileName);
             response.setContentType(MediaType.ALL_VALUE);
             IOUtils.copy(in, response.getOutputStream());
         } catch (IOException e) {

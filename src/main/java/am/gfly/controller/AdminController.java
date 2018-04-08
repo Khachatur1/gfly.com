@@ -2,11 +2,9 @@ package am.gfly.controller;
 
 import am.gfly.model.Category;
 import am.gfly.model.Image;
+import am.gfly.model.Post;
 import am.gfly.model.Product;
-import am.gfly.model.Video;
-import am.gfly.repository.CategoryRepository;
-import am.gfly.repository.ImageRepository;
-import am.gfly.repository.ProductRepository;
+import am.gfly.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -29,6 +27,9 @@ public class AdminController {
     @Value("${gfly.product.image.upload.path}")
     private String productImageUploadPath;
 
+    @Value("${gfly.post.image.upload.path}")
+    private String postImageUploadPath;
+
     @Autowired
     private CategoryRepository categoryRepository;
 
@@ -38,33 +39,39 @@ public class AdminController {
     @Autowired
     private ImageRepository imageRepository;
 
+    @Autowired
+    private PostRepository postRepository;
 
-@RequestMapping(value = "/buttons", method = RequestMethod.GET)
+    @Autowired
+    private UserRepository userRepository;
+
+
+    @RequestMapping(value = "/buttons", method = RequestMethod.GET)
     public String buttonsPage() {
         return "admin/buttons";
     }
 
-@RequestMapping(value = "/calendar", method = RequestMethod.GET)
+    @RequestMapping(value = "/calendar", method = RequestMethod.GET)
     public String calendarPage() {
         return "admin/calendar";
     }
 
-@RequestMapping(value = "/admin", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String adminPage() {
         return "admin/admin";
     }
 
-@RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage() {
         return "admin/login";
     }
 
-@RequestMapping(value = "/signup", method = RequestMethod.GET)
+    @RequestMapping(value = "/signup", method = RequestMethod.GET)
     public String signupPage() {
         return "admin/signup";
     }
 
-@RequestMapping(value = "/tables", method = RequestMethod.GET)
+    @RequestMapping(value = "/tables", method = RequestMethod.GET)
     public String tablesPage() {
         return "admin/tables";
     }
@@ -91,7 +98,9 @@ public class AdminController {
 
 
     @RequestMapping(value = "/forms", method = RequestMethod.GET)
-    public String addPruductPage(ModelMap map) {
+    public String forms(ModelMap map) {
+        map.addAttribute("post", new Post());
+        map.addAttribute("users", userRepository.findAll());
         map.addAttribute("product", new Product());
         map.addAttribute("image", new Image());
         map.addAttribute("category", new Category());
@@ -118,6 +127,7 @@ public class AdminController {
         imageRepository.save(image);
         return "redirect:/forms";
     }
+
     @RequestMapping(value = "/saveImage", method = RequestMethod.POST)
     public String saveImage(@ModelAttribute(name = "image") Image image, @RequestParam(value = "image") MultipartFile file) {
         String picName = file.getOriginalFilename();
@@ -132,5 +142,18 @@ public class AdminController {
         return "redirect:/forms";
     }
 
-
+    @RequestMapping(value = "/savePost", method = RequestMethod.POST)
+    public String savePost(@ModelAttribute(name = "post") Post post,
+                           @RequestParam(value = "image") MultipartFile file) {
+        String picName = file.getOriginalFilename();
+        File picture = new File(postImageUploadPath + picName);
+        try {
+            file.transferTo(picture);
+        } catch (IOException e) {
+            return "redirect:/forms";
+        }
+        post.setPicUrl(picName);
+        postRepository.save(post);
+        return "redirect:/forms";
+    }
 }

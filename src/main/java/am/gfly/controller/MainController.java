@@ -4,6 +4,7 @@ import am.gfly.model.Category;
 import am.gfly.model.Product;
 import am.gfly.repository.CategoryRepository;
 import am.gfly.repository.ImageRepository;
+import am.gfly.repository.PostRepository;
 import am.gfly.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,9 @@ import java.util.List;
 
 @Controller
 public class MainController {
+
+    @Autowired
+    private PostRepository postRepository;
 
     @Autowired
     private CategoryRepository categoryRepository;
@@ -41,9 +45,9 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping(value = "/blog", method = RequestMethod.GET)
+    @RequestMapping(value = "/post", method = RequestMethod.GET)
     public String blogPage() {
-        return "blog";
+        return "post";
     }
 
     @RequestMapping(value = "/cart", method = RequestMethod.GET)
@@ -56,22 +60,16 @@ public class MainController {
         return "redirect:/all/models";
     }
 
-//    @GetMapping("/all/models")
-//    public String allModelsPage(ModelMap map) {
-//        map.addAttribute("categories", categoryRepository.findAll());
-//        map.addAttribute("products", productRepository.findAll());
-//        return "models";
-//    }
-
     @RequestMapping(value = "/contact", method = RequestMethod.GET)
     public String contactPage() {
         return "contact";
     }
 
 
-    @RequestMapping(value = "/post", method = RequestMethod.GET)
-    public String postPage() {
-        return "post";
+    @RequestMapping(value = "/blog", method = RequestMethod.GET)
+    public String postPage(ModelMap modelMap) {
+        modelMap.addAttribute("posts", postRepository.findAll());
+        return "blog";
     }
 
     @RequestMapping(value = "/text", method = RequestMethod.GET)
@@ -107,5 +105,10 @@ public class MainController {
         allCategories.remove(category);
         modelMap.addAttribute("categories", allCategories);
         return "models";
+    }
+ @GetMapping("/post/{title}")
+    public String getPostByName(@PathVariable("title") String title, ModelMap modelMap) {
+       modelMap.addAttribute("post",postRepository.getPostByTitle(title));
+        return "post";
     }
 }

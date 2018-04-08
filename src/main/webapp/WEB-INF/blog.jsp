@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Karo
@@ -127,58 +128,19 @@
                 tricks.</p>
         </header>
         <div class="row">
-            <div class="col-sm-6">
-                <div class="post-item">
-                    <div class="image"><a href="/post"><img
-                            src="../static/img/blog1.jpg" alt=""
-                            class="img-fluid"></a></div>
-                    <h4><a href="/post">Newest photo apps</a></h4>
-                    <p class="intro">ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                        egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu
-                        libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-                        leo.</p>
-                    <p class="read-more"><a href="/post" class="btn btn-unique-outline">Continue reading</a></p>
+            <c:forEach items="${posts}" var="post">
+                <div class="col-sm-6">
+                    <div class="post-item">
+                        <div class="image"><a href="/post/${post.title}"><img
+                                src="/post/image?fileName=${post.picUrl}" alt=""
+                                class="img-fluid"></a></div>
+                        <h4><a href="/post/${post.title}">${post.title}</a></h4>
+                        <p class="intro">${post.description}</p>
+                        <p class="read-more"><a href="/post/${post.title}" class="btn btn-unique-outline">Continue
+                            reading</a></p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="post-item">
-                    <div class="image"><a href="/post"><img
-                            src="../static/img/blog2.jpg" alt=""
-                            class="img-fluid"></a></div>
-                    <h4><a href="/post">Best books about Photography</a></h4>
-                    <p class="intro">ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                        egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu
-                        libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-                        leo.</p>
-                    <p class="read-more"><a href="/post" class="btn btn-unique-outline">Continue reading</a></p>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="post-item">
-                    <div class="image"><a href="/post"><img
-                            src="../static/img/blog2.jpg" alt=""
-                            class="img-fluid"></a></div>
-                    <h4><a href="/post">Best books about Photography</a></h4>
-                    <p class="intro">ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                        egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu
-                        libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-                        leo.</p>
-                    <p class="read-more"><a href="/post" class="btn btn-unique-outline">Continue reading</a></p>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="post-item">
-                    <div class="image"><a href="/post"><img
-                            src="../static/img/blog1.jpg" alt=""
-                            class="img-fluid"></a></div>
-                    <h4><a href="/post">Lightroom Tips and Tricks</a></h4>
-                    <p class="intro">ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                        egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu
-                        libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-                        leo.</p>
-                    <p class="read-more"><a href="/post" class="btn btn-unique-outline">Continue reading</a></p>
-                </div>
-            </div>
+            </c:forEach>
         </div>
         <!-- Pagination -->
         <div class="pagination pagination-custom mt-5">
@@ -295,7 +257,7 @@
             <option value="blue">blue</option>
         </select>
     </form>
-   </div>
+</div>
 <!-- JavaScript files-->
 <script src="../static/js/jquery/jquery.min.js"></script>
 <script src="../static/js/popper.js/umd/popper.min.js"></script>

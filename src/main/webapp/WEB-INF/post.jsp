@@ -126,8 +126,8 @@
         <div class="row">
             <div class="col-xl-8 col-lg-10">
                 <header class="mb-5">
-                    <h1 class="heading-line">Blog post</h1>
-                    <p class="author-date-top">By <a href="#">John Slim</a> | January 16, 2016</p>
+                    <h1 class="heading-line">${post.title}</h1>
+                    <p class="author-date-top">By <a href="#">${post.user.name.toUpperCase()}</a> | ${post.timestamp}</p>
                     <p class="lead">
                         Are you curious about something? Do you have some kind of problem with our products? As am
                         hastily invited settled at limited civilly fortune me. Really spring in extent an by. Judge but
@@ -168,7 +168,7 @@
                         <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
                         <li>Aliquam tincidunt mauris eu risus.</li>
                     </ul>
-                    <p><img src="../static/img/blog1.jpg"
+                    <p><img src="/post/image?fileName=${post.picUrl}"
                             alt="Example blog post alt" class="img-fluid"></p>
                     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                         Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
