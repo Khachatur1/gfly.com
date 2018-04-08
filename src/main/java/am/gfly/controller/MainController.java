@@ -106,9 +106,5 @@ public class MainController {
         modelMap.addAttribute("categories", allCategories);
         return "models";
     }
- @GetMapping("/post/{title}")
-    public String getPostByName(@PathVariable("title") String title, ModelMap modelMap) {
-       modelMap.addAttribute("post",postRepository.getPostByTitle(title));
-        return "post";
-    }
+
 }

@@ -52,7 +52,7 @@ public class ImageController {
 
     @RequestMapping(value = "/post/image", method = RequestMethod.GET)
     public void getPostImageAsByteArray(HttpServletResponse response,
-                                           @RequestParam("fileName") String fileName) {
+                                        @RequestParam("fileName") String fileName) {
         try {
             InputStream in = new FileInputStream(postImageUploadPath + fileName);
             response.setContentType(MediaType.ALL_VALUE);
