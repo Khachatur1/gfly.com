@@ -2,24 +2,30 @@ package am.gfly.controller;
 
 import am.gfly.model.Category;
 import am.gfly.model.Product;
-import am.gfly.repository.CategoryRepository;
-import am.gfly.repository.ImageRepository;
-import am.gfly.repository.PostRepository;
-import am.gfly.repository.ProductRepository;
+import am.gfly.model.User;
+import am.gfly.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
 
 @Controller
 public class MainController {
 
+    List<Product> products;
+
     @Autowired
     private PostRepository postRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
     private CategoryRepository categoryRepository;
@@ -40,8 +46,11 @@ public class MainController {
     public String homePage(ModelMap map) {
         List<Product> allproducts = productRepository.findAll();
         map.addAttribute("categories", categoryRepository.findAll());
-        map.addAttribute("products", allproducts.subList(allproducts.size() - 4, allproducts.size()));
-        map.addAttribute("oneProduct", productRepository.findOne(allproducts.get(allproducts.size() - 1).getId()));
+        map.addAttribute("products4", allproducts.subList(allproducts.size() - 4, allproducts.size()));
+        map.addAttribute("products8", allproducts.subList(allproducts.size() - 8, allproducts.size() - 4));
+        map.addAttribute("oneProduct1", productRepository.findOne(allproducts.get(allproducts.size() - 1).getId()));
+        map.addAttribute("oneProduct2", productRepository.findOne(allproducts.get(allproducts.size() - 2).getId()));
+
         return "index";
     }
 
@@ -92,19 +101,48 @@ public class MainController {
 
 
     @GetMapping("/{name}/models")
-    public String getProductByCategoryId(@PathVariable("name") String name, ModelMap modelMap) {
+    public String getProductByCategoryId(@RequestParam(required = false) Integer page, @PathVariable("name") String name, ModelMap map) {
         Category category = categoryRepository.getCategoryByName(name);
         if (category.getName().equals("ALL")) {
-            modelMap.addAttribute("allProducts", productRepository.findAll());
+            products = productRepository.findAll();
         } else {
-            modelMap.addAttribute("allProducts", productRepository.getProductsByCategoryId(category.getId()));
-
+           products = productRepository.getProductsByCategoryId(category.getId());
         }
-        modelMap.addAttribute("selectCategory", category);
+        getPageList(page,map);
+        map.addAttribute("selectCategory", category);
         List<Category> allCategories = categoryRepository.findAll();
         allCategories.remove(category);
-        modelMap.addAttribute("categories", allCategories);
+        map.addAttribute("categories", allCategories);
         return "models";
     }
+
+    private ModelMap getPageList(Integer page,ModelMap map) {
+        PagedListHolder<Product> pagedListHolder = new PagedListHolder<>(products);
+        pagedListHolder.setPageSize(8);
+        map.addAttribute("maxPages", pagedListHolder.getPageCount());
+
+        if (page == null || page < 1 || page > pagedListHolder.getPageCount()) page = 1;
+
+        map.addAttribute("page", page);
+        if (page == null || page < 1 || page > pagedListHolder.getPageCount()) {
+            pagedListHolder.setPage(0);
+            map.addAttribute("allProducts", pagedListHolder.getPageList());
+        } else if (page <= pagedListHolder.getPageCount()) {
+            pagedListHolder.setPage(page - 1);
+            map.addAttribute("allProducts", pagedListHolder.getPageList());
+        }
+        return map;
+    }
+
+
+@GetMapping("/cart/result/{name}")
+    public String search() {
+
+
+
+      return "cart";
+}
+
+
 
 }

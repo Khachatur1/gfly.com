@@ -218,22 +218,22 @@
     <section class="product-1">
         <div class="container">
             <header>
-                <h2 class="h3 heading-line">Cameras Collection</h2>
+                <h2 class="h3 heading-line">Airplane Collection</h2>
             </header>
             <div class="row d-flex flex-row align-items-stretch">
                 <div class="col-lg-6">
                     <div class="item item-big text-right">
                         <h2>
 
-                            Digital <br>Cameras
-                        </h2><a href="/models" class="btn btn-unique btn-lg">Shop Now</a><img
-                            src="../static/img/camera-big.jpg" alt="camera"
+                            ${oneProduct2.name}
+                        </h2><a href="/model/${oneProduct2.id}" class="btn btn-unique btn-lg">View Details</a><img
+                            src="/product/image?fileName=${oneProduct2.picUrl}" alt="camera"
                             class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="row">
-                        <c:forEach items="${products}" var="product">
+                        <c:forEach items="${products4}" var="product">
                             <div class="col-md-6">
                                 <div class="item">
                                     <h4>${product.name}</h4>
@@ -256,12 +256,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h2>${oneProduct.name}</h2>
-                    <p>${oneProduct.description}</p><a
-                        href="#" class="btn btn-dark shop-now">Shop Now</a>
+                    <h2>${oneProduct1.name}</h2>
+                    <p>${oneProduct1.description}</p><a
+                        href="/model/${oneProduct1.id}" class="btn btn-dark shop-now">View Details</a>
                 </div>
                 <div class="col-md-6 d-none d-md-block">
-                    <div class="product" ><img src="/product/image?fileName=${oneProduct.picUrl}"
+                    <div class="product" ><img src="/product/image?fileName=${oneProduct1.picUrl}"
                                               alt="camera" class="img-fluid" width="450px"></div>
                 </div>
             </div>
@@ -276,46 +276,18 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="row">
+                        <c:forEach items="${products8}" var="product">
                         <div class="col-md-6">
                             <div class="item">
-                                <h4>Canon EOS C300</h4>
-                                <p class="text-primary">$1.299</p><img
-                                    src="../static/img/lens-1.jpg" alt="lens"
+                                <h4>${product.name}</h4>
+                                <p class="text-primary">${product.category.name}</p><img
+                                    src="./product/image?fileName=${product.picUrl}" alt="lens"
                                     class="img-fluid">
                                 <div class="overlay d-flex align-items-center justify-content-center"><a
-                                        href="/detail" class="btn btn-unique">View Details</a></div>
+                                        href="/model/${product.id}" class="btn btn-unique">View Details</a></div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="item">
-                                <h4>Canon EOS C300</h4>
-                                <p class="text-primary">$1.299</p><img
-                                    src="../static/img/lens-2.jpg" alt="lens"
-                                    class="img-fluid">
-                                <div class="overlay d-flex align-items-center justify-content-center"><a
-                                        href="/detail" class="btn btn-unique">View Details</a></div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="item">
-                                <h4>Canon EOS C300</h4>
-                                <p class="text-primary">$1.299</p><img
-                                    src="../static/img/lens-3.jpg" alt="lens"
-                                    class="img-fluid">
-                                <div class="overlay d-flex align-items-center justify-content-center"><a
-                                        href="/detail" class="btn btn-unique">View Details</a></div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="item">
-                                <h4>Canon EOS C300</h4>
-                                <p class="text-primary">$1.299</p><img
-                                    src="../static/img/lens-4.jpg" alt="lens"
-                                    class="img-fluid">
-                                <div class="overlay d-flex align-items-center justify-content-center"><a
-                                        href="/detail" class="btn btn-unique">View Details</a></div>
-                            </div>
-                        </div>
+                        </c:forEach>
                     </div>
                 </div>
                 <div class="col-lg-6 js-pull">
@@ -403,11 +375,10 @@
                 <div class="col-lg-3 col-sm-6">
                     <h3>Site Map</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li><a href="#">Privacy policy</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/contact">About Us</a></li>
+                        <li><a href="/${categories.get(0).name.toLowerCase()}/models">Models</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -449,7 +420,7 @@
                         <li class="d-flex align-items-center">
                             <div class="icon"><i class="icon-phone-call"></i></div>
                             <div class="text">
-                                <h3>Phone: 123-456-789</h3>
+                                <h3>Phone: +374 98֊346֊321</h3>
                                 <p>Contact with us</p>
                             </div>
                         </li>
@@ -462,30 +433,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <p>&copy; 2017 <span class="text-primary">Photo Template. </span>All rights reserved.</p>
+                    <p>&copy; 2017 <span class="text-primary">G - FLY </span>Aviamodeling group</p>
                 </div>
                 <div class="col-sm-6 text-right">
-                    <p>Template by <a href="https://ondrejsvestka.cz/" target="_blank">Ondrej Svestka</a></p>
+                    <p>Template by <a href="/home" target="_blank">G -FLY</a></p>
                 </div>
             </div>
         </div>
     </div>
 </footer>
 
-<div id="style-switch" class="collapse">
-    <h4 class="mb-3">Select theme colour</h4>
-    <form class="mb-3">
-        <select name="colour" id="colour" class="form-control">
-            <option value="">select colour variant</option>
-            <option value="default">red</option>
-            <option value="pink">pink</option>
-            <option value="green">green</option>
-            <option value="violet">violet</option>
-            <option value="sea">sea</option>
-            <option value="blue">blue</option>
-        </select>
-    </form>
-</div>
 <!-- JavaScript files-->
 <script src="../static/js/jquery/jquery.min.js"></script>
 <script src="../static/js/popper.js/umd/popper.min.js"></script>

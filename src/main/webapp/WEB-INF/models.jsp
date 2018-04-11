@@ -110,7 +110,7 @@
     <div class="container">
         <ol class="breadcrumb">
             <li class="breadcrumb-item text-uppercase"><a href="/home" class="text-primary">Home</a></li>
-            <li class="breadcrumb-item active text-uppercase">Cameras</li>
+            <li class="breadcrumb-item active text-uppercase">${selectCategory.name.toUpperCase()}</li>
         </ol>
     </div>
     <!-- Products-->
@@ -119,7 +119,7 @@
             <header>
                 <div class="row d-flex align-items-center">
                     <div class="col-md-6">
-                        <h1 class="heading-line">Cameras</h1>
+                        <h1 class="heading-line">${selectCategory.name.toUpperCase()}</h1>
                     </div>
                     <div class="col-md-6">
                         <div class="filters d-flex justify-content-end">
@@ -173,18 +173,42 @@
                 </div>
             </div>
             <!-- Pagination -->
+
+
             <div class="pagination pagination-custom">
                 <nav aria-label="...">
                     <ul class="pagination pagination-sm d-flex justify-content-between">
-                        <li class="page-item disabled"><a href="#" tabindex="-1" class="page-link">Previous</a></li>
+                        <li class="page-item disabled">  <c:url value="/${selectCategory.name.toLowerCase()}/models" var="prev">
+                            <c:param name="page" value="${page-1}"/>
+                        </c:url>
+                            <c:if test="${page > 1}">
+                                <a href="<c:out value="${prev}" />"  class="page-link">Prev</a>
+                            </c:if></li>
                         <li>
                             <ul class="pages list-inline">
-                                <li class="page-item active list-inline-item"><a href="#" class="page-link">1</a></li>
-                                <li class="page-item list-inline-item"><a href="#" class="page-link">2</a></li>
-                                <li class="page-item list-inline-item"><a href="#" class="page-link">3</a></li>
+                                <c:forEach begin="1" end="${maxPages}" step="1" varStatus="i">
+                                    <li class="page-item list-inline-item">
+                                        <c:choose>
+                                            <c:when test="${page == i.index}">
+                                                <span class="page-item active list-inline-item"><a href="#" class="page-link">${i.index}</a></span>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <c:url value="/${selectCategory.name.toLowerCase()}/models" var="url">
+                                                    <c:param name="page" value="${i.index}"/>
+                                                </c:url>
+                                                <a href='<c:out value="${url}" />' class="page-link">${i.index}</a>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </li>
+                                </c:forEach>
                             </ul>
                         </li>
-                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                        <li class="page-item"> <c:url value="/${selectCategory.name.toLowerCase()}/models" var="next">
+                            <c:param name="page" value="${page + 1}"/>
+                        </c:url>
+                            <c:if test="${page + 1 <= maxPages}">
+                                <a href='<c:out value="${next}" />' class="page-link">Next</a>
+                            </c:if></li>
                     </ul>
                 </nav>
             </div>
@@ -197,8 +221,8 @@
         <div class="search-close"><i class="icon-close"></i></div>
         <div class="container">
             <div class="form-holder">
-                <form class="d-flex">
-                    <input type="search" placeholder="What are you looking for...">
+                <form class="d-flex" action="/cart/result">
+                    <input type="search" name="result" placeholder="What are you looking for...">
                     <button type="submit" class="search text-primary text-uppercase">Search</button>
                 </form>
             </div>
