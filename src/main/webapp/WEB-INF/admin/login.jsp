@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: karo
@@ -57,11 +58,12 @@
                                 <hr class="right">
                             </div>
                         </div>
-                        <input class="form-control" type="text" placeholder="E-mail address">
-                        <input class="form-control" type="password" placeholder="Password">
-                        <div class="action">
-                            <a class="btn btn-primary signup" href="/admin">Login</a>
-                        </div>
+                        <form action="<c:url value="/loginSuccess"/> " method="post" name="loginForm">
+                            <input class="form-control" type="text" placeholder="email" name="j_email"/>
+                            <input class="form-control" type="password" placeholder="password" name="j_password"/>
+
+                            <button type="submit" class="btn btn-default">Login</button>
+                        </form>
                     </div>
                 </div>
 

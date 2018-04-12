@@ -39,52 +39,13 @@
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="../static/css/custom.css">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="../static/favicon.jpg">
+    <link rel="shortcut icon" href="../static/img/favicon.jpg">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
 <body>
 <!-- Top Bar -->
-<div class="top-bar d-none d-sm-block">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 col-md-3">
-                <ul class="list-inline d-flex flex-row">
-                    <li class="list-inline-item">
-                        <div class="dropdown">
-                            <button id="currency" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false" class="dropdown-toggle">USD
-                            </button>
-                            <div aria-labelledby="currency" class="dropdown-menu"><a href="#"
-                                                                                     class="dropdown-item">EUR</a><a
-                                    href="#" class="dropdown-item">EGP</a><a href="#" class="dropdown-item">AUD</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-inline-item">
-                        <div class="dropdown">
-                            <button id="lang" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false" class="dropdown-toggle">English
-                            </button>
-                            <div aria-labelledby="lang" class="dropdown-menu"><a href="#"
-                                                                                 class="dropdown-item">French</a><a
-                                    href="#" class="dropdown-item">Spanish</a><a href="#"
-                                                                                 class="dropdown-item">Arabic</a></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-8 col-md-9 text-right account-details">
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a href="/admin">My Account</a></li>
-                    <li class="list-inline-item"><a href="/calendar">Calendar</a></li>
-                    <li class="list-inline-item"><a href="/login">Login</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-md">
     <div class="container"><a href="/home" class="navbar-brand"> <img
@@ -94,18 +55,15 @@
                 class="navbar-toggler navbar-toggler-right">Menu <i class="fa fa-bars"></i></button>
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto d-md-flex flex-md-row align-items-md-center">
-                <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="/models" class="nav-link">Models</a></li>
-                <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="/contact" class="nav-link">Contact Us</a></li>
+                <li class="nav-item"><a href="/home" class="nav-link">Գլխավոր</a></li>
+                <li class="nav-item"><a href="/models" class="nav-link">Մոդելներ</a></li>
+                <li class="nav-item"><a href="/blog" class="nav-link">Բլոգ</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link">Հետադարձ կապ</a></li>
                 <li class="nav-item">
                     <ul class="list-inline">
                         <li class="list-inline-item"><a id="search" href="#" class="nav-link">
                             <div class="icon search"><i class="icon-magnifying-glass"></i></div>
                         </a></li>
-                        <li class="list-inline-item"><a href="/cart" class="nav-link">
-                            <div class="icon cart"><i class="icon-cart"></i></div>
-                            <span class="d-md-none d-lg-inline"><span class="no">2</span>items</span></a></li>
                     </ul>
                 </li>
             </ul>
@@ -138,114 +96,109 @@
                     <div class="contact-icon">
                         <div class="icon icon-051-placeholder-1"></div>
                     </div>
-                    <h3>Address</h3>
-                    <p class="text-muted font-weight-light">13/25 New Avenue<br>New Heaven, 45Y 73J<br>England, <strong>Great
-                        Britain</strong></p>
+                    <h3>Հասցե</h3>
+                    <p class="text-muted font-weight-light"><a href="https://www.bing.com/maps?v=2&pc=FACEBK&mid=8100&rtp=~pos.40.784660200668_43.840612471104_%D4%B3%D5%B5%D5%B8%D6%82%D5%B4%D6%80%D5%B8%D6%82+%D4%B1%D5%BE%D5%AB%D5%A1%D5%B4%D5%B8%D5%A4%D5%A5%D5%AC%D5%A1%D5%B5%D5%AB%D5%B6+%D5%AD%D5%B4%D5%A2%D5%A1%D5%AF%3A&cp=40.784660200668~43.840612471104&lvl=16&sty=r&rtop=0~0~0~&mode=D&FORM=FBKPL6&mkt=en-US"> Abovyan 252
+                        <br>Gyumri</a></p>
                 </div>
                 <div class="col-md-4">
                     <div class="contact-icon">
                         <div class="icon icon-051-support"></div>
                     </div>
-                    <h3>Call center</h3>
-                    <p class="text-muted font-weight-light">This number is toll free if calling from Great Britain
-                        otherwise we advise you to use the electronic form of communication.</p>
-                    <p><strong>+33 555 444 333</strong></p>
+                    <h3>Հեռախոս</h3>
+                    <p class="text-muted font-weight-light"></p>
+                    <p><strong>+374 98 346 321</strong></p>
                 </div>
                 <div class="col-md-4">
                     <div class="contact-icon">
                         <div class="icon icon-051-message"></div>
                     </div>
-                    <h3>Electronic support</h3>
-                    <p class="text-muted font-weight-light">Please feel free to write an email to us or to use our
-                        electronic ticketing system.</p>
+                    <h3>Էլ. փոստ</h3>
+                    <p class="text-muted font-weight-light"></p>
                     <ul class="list-style-none">
-                        <li><strong><a href="mailto:">info@fakeemail.com</a></strong></li>
-                        <li><strong><a href="#">
-                            Ticketio
-                            - our ticketing support platform</a></strong></li>
+                        <li><strong><a href="https://web.facebook.com/khachaturtadevosyan1:">Facebook</a></strong></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-    <div id="map"></div>
-    <section>
-        <div class="container">
-            <header class="mb-5">
-                <h2 class="heading-line">Contact form</h2>
-            </header>
-            <div class="row">
-                <div class="col-md-7">
-                    <form id="contact-form" method="post" action="https://demo.bootstrapious.com/photo/1-3/contact.php"
-                          class="custom-form form">
-                        <div class="controls">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="name">Your firstname *</label>
-                                        <input type="text" name="name" id="name" placeholder="Enter your firstname"
-                                               required="required" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="surname">Your lastname *</label>
-                                        <input type="text" name="surname" id="surname"
-                                               placeholder="Enter your  lastname" required="required"
-                                               class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Your email *</label>
-                                <input type="email" name="email" id="email" placeholder="Enter your  email"
-                                       required="required" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Your message for us *</label>
-                                <textarea rows="4" name="message" id="message" placeholder="Enter your message"
-                                          required="required" class="form-control"></textarea>
-                            </div>
-                            <input type="submit" value="Send message" class="btn btn-primary">
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-5">
-                    <p class="text-muted font-weight-light">Effects present letters inquiry no an removed or friends.
-                        Desire behind latter me though in. Supposing shameless am he engrossed up additions. My possible
-                        peculiar together to. Desire so better am cannot he up before points. Remember mistaken opinions
-                        it pleasure of debating. Court front maids forty if aware their at. Chicken use are pressed
-                        removed. </p>
-                    <p class="text-muted font-weight-light">Able an hope of body. Any nay shyness article matters own
-                        removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause
-                        manor happy. Without farther she exposed saw man led. Along on happy could cease green oh. </p>
-                    <div class="social">
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a href="https://web.facebook.com/Aviamodelizm1Gyumri/?timeline_context_item_type=intro_card_work&timeline_context_item_source=100003461520899&pnref=lhc" target="_blank"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-behance"></i></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!--  <div id="map"></div>
+    --   <section>
+          <div class="container">
+              <header class="mb-5">
+                  <h2 class="heading-line">Contact form</h2>
+              </header>
+              <div class="row">
+                  <div class="col-md-7">
+                      <form id="contact-form" method="post" action="https://demo.bootstrapious.com/photo/1-3/contact.php"
+                            class="custom-form form">
+                          <div class="controls">
+                              <div class="row">
+                                  <div class="col-sm-6">
+                                      <div class="form-group">
+                                          <label for="name">Your firstname *</label>
+                                          <input type="text" name="name" id="name" placeholder="Enter your firstname"
+                                                 required="required" class="form-control">
+                                      </div>
+                                  </div>
+                                  <div class="col-sm-6">
+                                      <div class="form-group">
+                                          <label for="surname">Your lastname *</label>
+                                          <input type="text" name="surname" id="surname"
+                                                 placeholder="Enter your  lastname" required="required"
+                                                 class="form-control">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label for="email">Your email *</label>
+                                  <input type="email" name="email" id="email" placeholder="Enter your  email"
+                                         required="required" class="form-control">
+                              </div>
+                              <div class="form-group">
+                                  <label for="message">Your message for us *</label>
+                                  <textarea rows="4" name="message" id="message" placeholder="Enter your message"
+                                            required="required" class="form-control"></textarea>
+                              </div>
+                              <input type="submit" value="Send message" class="btn btn-primary">
+                          </div>
+                      </form>
+                  </div>
+                  <div class="col-md-5">
+                      <p class="text-muted font-weight-light">Effects present letters inquiry no an removed or friends.
+                          Desire behind latter me though in. Supposing shameless am he engrossed up additions. My possible
+                          peculiar together to. Desire so better am cannot he up before points. Remember mistaken opinions
+                          it pleasure of debating. Court front maids forty if aware their at. Chicken use are pressed
+                          removed. </p>
+                      <p class="text-muted font-weight-light">Able an hope of body. Any nay shyness article matters own
+                          removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause
+                          manor happy. Without farther she exposed saw man led. Along on happy could cease green oh. </p>
+                      <div class="social">
+                          <ul class="list-inline">
+                              <li class="list-inline-item"><a href="https://web.facebook.com/Aviamodelizm1Gyumri/?timeline_context_item_type=intro_card_work&timeline_context_item_source=100003461520899&pnref=lhc" target="_blank"><i class="fa fa-facebook"></i></a>
+                              </li>
+                              <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                              </li>
+                              <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+                              </li>
+                              <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-behance"></i></a>
+                              </li>
+                              <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>-->
 </div>
-<!-- Search Panel-->
+
 <div class="search-overlay">
     <div class="search-inner d-flex justify-content-center align-items-center">
         <div class="search-close"><i class="icon-close"></i></div>
         <div class="container">
             <div class="form-holder">
-                <form class="d-flex">
-                    <input type="search" placeholder="What are you looking for...">
+                <form class="d-flex" action="/models/search">
+                    <input type="search" name="name" placeholder="What are you looking for...">
                     <button type="submit" class="search text-primary text-uppercase">Search</button>
                 </form>
             </div>
@@ -260,54 +213,31 @@
                 <div class="col-lg-3 col-sm-6">
                     <h3>Site Map</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li><a href="#">Privacy policy</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="/home">Գլխավոր</a></li>
+
+
+
                     </ul>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <h3>Our Services</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
+                        <li><a href="/${categories.get(0).name.toLowerCase()}/models">Մոդելներ</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-sm-6">
                     <h3>Extras</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
+                        <li><a href="/contact">Հետադարձ կապ</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-sm-6 details js-pull">
                     <ul class="list-unstyled">
-                        <li class="d-flex align-items-center">
-                            <div class="icon"><i class="icon-delivery-truck"></i></div>
-                            <div class="text">
-                                <h3>Free Shipping Worldwide</h3>
-                                <p>On orders over $200</p>
-                            </div>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <div class="icon"><i class="icon-dollar-symbol"></i></div>
-                            <div class="text">
-                                <h3>30 days money back</h3>
-                                <p>Money back guarantee</p>
-                            </div>
-                        </li>
+
                         <li class="d-flex align-items-center">
                             <div class="icon"><i class="icon-phone-call"></i></div>
                             <div class="text">
-                                <h3>Phone: 123-456-789</h3>
-                                <p>Contact with us</p>
+                                <h3>Հեռ: +374 98֊346֊321</h3>
                             </div>
                         </li>
                     </ul>
@@ -319,29 +249,26 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <p>&copy; 2017 <span class="text-primary">Photo Template. </span>All rights reserved.</p>
+                    <p>&copy; 2016 &nbsp <span class="text-primary">G - FLY &nbsp&nbsp</span>Ավիամոդելային Լաբորատորիա</p>
                 </div>
                 <div class="col-sm-6 text-right">
-                    <p>Template by <a href="https://ondrejsvestka.cz/" target="_blank">Ondrej Svestka</a></p>
+                    <li class="list-inline-item"><a
+                            href="https://web.facebook.com/Aviamodelizm1Gyumri/?timeline_context_item_type=intro_card_work&timeline_context_item_source=100003461520899&pnref=lhc"
+                            target="_blank"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
+                    </li>
                 </div>
             </div>
         </div>
     </div>
 </footer>
-<div id="style-switch" class="collapse">
-    <h4 class="mb-3">Select theme colour</h4>
-    <form class="mb-3">
-        <select name="colour" id="colour" class="form-control">
-            <option value="">select colour variant</option>
-            <option value="default">red</option>
-            <option value="pink">pink</option>
-            <option value="green">green</option>
-            <option value="violet">violet</option>
-            <option value="sea">sea</option>
-            <option value="blue">blue</option>
-        </select>
-    </form>
-    </div>
 <!-- JavaScript files-->
 <script src="../static/js/jquery/jquery.min.js"></script>
 <script src="../static/js/popper.js/umd/popper.min.js"></script>

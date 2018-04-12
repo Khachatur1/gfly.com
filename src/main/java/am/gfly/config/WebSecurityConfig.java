@@ -23,19 +23,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
-//                .formLogin()
-//                .loginPage("/loginPage")
-//                .usernameParameter("j_email")
-//                .passwordParameter("j_password")
-//                .defaultSuccessUrl("/loginSuccess")
-//                .failureHandler(new CustomAuthenticationFailureHandler())
-//                .and()
-//                .logout()
-//                .logoutSuccessUrl("/")
-//                .and()
-               .authorizeRequests()
-//                .antMatchers("/admin/**").hasAuthority("MANAGER")
+                .formLogin()
+                .loginPage("/login")
+                .usernameParameter("j_email")
+                .passwordParameter("j_password")
+                .defaultSuccessUrl("/loginSuccess")
+                .failureHandler(new CustomAuthenticationFailureHandler())
+                .and()
+                .logout()
+                .logoutSuccessUrl("/")
+                .and()
+                .authorizeRequests()
+                .antMatchers("/admin/**").hasAuthority("ADMIN")
                 .anyRequest().permitAll();
+    }
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+                .userDetailsService(userDetailsService);
     }
 
 }

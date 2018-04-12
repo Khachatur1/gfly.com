@@ -39,52 +39,13 @@
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="../static/css/custom.css">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="../static/favicon.jpg">
+    <link rel="shortcut icon" href="../static/img/favicon.jpg">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
 <body>
 <!-- Top Bar -->
-<div class="top-bar d-none d-sm-block">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 col-md-3">
-                <ul class="list-inline d-flex flex-row">
-                    <li class="list-inline-item">
-                        <div class="dropdown">
-                            <button id="currency" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false" class="dropdown-toggle">USD
-                            </button>
-                            <div aria-labelledby="currency" class="dropdown-menu"><a href="#"
-                                                                                     class="dropdown-item">EUR</a><a
-                                    href="#" class="dropdown-item">EGP</a><a href="#" class="dropdown-item">AUD</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-inline-item">
-                        <div class="dropdown">
-                            <button id="lang" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false" class="dropdown-toggle">English
-                            </button>
-                            <div aria-labelledby="lang" class="dropdown-menu"><a href="#"
-                                                                                 class="dropdown-item">French</a><a
-                                    href="#" class="dropdown-item">Spanish</a><a href="#"
-                                                                                 class="dropdown-item">Arabic</a></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-8 col-md-9 text-right account-details">
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a href="/admin">My Account</a></li>
-                    <li class="list-inline-item"><a href="/calendar">Calendar</a></li>
-                    <li class="list-inline-item"><a href="/login">Login</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-md">
     <div class="container"><a href="/home" class="navbar-brand"> <img
@@ -94,18 +55,15 @@
                 class="navbar-toggler navbar-toggler-right">Menu <i class="fa fa-bars"></i></button>
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto d-md-flex flex-md-row align-items-md-center">
-                <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="/models" class="nav-link">Models</a></li>
-                <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="/contact" class="nav-link">Contact Us</a></li>
+                <li class="nav-item"><a href="/home" class="nav-link">Գլխավոր</a></li>
+                <li class="nav-item"><a href="/models" class="nav-link">Մոդելներ</a></li>
+                <li class="nav-item"><a href="/blog" class="nav-link">Բլոգ</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link">Հետադարձ կապ</a></li>
                 <li class="nav-item">
                     <ul class="list-inline">
                         <li class="list-inline-item"><a id="search" href="#" class="nav-link">
                             <div class="icon search"><i class="icon-magnifying-glass"></i></div>
                         </a></li>
-                        <li class="list-inline-item"><a href="/cart" class="nav-link">
-                            <div class="icon cart"><i class="icon-cart"></i></div>
-                            <span class="d-md-none d-lg-inline"><span class="no">2</span>items</span></a></li>
                     </ul>
                 </li>
             </ul>
@@ -188,8 +146,8 @@
         <div class="search-close"><i class="icon-close"></i></div>
         <div class="container">
             <div class="form-holder">
-                <form class="d-flex">
-                    <input type="search" placeholder="What are you looking for...">
+                <form class="d-flex" action="/models/search">
+                    <input type="search" name="name" placeholder="What are you looking for...">
                     <button type="submit" class="search text-primary text-uppercase">Search</button>
                 </form>
             </div>
@@ -204,54 +162,31 @@
                 <div class="col-lg-3 col-sm-6">
                     <h3>Site Map</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li><a href="#">Privacy policy</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="/home">Գլխավոր</a></li>
+
+
+
                     </ul>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <h3>Our Services</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
+                        <li><a href="/${categories.get(0).name.toLowerCase()}/models">Մոդելներ</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-sm-6">
                     <h3>Extras</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
+                        <li><a href="/contact">Հետադարձ կապ</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-sm-6 details js-pull">
                     <ul class="list-unstyled">
-                        <li class="d-flex align-items-center">
-                            <div class="icon"><i class="icon-delivery-truck"></i></div>
-                            <div class="text">
-                                <h3>Free Shipping Worldwide</h3>
-                                <p>On orders over $200</p>
-                            </div>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <div class="icon"><i class="icon-dollar-symbol"></i></div>
-                            <div class="text">
-                                <h3>30 days money back</h3>
-                                <p>Money back guarantee</p>
-                            </div>
-                        </li>
+
                         <li class="d-flex align-items-center">
                             <div class="icon"><i class="icon-phone-call"></i></div>
                             <div class="text">
-                                <h3>Phone: 123-456-789</h3>
-                                <p>Contact with us</p>
+                                <h3>Հեռ: +374 98֊346֊321</h3>
                             </div>
                         </li>
                     </ul>
@@ -263,10 +198,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <p>&copy; 2017 <span class="text-primary">Photo Template. </span>All rights reserved.</p>
+                    <p>&copy; 2016 &nbsp <span class="text-primary">G - FLY &nbsp&nbsp</span>Ավիամոդելային Լաբորատորիա</p>
                 </div>
                 <div class="col-sm-6 text-right">
-                    <p>Template by <a href="https://ondrejsvestka.cz/" target="_blank">Ondrej Svestka</a></p>
+                    <li class="list-inline-item"><a
+                            href="https://web.facebook.com/Aviamodelizm1Gyumri/?timeline_context_item_type=intro_card_work&timeline_context_item_source=100003461520899&pnref=lhc"
+                            target="_blank"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
+                    </li>
                 </div>
             </div>
         </div>

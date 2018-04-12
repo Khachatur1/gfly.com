@@ -28,6 +28,5 @@ public class User {
     @Column
     @Enumerated(EnumType.STRING)
     private UserType type;
-    @Column
-    private boolean verify;
+
 }

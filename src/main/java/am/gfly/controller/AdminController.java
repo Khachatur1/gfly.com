@@ -1,12 +1,11 @@
 package am.gfly.controller;
 
-import am.gfly.model.Category;
-import am.gfly.model.Image;
-import am.gfly.model.Post;
-import am.gfly.model.Product;
+import am.gfly.model.*;
 import am.gfly.repository.*;
+import am.gfly.security.CurrentUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -46,10 +45,6 @@ public class AdminController {
     private UserRepository userRepository;
 
 
-    @RequestMapping(value = "/buttons", method = RequestMethod.GET)
-    public String buttonsPage() {
-        return "admin/buttons";
-    }
 
     @RequestMapping(value = "/calendar", method = RequestMethod.GET)
     public String calendarPage() {
@@ -64,6 +59,14 @@ public class AdminController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage() {
         return "admin/login";
+    }
+    @RequestMapping(value = "/loginSuccess", method = RequestMethod.POST)
+    public String loginSuccess() {
+        CurrentUser principal = (CurrentUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal.getUser().getType() == UserType.ADMIN) {
+            return "redirect:/admin";
+        }
+        return "redirect:/login";
     }
 
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
