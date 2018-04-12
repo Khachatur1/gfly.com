@@ -23,51 +23,12 @@
     <link rel="stylesheet" href="../static/css/style.default.css"
           id="theme-stylesheet">
     <link rel="stylesheet" href="../static/css/custom.css">
-    <link rel="shortcut icon" href="../static/favicon.jpg">
+    <link rel="shortcut icon" href="../static/img/favicon.jpg">
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
-<div class="top-bar d-none d-sm-block">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 col-md-3">
-                <ul class="list-inline d-flex flex-row">
-                    <li class="list-inline-item">
-                        <div class="dropdown">
-                            <button id="currency" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false" class="dropdown-toggle">USD
-                            </button>
-                            <div aria-labelledby="currency" class="dropdown-menu"><a href="#"
-                                                                                     class="dropdown-item">EUR</a><a
-                                    href="#" class="dropdown-item">EGP</a><a href="#" class="dropdown-item">AUD</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-inline-item">
-                        <div class="dropdown">
-                            <button id="lang" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false" class="dropdown-toggle">English
-                            </button>
-                            <div aria-labelledby="lang" class="dropdown-menu"><a href="#"
-                                                                                 class="dropdown-item">French</a><a
-                                    href="#" class="dropdown-item">Spanish</a><a href="#"
-                                                                                 class="dropdown-item">Arabic</a></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-8 col-md-9 text-right account-details">
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a href="/admin">My Account</a></li>
-                    <li class="list-inline-item"><a href="/calendar">Calendar</a></li>
-                    <li class="list-inline-item"><a href="/login">Login</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-md">
     <div class="container"><a href="/home" class="navbar-brand"> <img
@@ -77,18 +38,15 @@
                 class="navbar-toggler navbar-toggler-right">Menu <i class="fa fa-bars"></i></button>
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto d-md-flex flex-md-row align-items-md-center">
-                <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="/${categories.get(0).name.toLowerCase()}/models" class="nav-link">Models</a></li>
-                <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="/contact" class="nav-link">Contact Us</a></li>
+                <li class="nav-item"><a href="/home" class="nav-link">Գլխավոր</a></li>
+                <li class="nav-item"><a href="/models" class="nav-link">Մոդելներ</a></li>
+                <li class="nav-item"><a href="/blog" class="nav-link">Բլոգ</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link">Հետադարձ կապ</a></li>
                 <li class="nav-item">
                     <ul class="list-inline">
                         <li class="list-inline-item"><a id="search" href="#" class="nav-link">
                             <div class="icon search"><i class="icon-magnifying-glass"></i></div>
                         </a></li>
-                        <li class="list-inline-item"><a href="/cart" class="nav-link">
-                            <div class="icon cart"><i class="icon-cart"></i></div>
-                            <span class="d-md-none d-lg-inline"><span class="no">2</span>items</span></a></li>
                     </ul>
                 </li>
             </ul>
@@ -195,7 +153,7 @@
         <div class="container">
             <div class="categories-inner">
                 <header>
-                    <h2 class="h5 heading-line d-none d-md-block">Categories</h2>
+                    <h2 class="h5 heading-line d-none d-md-block">Կատեգորիաներ</h2>
                 </header>
                 <div class="row text-center">
                     <c:forEach items="${categories}" var="category">
@@ -207,8 +165,6 @@
                                                     alt="camera" class="img-fluid"></div>
                         </a></div>
                     </c:forEach>
-
-
                 </div>
 
             </div>
@@ -218,22 +174,22 @@
     <section class="product-1">
         <div class="container">
             <header>
-                <h2 class="h3 heading-line">Airplane Collection</h2>
+                <h2 class="h3 heading-line">Օդանավեր</h2>
             </header>
             <div class="row d-flex flex-row align-items-stretch">
                 <div class="col-lg-6">
                     <div class="item item-big text-right">
                         <h2>
 
-                            ${oneProduct2.name}
-                        </h2><a href="/model/${oneProduct2.id}" class="btn btn-unique btn-lg">View Details</a><img
-                            src="/product/image?fileName=${oneProduct2.picUrl}" alt="camera"
+                            ${product1.name}
+                        </h2><a href="/model/${product1.id}" class="btn btn-unique btn-lg">Տեսնել Ավելին</a><img
+                            src="/product/image?fileName=${product1.picUrl}" alt="camera"
                             class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="row">
-                        <c:forEach items="${products4}" var="product">
+                        <c:forEach items="${products2}" var="product">
                             <div class="col-md-6">
                                 <div class="item">
                                     <h4>${product.name}</h4>
@@ -241,7 +197,7 @@
                                         src="/product/image?fileName=${product.picUrl}" alt="camera"
                                         class="img-fluid">
                                     <div class="overlay d-flex align-items-center justify-content-center"><a
-                                            href="/model/${product.id}" class="btn btn-unique">View Details</a></div>
+                                            href="/model/${product.id}" class="btn btn-unique">Տեսնել Ավելին</a></div>
                                 </div>
                             </div>
                         </c:forEach>
@@ -256,12 +212,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h2>${oneProduct1.name}</h2>
-                    <p>${oneProduct1.description}</p><a
-                        href="/model/${oneProduct1.id}" class="btn btn-dark shop-now">View Details</a>
+                    <h2>${product3.name}</h2>
+                    <p>${product3.description}</p><a
+                        href="/model/${product3.id}" class="btn btn-dark shop-now">Տեսնել Ավելին</a>
                 </div>
                 <div class="col-md-6 d-none d-md-block">
-                    <div class="product" ><img src="/product/image?fileName=${oneProduct1.picUrl}"
+                    <div class="product"><img src="/product/image?fileName=${product3.picUrl}"
                                               alt="camera" class="img-fluid" width="450px"></div>
                 </div>
             </div>
@@ -271,22 +227,22 @@
     <section class="product-2">
         <div class="container">
             <header>
-                <h2 class="h3 heading-line">Lenses Collection</h2>
+                <h2 class="h3 heading-line">Օդանավեր</h2>
             </header>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="row">
-                        <c:forEach items="${products8}" var="product">
-                        <div class="col-md-6">
-                            <div class="item">
-                                <h4>${product.name}</h4>
-                                <p class="text-primary">${product.category.name}</p><img
-                                    src="./product/image?fileName=${product.picUrl}" alt="lens"
-                                    class="img-fluid">
-                                <div class="overlay d-flex align-items-center justify-content-center"><a
-                                        href="/model/${product.id}" class="btn btn-unique">View Details</a></div>
+                        <c:forEach items="${products4}" var="product">
+                            <div class="col-md-6">
+                                <div class="item">
+                                    <h4>${product.name}</h4>
+                                    <p class="text-primary">${product.category.name}</p><img
+                                        src="./product/image?fileName=${product.picUrl}" alt="lens"
+                                        class="img-fluid">
+                                    <div class="overlay d-flex align-items-center justify-content-center"><a
+                                            href="/model/${product.id}" class="btn btn-unique">Տեսնել Ավելին</a></div>
+                                </div>
                             </div>
-                        </div>
                         </c:forEach>
                     </div>
                 </div>
@@ -294,9 +250,9 @@
                     <div class="item item-big">
                         <h2>
 
-                            Zoom <br>Lenses
-                        </h2><a href="/models" class="btn btn-unique btn-lg">Shop Now</a><img
-                            src="../static/img/lens-big.jpg" alt="lens"
+                            ${product5.name}
+                        </h2><a href="/model/${product5.id}" class="btn btn-unique btn-lg">Տեսնել Ավելին</a><img
+                            src="/product/image?fileName=${product5.picUrl}" alt="lens"
                             class="img-fluid">
                     </div>
                 </div>
@@ -306,52 +262,15 @@
     <!-- Divider Section-->
     <section class="divider">
         <div class="container text-center">
-            <p class="h5">New Arrival Collections</p>
-            <h2>For your perfect photos</h2>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p><a
-                href="#" class="btn btn-white">Learn More</a>
+            <p class="h1">Նոր մոդելներ</p>
+            <br>
+            <br>
+            <br>
+            <a href="/models/new" class="btn btn-white">Տեսնել ավելին</a>
         </div>
     </section>
     <!-- Newsletter Section-->
-    <section class="newsletter">
-        <div class="container">
-            <div class="row">
-                <div class="ml-auto mr-auto col-lg-8 text-center">
-                    <div class="form">
-                        <p class="h5"><span class="text-primary">Special offers </span>for subscribers</p>
-                        <h2>New Offers Every Week <span class="text-primary">& </span><br>Discount System <span
-                                class="text-primary">&  </span>Best hot prices</h2>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, error explicabo commodi
-                            dolor ex perferendis.</p>
-                        <form>
-                            <input id="email" type="email" name="email" placeholder="Enter your email address">
-                            <input type="submit" value="Subscribe" class="btn btn-unique">
-                        </form>
-                    </div>
-                    <div class="social">
-                        <h2>We are social</h2>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores laborum nesciunt
-                            cu.</p>
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a
-                                    href="https://web.facebook.com/Aviamodelizm1Gyumri/?timeline_context_item_type=intro_card_work&timeline_context_item_source=100003461520899&pnref=lhc"
-                                    target="_blank"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-behance"></i></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 </div>
 <!-- Search Panel-->
 <div class="search-overlay">
@@ -359,8 +278,8 @@
         <div class="search-close"><i class="icon-close"></i></div>
         <div class="container">
             <div class="form-holder">
-                <form class="d-flex">
-                    <input type="search" placeholder="What are you looking for...">
+                <form class="d-flex" action="/models/search">
+                    <input type="search" name="name" placeholder="What are you looking for...">
                     <button type="submit" class="search text-primary text-uppercase">Search</button>
                 </form>
             </div>
@@ -373,55 +292,32 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
-                    <h3>Site Map</h3>
+
                     <ul class="list-unstyled">
-                        <li><a href="/home">Home</a></li>
-                        <li><a href="/contact">About Us</a></li>
-                        <li><a href="/${categories.get(0).name.toLowerCase()}/models">Models</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/home">Գլխավոր</a></li>
+
+
                     </ul>
                 </div>
                 <div class="col-lg-3 col-sm-6">
-                    <h3>Our Services</h3>
+
                     <ul class="list-unstyled">
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
+                        <li><a href="/models">Մոդելներ</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-sm-6">
-                    <h3>Extras</h3>
+
                     <ul class="list-unstyled">
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
-                        <li><a href="#">Footer Link</a></li>
+                        <li><a href="/contact">Հետադարձ կապ</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-sm-6 details js-pull">
                     <ul class="list-unstyled">
-                        <li class="d-flex align-items-center">
-                            <div class="icon"><i class="icon-delivery-truck"></i></div>
-                            <div class="text">
-                                <h3>Free Shipping Worldwide</h3>
-                                <p>On orders over $200</p>
-                            </div>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <div class="icon"><i class="icon-dollar-symbol"></i></div>
-                            <div class="text">
-                                <h3>30 days money back</h3>
-                                <p>Money back guarantee</p>
-                            </div>
-                        </li>
+
                         <li class="d-flex align-items-center">
                             <div class="icon"><i class="icon-phone-call"></i></div>
                             <div class="text">
-                                <h3>Phone: +374 98֊346֊321</h3>
-                                <p>Contact with us</p>
+                                <h3>Հեռ: +374 98֊346֊321</h3>
                             </div>
                         </li>
                     </ul>
@@ -433,10 +329,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <p>&copy; 2017 <span class="text-primary">G - FLY </span>Aviamodeling group</p>
+                    <p>&copy; 2016 &nbsp <span class="text-primary">G - FLY &nbsp&nbsp</span>Ավիամոդելային Լաբորատորիա
+                    </p>
                 </div>
                 <div class="col-sm-6 text-right">
-                    <p>Template by <a href="/home" target="_blank">G -FLY</a></p>
+                    <li class="list-inline-item"><a
+                            href="https://web.facebook.com/Aviamodelizm1Gyumri/?timeline_context_item_type=intro_card_work&timeline_context_item_source=100003461520899&pnref=lhc"
+                            target="_blank"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
+                    </li>
                 </div>
             </div>
         </div>
