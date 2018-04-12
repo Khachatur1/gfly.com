@@ -5,19 +5,18 @@ import am.gfly.repository.*;
 import am.gfly.security.CurrentUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
 
 @Controller
+@RequestMapping("/admin")
 public class AdminController {
 
     @Value("${gfly.category.image.upload.path}")
@@ -45,29 +44,19 @@ public class AdminController {
     private UserRepository userRepository;
 
 
-
     @RequestMapping(value = "/calendar", method = RequestMethod.GET)
     public String calendarPage() {
         return "admin/calendar";
     }
 
-    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    @RequestMapping("/home")
     public String adminPage() {
         return "admin/admin";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginPage() {
-        return "admin/login";
-    }
-    @RequestMapping(value = "/loginSuccess", method = RequestMethod.POST)
-    public String loginSuccess() {
-        CurrentUser principal = (CurrentUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if (principal.getUser().getType() == UserType.ADMIN) {
-            return "redirect:/admin";
-        }
-        return "redirect:/login";
-    }
+
+
+
 
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
     public String signupPage() {
@@ -138,11 +127,11 @@ public class AdminController {
         try {
             file.transferTo(picture);
         } catch (IOException e) {
-            return "redirect:/forms";
+            return "redirect:/admin/forms";
         }
         image.setPicIrl(picName);
         imageRepository.save(image);
-        return "redirect:/forms";
+        return "redirect:/admin/forms";
     }
 
     @RequestMapping(value = "/savePost", method = RequestMethod.POST)
@@ -157,6 +146,6 @@ public class AdminController {
         }
         post.setPicUrl(picName);
         postRepository.save(post);
-        return "redirect:/forms";
+        return "redirect:/admin/forms";
     }
 }

@@ -42,7 +42,7 @@
             <div class="col-md-5">
                 <!-- Logo -->
                 <div class="logo">
-                    <h1><a href="/admin">Admin</a></h1>
+                    <h1><a href="/admin/home">Admin</a></h1>
                 </div>
             </div>
             <div class="col-md-5">
@@ -83,11 +83,11 @@
             <div class="sidebar content-box" style="display: block;">
                 <ul class="nav">
                     <!-- Main menu -->
-                    <li><a href="/admin"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
-                    <li><a href="/calendar"><i class="glyphicon glyphicon-calendar"></i> Calendar</a></li>
-                    <li><a href="/tables"><i class="glyphicon glyphicon-list"></i> Tables</a></li>
-                    <li><a href="/buttons"><i class="glyphicon glyphicon-record"></i> Buttons</a></li>
-                    <li class="current"><a href="/forms"><i class="glyphicon glyphicon-tasks"></i> Forms</a></li>
+                    <li><a href="/admin/home"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                    <li><a href="/home"><i class="glyphicon glyphicon-list"></i> G-FLY</a></li>
+                    <li><a href="/admin/calendar"><i class="glyphicon glyphicon-calendar"></i> Calendar</a></li>
+                    <li><a href="/admin/tables"><i class="glyphicon glyphicon-list"></i> Tables</a></li>
+                    <li class="current"><a href="/admin/forms"><i class="glyphicon glyphicon-tasks"></i> Forms</a></li>
                     <li class="submenu">
                         <a href="#">
                             <i class="glyphicon glyphicon-list"></i> Pages
@@ -96,7 +96,7 @@
                         <!-- Sub menu -->
                         <ul>
                             <li><a href="/login">Login</a></li>
-                            <li><a href="/signup">Signup</a></li>
+                            <li><a href="/admin/signup">Signup</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -112,7 +112,7 @@
 
                         </div>
                         <div class="panel-body">
-                            <spring:form action="/saveCategory" method="post" modelAttribute="category"
+                            <spring:form action="/admin/saveCategory" method="post" modelAttribute="category"
                                          enctype="multipart/form-data" class="form-horizontal" role="form">
                                 <div class="form-group">
                                     <spring:label path="name"
@@ -147,7 +147,7 @@
 
                         </div>
                         <div class="panel-body">
-                            <spring:form action="/saveImage" method="post" modelAttribute="image"
+                            <spring:form action="/admin/saveImage" method="post" modelAttribute="image"
                                          enctype="multipart/form-data" class="form-horizontal" role="form">
                                 <div class="form-group">
                                     <label for="image" class="col-md-2 control-label">Image</label>
@@ -185,7 +185,7 @@
                         <div class="panel-body">
 
 
-                            <spring:form action="/saveProduct" method="post" modelAttribute="product"
+                            <spring:form action="/admin/saveProduct" method="post" modelAttribute="product"
                                          enctype="multipart/form-data" class="form-horizontal" role="form">
                                 <div class="form-group">
                                     <spring:label path="name"
@@ -277,7 +277,7 @@
                             <div class="panel-title">Add Post</div>
                         </div>
                         <div class="panel-body">
-                            <spring:form action="/savePost" method="post" modelAttribute="post"
+                            <spring:form action="/admin/savePost" method="post" modelAttribute="post"
                                          enctype="multipart/form-data" class="form-horizontal" role="form">
                                 <div class="form-group">
                                     <spring:label path="title"

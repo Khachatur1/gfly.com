@@ -30,7 +30,7 @@
             <div class="col-md-5">
                 <!-- Logo -->
                 <div class="logo">
-                    <h1><a href="/admin">Bootstrap Admin Theme</a></h1>
+                    <h1><a href="/admin/home">Bootstrap Admin Theme</a></h1>
                 </div>
             </div>
             <div class="col-md-5">
@@ -70,12 +70,11 @@
             <div class="sidebar content-box" style="display: block;">
                 <ul class="nav">
                     <!-- Main menu -->
-                    <li class="current"><a href="/admin"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
-                    <li><a href="/home"><i class="glyphicon glyphicon-list"></i> Home</a></li>
-                    <li><a href="/calendar"><i class="glyphicon glyphicon-calendar"></i> Calendar</a></li>
-                    <li><a href="/tables"><i class="glyphicon glyphicon-list"></i> Tables</a></li>
-                    <li><a href="/buttons"><i class="glyphicon glyphicon-record"></i> Buttons</a></li>
-                    <li><a href="/forms"><i class="glyphicon glyphicon-tasks"></i> Forms</a></li>
+                    <li class="current"><a href="/admin/home"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                    <li><a href="/home"><i class="glyphicon glyphicon-list"></i> G-FLY</a></li>
+                    <li><a href="/admin/calendar"><i class="glyphicon glyphicon-calendar"></i> Calendar</a></li>
+                    <li><a href="/admin/tables"><i class="glyphicon glyphicon-list"></i> Tables</a></li>
+                    <li><a href="/admin/forms"><i class="glyphicon glyphicon-tasks"></i> Forms</a></li>
                     <li class="submenu">
                         <a href="#">
                             <i class="glyphicon glyphicon-list"></i> Pages
@@ -84,7 +83,7 @@
                         <!-- Sub menu -->
                         <ul>
                             <li><a href="/login">Login</a></li>
-                            <li><a href="/signup">Signup</a></li>
+                            <li><a href="/admin/signup">Signup</a></li>
                         </ul>
                     </li>
                 </ul>

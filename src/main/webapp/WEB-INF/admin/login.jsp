@@ -58,18 +58,12 @@
                                 <hr class="right">
                             </div>
                         </div>
-                        <form action="<c:url value="/loginSuccess"/> " method="post" name="loginForm">
-                            <input class="form-control" type="text" placeholder="email" name="j_email"/>
-                            <input class="form-control" type="password" placeholder="password" name="j_password"/>
-
+                        <form action="<c:url value="/login"/> " method="post" name="loginForm">
+                            <input class="form-control" type="text" placeholder="email" name="email"/>
+                            <input class="form-control" type="password" placeholder="password" name="password"/>
                             <button type="submit" class="btn btn-default">Login</button>
                         </form>
                     </div>
-                </div>
-
-                <div class="already">
-                    <p>Don't have an account yet?</p>
-                    <a href="/signup">Sign Up</a>
                 </div>
             </div>
         </div>

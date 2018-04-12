@@ -1,12 +1,11 @@
 package am.gfly.controller;
 
-import am.gfly.model.Category;
-import am.gfly.model.Post;
-import am.gfly.model.Product;
-import am.gfly.model.User;
+import am.gfly.model.*;
 import am.gfly.repository.*;
+import am.gfly.security.CurrentUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -133,5 +132,17 @@ public class MainController {
         return "search";
     }
 
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login() {
+        return "admin/login";
+    }
 
+    @RequestMapping(value = "/loginSuccess", method = RequestMethod.GET)
+    public String loginSuccess() {
+        CurrentUser principal = (CurrentUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal.getUser().getType() == UserType.USER) {
+            return "redirect:/login";
+        }
+        return "redirect:/admin/home";
+    }
 }
