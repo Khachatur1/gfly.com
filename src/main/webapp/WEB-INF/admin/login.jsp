@@ -31,7 +31,7 @@
             <div class="col-md-12">
                 <!-- Logo -->
                 <div class="logo">
-                    <h1><a href="/admin">Bootstrap Admin Theme</a></h1>
+                    <h1><a>Login</a></h1>
                 </div>
             </div>
         </div>

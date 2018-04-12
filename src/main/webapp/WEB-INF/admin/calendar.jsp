@@ -36,7 +36,7 @@
             <div class="col-md-5">
                 <!-- Logo -->
                 <div class="logo">
-                    <h1><a href="/admin/home">Bootstrap Admin Theme</a></h1>
+                    <h1><a>Calendar</a></h1>
                 </div>
             </div>
             <div class="col-md-5">
@@ -56,9 +56,8 @@
                     <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
+                                <a class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
                                 <ul class="dropdown-menu animated fadeInUp">
-                                    <li><a href="profile.html">Profile</a></li>
                                     <li><a href="/login">Logout</a></li>
                                 </ul>
                             </li>
@@ -82,7 +81,7 @@
                     <li><a href="/admin/tables"><i class="glyphicon glyphicon-list"></i> Tables</a></li>
                     <li><a href="/admin/forms"><i class="glyphicon glyphicon-tasks"></i> Forms</a></li>
                     <li class="submenu">
-                        <a href="#">
+                        <a>
                             <i class="glyphicon glyphicon-list"></i> Pages
                             <span class="caret pull-right"></span>
                         </a>
@@ -139,7 +138,7 @@
     <div class="container">
 
         <div class="copy text-center">
-            Copyright 2014 <a href='#'>Website</a>
+            &copy; 2016 &nbsp <a href="/home">G - FLY</a>
         </div>
 
     </div>
