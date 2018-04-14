@@ -43,20 +43,20 @@ public class AdminController {
     @Autowired
     private UserRepository userRepository;
 
-
     @RequestMapping(value = "/calendar", method = RequestMethod.GET)
     public String calendarPage() {
         return "admin/calendar";
     }
 
     @RequestMapping("/home")
-    public String adminPage() {
+    public String adminHomePage() {
         return "admin/admin";
     }
 
-
-
-
+    @RequestMapping("")
+    public String adminPage() {
+        return "redirect:/admin/home";
+    }
 
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
     public String signupPage() {
