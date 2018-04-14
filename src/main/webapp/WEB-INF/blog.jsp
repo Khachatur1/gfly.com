@@ -85,7 +85,7 @@
             <p class="lead"></p>
         </header>
         <div class="row">
-            <c:forEach items="${posts}" var="post">
+            <c:forEach items="${allPosts}" var="post">
                 <div class="col-sm-6">
                     <div class="post-item">
                         <div class="image"><a href="/blog/post?title=${post.title}"><img
@@ -93,8 +93,7 @@
                                 class="img-fluid"></a></div>
                         <h4><a href="/blog/post?title=${post.title}">${post.title}</a></h4>
                         <p class="intro">${post.description}</p>
-                        <p class="read-more"><a href="/blog/post?title=${post.title}" class="btn btn-unique-outline">Continue
-                            reading</a></p>
+                        <p class="read-more"><a href="/blog/post?title=${post.title}" class="btn btn-unique-outline">Կարդալ</a></p>
                     </div>
                 </div>
             </c:forEach>
@@ -103,8 +102,37 @@
         <div class="pagination pagination-custom mt-5">
             <nav aria-label="...">
                 <ul class="pagination pagination-lg d-flex justify-content-between">
-                    <li class="page-item"><a href="#" class="page-link">&lt; Older posts</a></li>
-                    <li class="page-item disabled"><a href="#" tabindex="-1" class="page-link">Newer posts &gt; </a>
+                    <li class="page-item">  <c:url value="/blog" var="prev">
+                        <c:param name="page" value="${page-1}"/>
+                    </c:url>
+                        <c:if test="${page > 1}">
+                            <a href="<c:out value="${prev}" />"  class="page-link">Prev</a>
+                        </c:if></li>
+                    <li>
+                        <ul class="pages list-inline">
+                            <c:forEach begin="1" end="${maxPages}" step="1" varStatus="i">
+                                <li class="page-item list-inline-item">
+                                    <c:choose>
+                                        <c:when test="${page == i.index}">
+                                            <span class="page-item active list-inline-item"><a href="#" class="page-link">${i.index}</a></span>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <c:url value="/blog" var="url">
+                                                <c:param name="page" value="${i.index}"/>
+                                            </c:url>
+                                            <a href='<c:out value="${url}" />' class="page-link">${i.index}</a>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </li>
+                    <li class="page-item"> <c:url value="/blog" var="next">
+                        <c:param name="page" value="${page + 1}"/>
+                    </c:url>
+                        <c:if test="${page + 1 <= maxPages}">
+                            <a href='<c:out value="${next}" />' class="page-link">Next</a>
+                        </c:if></li>
                     </li>
                 </ul>
             </nav>

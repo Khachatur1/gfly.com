@@ -71,8 +71,9 @@
     <div class="container">
         <ol class="breadcrumb">
             <li class="breadcrumb-item text-uppercase"><a href="/home" class="text-primary">Home</a></li>
-            <li class="breadcrumb-item text-uppercase"><a href="/models" class="text-primary">Lenses</a></li>
-            <li class="breadcrumb-item active text-uppercase">Fast telephoto zoom lense</li>
+            <li class="breadcrumb-item text-uppercase"><a href="/models"
+                                                          class="text-primary">${product.category.name}</a></li>
+            <li class="breadcrumb-item active text-uppercase">${product.name}</li>
         </ol>
     </div>
     <!-- Item details -->
@@ -90,8 +91,9 @@
                     </div>
                     <div data-slider-id="1" class="owl-thumbs">
                         <c:forEach items="${images}" var="images">
-                        <button class="owl-thumb-item"><img src="/product/image?fileName=${images.picIrl}" alt="lens">
-                        </button>
+                            <button class="owl-thumb-item"><img src="/product/image?fileName=${images.picIrl}"
+                                                                alt="lens">
+                            </button>
                         </c:forEach>
                     </div>
                     <div class="brief">
@@ -195,112 +197,25 @@
         <div class="container">
             <h3 class="heading-line">You May Also Like</h3>
             <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="item text-center">
-                        <div class="product-image"><img src="../static/img/detail-related-1.jpg" alt="camera">
-                            <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="#" class="btn btn-unique">View Details</a></li>
-                                    <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
-                                </ul>
+                <c:forEach items="${products}" var="products">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="item text-center">
+                            <div class="product-image"><img src="/product/image?fileName=${products.picUrl}"
+                                                            alt="camera" width="55%">
+                                <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
+                                    <ul class="list-unstyled">
+                                        <li><a href="/model/${products.id}" class="btn btn-unique">Տեսնել ավելին</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
+                            <a href="/model/${products.id}" class="item-name">
+                                <h4>${products.name}</h4></a>
+                            <p>${products.description}</p>
                         </div>
-                        <a href="/detail" class="item-name">
-                            <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
-                        <ul class="list-inline rate text-primary">
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        </ul>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas possimus
-                            magnam.</p>
-                        <ul class="price list-inline">
-                            <li class="list-inline-item"><span class="price">$1.299</span></li>
-                        </ul>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="item text-center">
-                        <div class="product-image"><span
-                                class="new badge badge-pill badge-info text-uppercase">new</span><img
-                                src="../static/img/detail-related-2.jpg" alt="camera">
-                            <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="#" class="btn btn-unique">View Details</a></li>
-                                    <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <a href="/detail" class="item-name">
-                            <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
-                        <ul class="list-inline rate text-primary">
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        </ul>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas possimus
-                            magnam.</p>
-                        <ul class="price list-inline">
-                            <li class="list-inline-item"><span class="price">$1.299</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="item text-center">
-                        <div class="product-image"><img src="../static/img/detail-related-3.jpg" alt="camera">
-                            <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="#" class="btn btn-unique">View Details</a></li>
-                                    <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <a href="/detail" class="item-name">
-                            <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
-                        <ul class="list-inline rate text-primary">
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        </ul>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas possimus
-                            magnam.</p>
-                        <ul class="price list-inline">
-                            <li class="list-inline-item"><span class="price">$1.299</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="item text-center">
-                        <div class="product-image"><img src="../static/img/detail-related-3.jpg" alt="camera">
-                            <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="#" class="btn btn-unique">View Details</a></li>
-                                    <li><a href="#" class="btn btn-dark">Add To Cart</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <a href="/detail" class="item-name">
-                            <h4>EOS 7D Mark II EF-S 18 135mm</h4></a>
-                        <ul class="list-inline rate text-primary">
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        </ul>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ut, voluptas possimus
-                            magnam.</p>
-                        <ul class="price list-inline">
-                            <li class="list-inline-item"><span class="price">$1.299</span></li>
-                        </ul>
-                    </div>
-                </div>
+                </c:forEach>
+
             </div>
         </div>
     </section>
@@ -328,7 +243,6 @@
                     <h3>Site Map</h3>
                     <ul class="list-unstyled">
                         <li><a href="/home">Գլխավոր</a></li>
-
 
 
                     </ul>
@@ -363,7 +277,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <p>&copy; 2016 &nbsp <span class="text-primary">G - FLY &nbsp&nbsp</span>Ավիամոդելային Լաբորատորիա</p>
+                    <p>&copy; 2016 &nbsp <span class="text-primary">G - FLY &nbsp&nbsp</span>Ավիամոդելային Լաբորատորիա
+                    </p>
                 </div>
                 <div class="col-sm-6 text-right">
                     <li class="list-inline-item"><a
@@ -396,7 +311,7 @@
             <option value="blue">blue</option>
         </select>
     </form>
-   </div>
+</div>
 <!-- JavaScript files-->
 <script src="../static/js/jquery/jquery.min.js"></script>
 <script src="../static/js/popper.js/umd/popper.min.js"></script>

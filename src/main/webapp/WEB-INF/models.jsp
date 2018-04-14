@@ -103,27 +103,17 @@
                             <div class="item text-center">
                                 <div class="product-image"><img
                                         src="/product/image?fileName=${products.picUrl}"
-                                        alt="camera" width="156px" height="130px">
+                                        alt="camera" width="55%">
                                     <div class="overlay">
                                         <ul class="list-unstyled">
-                                            <li><a href="/model/${products.id}" class="btn btn-unique">View Detail</a>
+                                            <li><a href="/${products.category.name.toLowerCase()}/model?id=${products.id}" class="btn btn-unique">Տեսնել ավելին</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                                <a href="/detail" class="item-name">
+                                <a href="/${products.category.name.toLowerCase()}/model?id=${products.id}" class="item-name">
                                     <h4>${products.name}</h4></a>
-                                <ul class="list-inline rate text-primary">
-                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                </ul>
-                                <p>${products.description}</p>
-                                <ul class="price list-inline">
-                                    <li class="list-inline-item"><span class="price">$1,299</span></li>
-                                </ul>
+                                <p>${products.shortDescription}</p>
                             </div>
                         </div>
                     </c:forEach>
@@ -135,7 +125,7 @@
             <div class="pagination pagination-custom">
                 <nav aria-label="...">
                     <ul class="pagination pagination-sm d-flex justify-content-between">
-                        <li class="page-item disabled">  <c:url value="/${selectCategory.name.toLowerCase()}/models" var="prev">
+                        <li class="page-item">  <c:url value="/${selectCategory.name.toLowerCase()}/models" var="prev">
                             <c:param name="page" value="${page-1}"/>
                         </c:url>
                             <c:if test="${page > 1}">

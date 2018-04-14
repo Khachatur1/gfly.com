@@ -74,14 +74,23 @@ public class MainController {
         return "undefined";
     }
 
+//    @GetMapping("/model/{id}")
+//    public String getProduct(@PathVariable("id") int id, ModelMap modelMap, HttpServletRequest request) {
+//        modelMap.addAttribute("product", productRepository.findOne(id));
+//        modelMap.addAttribute("images", imageRepository.getImagesByProductId(id));
+//        return "product";
+//    }
 
-    @GetMapping("/model/{id}")
-    public String getProduct(@PathVariable("id") int id, ModelMap modelMap, HttpServletRequest request) {
-        modelMap.addAttribute("product", productRepository.findOne(id));
+    @GetMapping("/{categoryName}/model")
+    public String getProduct(@PathVariable("categoryName") String name, @RequestParam("id") int id, ModelMap modelMap, HttpServletRequest request) {
+        Product product = productRepository.findOne(id);
+        List<Product> productsByCategoryId = productRepository.getProductsByCategoryId(product.getCategory().getId());
+        modelMap.addAttribute("products", productsByCategoryId.subList(productsByCategoryId.size() - 4, productsByCategoryId.size()));
+        modelMap.addAttribute("product", product);
         modelMap.addAttribute("images", imageRepository.getImagesByProductId(id));
+        modelMap.addAttribute("category", categoryRepository.getCategoryByName(name));
         return "product";
     }
-
 
     @GetMapping("/{name}/models")
     public String getProductByCategoryId(@RequestParam(required = false) Integer page, @PathVariable("name") String name, ModelMap map) {
@@ -116,7 +125,6 @@ public class MainController {
         }
         return map;
     }
-
 
     @RequestMapping(value = "/models/search", method = RequestMethod.GET)
     public String searchProduct(@RequestParam("name") String name, ModelMap map) {

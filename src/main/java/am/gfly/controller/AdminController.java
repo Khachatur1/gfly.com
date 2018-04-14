@@ -109,7 +109,7 @@ public class AdminController {
         try {
             file.transferTo(picture);
         } catch (IOException e) {
-            return "redirect:/forms";
+            return "redirect:/admin/forms";
         }
         product.setPicUrl(picName);
         productRepository.save(product);
@@ -117,7 +117,7 @@ public class AdminController {
         image.setPicIrl(picName);
         image.setProduct(product);
         imageRepository.save(image);
-        return "redirect:/forms";
+        return "redirect:/admin/forms";
     }
 
     @RequestMapping(value = "/saveImage", method = RequestMethod.POST)
@@ -142,7 +142,7 @@ public class AdminController {
         try {
             file.transferTo(picture);
         } catch (IOException e) {
-            return "redirect:/forms";
+            return "redirect:/admin/forms";
         }
         post.setPicUrl(picName);
         postRepository.save(post);

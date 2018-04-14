@@ -161,7 +161,7 @@
                         <div class="col-md-4 item"><a href="/${category.name.toLowerCase()}/models">
                             <h4>${category.name.toUpperCase()}</h4>
                             <p>${category.description}</p>
-                            <div class="image"><img src="/category/image?fileName=${category.picUrl}"
+                            <div class="image"><img title="${category.name.toUpperCase()}" src="/category/image?fileName=${category.picUrl}"
                                                     alt="camera" class="img-fluid"></div>
                         </a></div>
                     </c:forEach>
@@ -182,7 +182,7 @@
                         <h2>
 
                             ${product1.name}
-                        </h2><a href="/model/${product1.id}" class="btn btn-unique btn-lg">Տեսնել Ավելին</a><img
+                        </h2><a href="/${product1.category.name.toLowerCase()}/model?id=${product1.id}" class="btn btn-unique btn-lg">Տեսնել Ավելին</a><img
                             src="/product/image?fileName=${product1.picUrl}" alt="camera"
                             class="img-fluid">
                     </div>
@@ -197,7 +197,7 @@
                                         src="/product/image?fileName=${product.picUrl}" alt="camera"
                                         class="img-fluid">
                                     <div class="overlay d-flex align-items-center justify-content-center"><a
-                                            href="/model/${product.id}" class="btn btn-unique">Տեսնել Ավելին</a></div>
+                                            href="/${product.category.name.toLowerCase()}/model?id=${product.id}" class="btn btn-unique">Տեսնել Ավելին</a></div>
                                 </div>
                             </div>
                         </c:forEach>
@@ -214,7 +214,7 @@
                 <div class="col-md-6">
                     <h2>${product3.name}</h2>
                     <p>${product3.description}</p><a
-                        href="/model/${product3.id}" class="btn btn-dark shop-now">Տեսնել Ավելին</a>
+                        href="/${product3.category.name.toLowerCase()}/model?id=${product3.id}" class="btn btn-dark shop-now">Տեսնել Ավելին</a>
                 </div>
                 <div class="col-md-6 d-none d-md-block">
                     <div class="product"><img src="/product/image?fileName=${product3.picUrl}"
@@ -240,7 +240,7 @@
                                         src="./product/image?fileName=${product.picUrl}" alt="lens"
                                         class="img-fluid">
                                     <div class="overlay d-flex align-items-center justify-content-center"><a
-                                            href="/model/${product.id}" class="btn btn-unique">Տեսնել Ավելին</a></div>
+                                            href="/${product.category.name.toLowerCase()}/model?id=${product.id}" class="btn btn-unique">Տեսնել Ավելին</a></div>
                                 </div>
                             </div>
                         </c:forEach>
@@ -251,7 +251,7 @@
                         <h2>
 
                             ${product5.name}
-                        </h2><a href="/model/${product5.id}" class="btn btn-unique btn-lg">Տեսնել Ավելին</a><img
+                        </h2><a href="/${product5.category.name.toLowerCase()}/model?id=${product5.id}" class="btn btn-unique btn-lg">Տեսնել Ավելին</a><img
                             src="/product/image?fileName=${product5.picUrl}" alt="lens"
                             class="img-fluid">
                     </div>

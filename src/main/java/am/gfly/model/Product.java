@@ -35,6 +35,8 @@ public class Product {
     private String picUrl;
     @Column
     private String description;
+    @Column(name = "short_description")
+    private String shortDescription;
     @Column(name = "video_url")
     private String videoUrl;
 
