@@ -35,8 +35,6 @@ public class GflyApplication extends WebMvcConfigurerAdapter {
         bean.setPrefix("/WEB-INF/");
         bean.setSuffix(".jsp");
         return bean;
-
-
     }
 
     @Bean
