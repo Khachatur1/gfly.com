@@ -104,7 +104,7 @@ public class AdminController {
     @RequestMapping(value = "/saveProduct", method = RequestMethod.POST)
     public String saveProductPage(@ModelAttribute(name = "product") Product product,
                                   @RequestParam(value = "image") MultipartFile file) {
-        String picName = System.currentTimeMillis() + file.getOriginalFilename();
+        String picName = file.getOriginalFilename();
         File picture = new File(productImageUploadPath + picName);
         try {
             file.transferTo(picture);
