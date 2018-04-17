@@ -62,14 +62,13 @@
                 <div class="item">
                     <div class="row d-flex flex-row align-items-center">
                         <div class="col-md-6 text">
-                            <h1>Bootstrap&nbsp;4<br>Ecommerce Template</h1>
-                            <p><strong>9 HTML</strong> pages, <strong>SCSS</strong> source files, <strong>7 colour
-                                variants</strong></p>
+                            <h1>G֊fly ակումբը<br>իրականացնում է </h1>
+
                             <hr>
                             <ul class="list-unstyled props">
-                                <li><i class="icon-checked"></i>Regular updates</li>
-                                <li><i class="icon-checked"></i>Well-structured & SEO-friendly code</li>
-                                <li><i class="icon-checked"></i>SCSS files for full customization</li>
+                                <li><i class="icon-checked"></i>Նախագծում</li>
+                                <li><i class="icon-checked"></i>Պատրաստում</li>
+                                <li><i class="icon-checked"></i>Փորձարկում</li>
                             </ul>
                         </div>
                         <div class="col-md-6 product"><img
@@ -82,27 +81,12 @@
                 <div class="item">
                     <div class="row d-flex flex-row align-items-center">
                         <div class="col-md-6 text">
-                            <h5>Professional Edition</h5>
-                            <h1>Premium Quality</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt</p>
+                            <h2>G֊fly ակումբը<br>իրականացնում է</h2>
                             <hr>
                             <ul class="list-unstyled props">
-                                <li><i class="icon-checked"></i>Lorem ipsum dolor sit amet</li>
-                                <li><i class="icon-checked"></i>Lorem ipsum dolor sit amet</li>
-                            </ul>
-                            <ul class="price list-inline">
-                                <li class="list-inline-item">
-                                    <p class="price">Best Price: 350$</p>
-                                </li>
-                                <li class="list-inline-item">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item"><a href="#" class="btn btn-white">Add To Cart</a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#" class="btn btn-dark">Learn More</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                <li><i class="icon-checked"></i>Նախագծում</li>
+                                <li><i class="icon-checked"></i>Պատրաստում</li>
+                                <li><i class="icon-checked"></i>Փորձարկում</li>
                             </ul>
                         </div>
                         <div class="col-md-6 product"><img
@@ -115,27 +99,13 @@
                 <div class="item">
                     <div class="row d-flex flex-row align-items-center">
                         <div class="col-md-6 text">
-                            <h5>Professional Edition</h5>
-                            <h1>Premium Quality</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt</p>
+                            <h2>G֊fly ակումբը<br>իրականացնում է</h2>
+
                             <hr>
                             <ul class="list-unstyled props">
-                                <li><i class="icon-checked"></i>Lorem ipsum dolor sit amet</li>
-                                <li><i class="icon-checked"></i>Lorem ipsum dolor sit amet</li>
-                            </ul>
-                            <ul class="price list-inline">
-                                <li class="list-inline-item">
-                                    <p class="price">Best Price: 350$</p>
-                                </li>
-                                <li class="list-inline-item">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item"><a href="#" class="btn btn-white">Add To Cart</a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#" class="btn btn-dark">Learn More</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                <li><i class="icon-checked"></i>Նախագծում</li>
+                                <li><i class="icon-checked"></i>Պատրաստում</li>
+                                <li><i class="icon-checked"></i>Փորձարկում</li>
                             </ul>
                         </div>
                         <div class="col-md-6 product"><img
@@ -161,7 +131,8 @@
                         <div class="col-md-4 item"><a href="/${category.name.toLowerCase()}/models">
                             <h4>${category.name.toUpperCase()}</h4>
                             <p>${category.description}</p>
-                            <div class="image"><img title="${category.name.toUpperCase()}" src="/category/image?fileName=${category.picUrl}"
+                            <div class="image"><img title="${category.name.toUpperCase()}"
+                                                    src="/category/image?fileName=${category.picUrl}"
                                                     alt="camera" class="img-fluid"></div>
                         </a></div>
                     </c:forEach>
@@ -182,7 +153,8 @@
                         <h2>
 
                             ${product1.name}
-                        </h2><a href="/${product1.category.name.toLowerCase()}/model?id=${product1.id}" class="btn btn-unique btn-lg">Տեսնել Ավելին</a><img
+                        </h2><a href="/${product1.category.name.toLowerCase()}/model?id=${product1.id}"
+                                class="btn btn-unique btn-lg">Տեսնել Ավելին</a><img
                             src="/product/image?fileName=${product1.picUrl}" alt="camera"
                             class="img-fluid">
                     </div>
@@ -197,7 +169,8 @@
                                         src="/product/image?fileName=${product.picUrl}" alt="camera"
                                         class="img-fluid">
                                     <div class="overlay d-flex align-items-center justify-content-center"><a
-                                            href="/${product.category.name.toLowerCase()}/model?id=${product.id}" class="btn btn-unique">Տեսնել Ավելին</a></div>
+                                            href="/${product.category.name.toLowerCase()}/model?id=${product.id}"
+                                            class="btn btn-unique">Տեսնել Ավելին</a></div>
                                 </div>
                             </div>
                         </c:forEach>
@@ -214,7 +187,8 @@
                 <div class="col-md-6">
                     <h2>${product3.name}</h2>
                     <p>${product3.description}</p><a
-                        href="/${product3.category.name.toLowerCase()}/model?id=${product3.id}" class="btn btn-dark shop-now">Տեսնել Ավելին</a>
+                        href="/${product3.category.name.toLowerCase()}/model?id=${product3.id}"
+                        class="btn btn-dark shop-now">Տեսնել Ավելին</a>
                 </div>
                 <div class="col-md-6 d-none d-md-block">
                     <div class="product"><img src="/product/image?fileName=${product3.picUrl}"
@@ -240,7 +214,8 @@
                                         src="./product/image?fileName=${product.picUrl}" alt="lens"
                                         class="img-fluid">
                                     <div class="overlay d-flex align-items-center justify-content-center"><a
-                                            href="/${product.category.name.toLowerCase()}/model?id=${product.id}" class="btn btn-unique">Տեսնել Ավելին</a></div>
+                                            href="/${product.category.name.toLowerCase()}/model?id=${product.id}"
+                                            class="btn btn-unique">Տեսնել Ավելին</a></div>
                                 </div>
                             </div>
                         </c:forEach>
@@ -251,7 +226,8 @@
                         <h2>
 
                             ${product5.name}
-                        </h2><a href="/${product5.category.name.toLowerCase()}/model?id=${product5.id}" class="btn btn-unique btn-lg">Տեսնել Ավելին</a><img
+                        </h2><a href="/${product5.category.name.toLowerCase()}/model?id=${product5.id}"
+                                class="btn btn-unique btn-lg">Տեսնել Ավելին</a><img
                             src="/product/image?fileName=${product5.picUrl}" alt="lens"
                             class="img-fluid">
                     </div>

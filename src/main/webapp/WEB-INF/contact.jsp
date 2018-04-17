@@ -115,7 +115,8 @@
                     <h3>Էլ. փոստ</h3>
                     <p class="text-muted font-weight-light"></p>
                     <ul class="list-style-none">
-                        <li><strong><a href="https://web.facebook.com/khachaturtadevosyan1:">Facebook</a></strong></li>
+                        <li><strong><a href="https://web.facebook.com/khachaturtadevosyan1:">khachatur098346321@gmail.com</a></strong></li>
+                        <li><strong><a href="https://web.facebook.com/khachaturtadevosyan1:">khachatur098346321@gail.ru</a></strong></li>
                     </ul>
                 </div>
             </div>

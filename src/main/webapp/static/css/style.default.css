@@ -401,7 +401,7 @@ section.hero {
     min-height: calc(100vh - 180px);
     padding-top: 40px;
     padding-bottom: 80px;
-    background-image: linear-gradient(-18deg, #2657eb 0%, #de6161 100%);
+    background-image: linear-gradient(-18deg, #2657eb 0%, #757171 100%);
     color: #fff;
     position: relative
 }
@@ -752,7 +752,7 @@ section.product-1 .item-big h2, section.product-2 .item-big h2 {
 
 section.sale {
     padding: 100px 0;
-    background-image: linear-gradient(-18deg, #2657eb 0%, #de6161 100%);
+    background-image: linear-gradient(-18deg, #2657eb 0%, #757171 100%);
     color: #fff
 }
 

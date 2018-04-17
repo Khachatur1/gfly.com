@@ -113,7 +113,7 @@
                                 </div>
                                 <a href="/${products.category.name.toLowerCase()}/model?id=${products.id}" class="item-name">
                                     <h4>${products.name}</h4></a>
-                                <p>${products.shortDescription}</p>
+                                <p>${products.description}</p>
                             </div>
                         </div>
                     </c:forEach>
