@@ -84,11 +84,7 @@
             <header class="mb-5">
                 <h1 class="heading-line">Contact</h1>
                 <p class="lead text-muted">
-                    Are you curious about something? Do you have some kind of problem with our products? As am hastily
-                    invited settled at limited civilly fortune me. Really spring in extent an by. Judge but built party
-                    world. Of so am
-                    he remember although required. Bachelor unpacked be advanced at. Confined in declared marianne is
-                    vicinity.
+
                 </p>
             </header>
             <div class="row">
@@ -115,9 +111,9 @@
                     <h3>Էլ. փոստ</h3>
                     <p class="text-muted font-weight-light"></p>
                     <ul class="list-style-none">
-                        <li><strong><a href="https://web.facebook.com/khachaturtadevosyan1:">khachatur098346321@gmail.com</a></strong></li>
-                        <li><strong><a href="https://web.facebook.com/khachaturtadevosyan1:">khachatur098346321@gail.ru</a></strong></li>
-                    </ul>
+                        <li><strong><a href="mailto:">khachatur098346321@gmail.com</a></strong></li>
+                        <li><strong><a href="mailto:">khachatur098346321@mail.ru</a></strong></li>
+                       </ul>
                 </div>
             </div>
         </div>
@@ -223,7 +219,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <h3>Our Services</h3>
                     <ul class="list-unstyled">
-                        <li><a href="/${categories.get(0).name.toLowerCase()}/models">Մոդելներ</a></li>
+                        <li><a href="/models">Մոդելներ</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-sm-6">

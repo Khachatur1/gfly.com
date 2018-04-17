@@ -88,24 +88,14 @@
                                         alt="camera" width="156px" height="130px">
                                     <div class="overlay">
                                         <ul class="list-unstyled">
-                                            <li><a href="/model/${products.id}" class="btn btn-unique">View Detail</a>
+                                            <li><a href="/${products.category.name.toLowerCase()}/model?id=${products.id}" class="btn btn-unique">View Detail</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                                <a href="/detail" class="item-name">
+                                <a href="/${products.category.name.toLowerCase()}/model?id=${products.id}" class="item-name">
                                     <h4>${products.name}</h4></a>
-                                <ul class="list-inline rate text-primary">
-                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                </ul>
                                 <p>${products.description}</p>
-                                <ul class="price list-inline">
-                                    <li class="list-inline-item"><span class="price">$1,299</span></li>
-                                </ul>
                             </div>
                         </div>
                     </c:forEach>
@@ -185,7 +175,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <h3>Our Services</h3>
                     <ul class="list-unstyled">
-                        <li><a href="/${categories.get(0).name.toLowerCase()}/models">Մոդելներ</a></li>
+                        <li><a href="/models">Մոդելներ</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-sm-6">

@@ -193,7 +193,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <h3>Our Services</h3>
                     <ul class="list-unstyled">
-                        <li><a href="/${categories.get(0).name.toLowerCase()}/models">Մոդելներ</a></li>
+                        <li><a href="/models">Մոդելներ</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-sm-6">

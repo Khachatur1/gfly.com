@@ -165,7 +165,7 @@
                             <div class="col-md-6">
                                 <div class="item">
                                     <h4>${product.name}</h4>
-                                    <p class="text-primary">$1.299</p><img
+                                    <p class="text-primary">${product.category.name.toUpperCase()}</p><img
                                         src="/product/image?fileName=${product.picUrl}" alt="camera"
                                         class="img-fluid">
                                     <div class="overlay d-flex align-items-center justify-content-center"><a

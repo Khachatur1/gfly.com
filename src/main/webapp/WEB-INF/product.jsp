@@ -97,97 +97,100 @@
                         </c:forEach>
                     </div>
                     <div class="brief">
+
                         ${product.videoUrl}
                     </div>
                 </div>
                 <div class="col-md-6">
                     <h1 class="h2">${product.name}</h1>
-                    <div class="price d-flex justify-content-between align-items-center text-primary">$599.00
-                        <div class="d-flex justify-content-center">
-                            <ul class="rate list-inline">
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                            </ul>
-                            <span>No Reviews</span>
-                        </div>
-                    </div>
+                    <%--<div class="price d-flex justify-content-between align-items-center text-primary">$599.00--%>
+                        <%--<div class="d-flex justify-content-center">--%>
+                            <%--<ul class="rate list-inline">--%>
+                                <%--<li class="list-inline-item"><i class="fa fa-star-o"></i></li>--%>
+                                <%--<li class="list-inline-item"><i class="fa fa-star-o"></i></li>--%>
+                                <%--<li class="list-inline-item"><i class="fa fa-star-o"></i></li>--%>
+                                <%--<li class="list-inline-item"><i class="fa fa-star-o"></i></li>--%>
+                                <%--<li class="list-inline-item"><i class="fa fa-star-o"></i></li>--%>
+                            <%--</ul>--%>
+                            <%--<span>No Reviews</span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
                     <div class="model">
                         <ul class="list-unstyled">
-                            <li><span class="text-uppercase">Category: </span>${product.category.name}</li>
-                            <li><span class="text-uppercase">Engine: </span>${product.engine.toString()}</li>
-                            <li><span class="text-uppercase">Material: </span>${product.material}</li>
+                            <li><span class="text-uppercase text-primary">Category: </span>${product.category.name}</li><br>
+                            <li><span class="text-uppercase text-primary">Engine: </span>${product.engine.toString()}</li><br>
+                            <li><span class="text-uppercase text-primary">Material: </span>${product.material}</li><br>
+                            <li><span class="text-uppercase text-primary">Wingspan: </span>${product.wingspan}</li><br>
+                            <li><span class="text-uppercase text-primary">Weight: </span>${product.weight}</li><br>
                         </ul>
                     </div>
                     <div class="description">
                         <p>${product.description}</p>
                     </div>
-                    <form action="#" method="get">
-                        <div class="row d-flex justify-content-between">
-                            <div class="col-lg-6">
-                                <ul class="product-quantity list-inline">
-                                    <li class="list-inline-item">
-                                        <h3 class="h5">Quantity</h3>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <div class="counter d-flex align-items-center justify-content-start">
-                                            <div class="minus-btn"><i class="icon-android-remove"></i></div>
-                                            <input type="text" value="1" class="quantity">
-                                            <div class="plus-btn"><i class="icon-android-add"></i></div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <select name="variant" title="variant" class="country form-control">
-                                    <option value="">D750 body only</option>
-                                    <option value="">24-120mm VR Lens Kit</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="CTAs">
-                            <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <button href="#" class="btn btn-unique">Add To Cart</button>
-                                </li>
-                                <li class="list-inline-item"><a href="#" class="btn btn-dark">Add to wishlist<i
-                                        class="fa fa-heart"></i></a></li>
-                            </ul>
-                        </div>
-                    </form>
-                    <div class="specifications">
-                        <ul class="property list-unstyled">
-                            <li class="title">Wingspan</li>
-                            <li class="value">${product.wingspan}</li>
-                        </ul>
-                        <ul class="property list-unstyled">
-                            <li class="title">Weight</li>
-                            <li class="value">${product.weight}</li>
-                        </ul>
-                        <ul class="property list-unstyled">
-                            <li class="title">Minimum Apparature</li>
-                            <li class="value">F/22</li>
-                        </ul>
-                        <ul class="property list-unstyled">
-                            <li class="title">Lens Construction</li>
-                            <li class="value">21 element in 16 groups (with 7 ED and some Nano Crystal lens elements)
-                            </li>
-                        </ul>
-                        <ul class="property list-unstyled">
-                            <li class="title">Weight</li>
-                            <li class="value">Approximately 1.540 g/3.4 lb</li>
-                        </ul>
-                        <ul class="property list-unstyled">
-                            <li class="title">Filter/Attachment size</li>
-                            <li class="value">77mm</li>
-                        </ul>
-                        <ul class="property list-unstyled">
-                            <li class="title">Maimum Reproduction Ratio</li>
-                            <li class="value">.12x</li>
-                        </ul>
-                    </div>
+                    <%--<form action="#" method="get">--%>
+                        <%--<div class="row d-flex justify-content-between">--%>
+                            <%--<div class="col-lg-6">--%>
+                                <%--<ul class="product-quantity list-inline">--%>
+                                    <%--<li class="list-inline-item">--%>
+                                        <%--<h3 class="h5">Quantity</h3>--%>
+                                    <%--</li>--%>
+                                    <%--<li class="list-inline-item">--%>
+                                        <%--<div class="counter d-flex align-items-center justify-content-start">--%>
+                                            <%--<div class="minus-btn"><i class="icon-android-remove"></i></div>--%>
+                                            <%--<input type="text" value="1" class="quantity">--%>
+                                            <%--<div class="plus-btn"><i class="icon-android-add"></i></div>--%>
+                                        <%--</div>--%>
+                                    <%--</li>--%>
+                                <%--</ul>--%>
+                            <%--</div>--%>
+                            <%--<div class="col-lg-6">--%>
+                                <%--<select name="variant" title="variant" class="country form-control">--%>
+                                    <%--<option value="">D750 body only</option>--%>
+                                    <%--<option value="">24-120mm VR Lens Kit</option>--%>
+                                <%--</select>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="CTAs">--%>
+                            <%--<ul class="list-inline">--%>
+                                <%--<li class="list-inline-item">--%>
+                                    <%--<button href="#" class="btn btn-unique">Add To Cart</button>--%>
+                                <%--</li>--%>
+                                <%--<li class="list-inline-item"><a href="#" class="btn btn-dark">Add to wishlist<i--%>
+                                        <%--class="fa fa-heart"></i></a></li>--%>
+                            <%--</ul>--%>
+                        <%--</div>--%>
+                    <%--</form>--%>
+                    <%--<div class="specifications">--%>
+                        <%--<ul class="property list-unstyled">--%>
+                            <%--<li class="title">Wingspan</li>--%>
+                            <%--<li class="value">${product.wingspan}</li>--%>
+                        <%--</ul>--%>
+                        <%--<ul class="property list-unstyled">--%>
+                            <%--<li class="title">Weight</li>--%>
+                            <%--<li class="value">${product.weight}</li>--%>
+                        <%--</ul>--%>
+                        <%--<ul class="property list-unstyled">--%>
+                            <%--<li class="title">Minimum Apparature</li>--%>
+                            <%--<li class="value">F/22</li>--%>
+                        <%--</ul>--%>
+                        <%--<ul class="property list-unstyled">--%>
+                            <%--<li class="title">Lens Construction</li>--%>
+                            <%--<li class="value">21 element in 16 groups (with 7 ED and some Nano Crystal lens elements)--%>
+                            <%--</li>--%>
+                        <%--</ul>--%>
+                        <%--<ul class="property list-unstyled">--%>
+                            <%--<li class="title">Weight</li>--%>
+                            <%--<li class="value">Approximately 1.540 g/3.4 lb</li>--%>
+                        <%--</ul>--%>
+                        <%--<ul class="property list-unstyled">--%>
+                            <%--<li class="title">Filter/Attachment size</li>--%>
+                            <%--<li class="value">77mm</li>--%>
+                        <%--</ul>--%>
+                        <%--<ul class="property list-unstyled">--%>
+                            <%--<li class="title">Maimum Reproduction Ratio</li>--%>
+                            <%--<li class="value">.12x</li>--%>
+                        <%--</ul>--%>
+                    <%--</div>--%>
                 </div>
             </div>
         </div>
@@ -195,16 +198,16 @@
     <!-- Related Items                         -->
     <section class="related-items p-t-small p-b-small">
         <div class="container">
-            <h3 class="heading-line">You May Also Like</h3>
+            <h3 class="heading-line">${product.category.name.toUpperCase()} մոդելներ</h3>
             <div class="row">
                 <c:forEach items="${products}" var="products">
                     <div class="col-lg-3 col-md-6">
                         <div class="item text-center">
                             <div class="product-image"><img src="/product/image?fileName=${products.picUrl}"
                                                             alt="camera" width="55%">
-                                <div class="overlay"><a href="#" class="wishlist"><i class="fa fa-heart"></i></a>
+                                <div class="overlay">
                                     <ul class="list-unstyled">
-                                        <li><a href="/model/${products.id}" class="btn btn-unique">Տեսնել ավելին</a>
+                                        <li><a href="/${products.category.name.toLowerCase()}/model?id=${products.id}" class="btn btn-unique">Տեսնել ավելին</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -250,7 +253,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <h3>Our Services</h3>
                     <ul class="list-unstyled">
-                        <li><a href="/${categories.get(0).name.toLowerCase()}/models">Մոդելներ</a></li>
+                        <li><a href="/models">Մոդելներ</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-sm-6">
