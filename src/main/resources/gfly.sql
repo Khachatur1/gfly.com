@@ -2,11 +2,13 @@
 SQLyog Ultimate v12.2.6 (64 bit)
 MySQL - 5.7.21 : Database - gfly
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
 /*!40101 SET SQL_MODE=''*/;
+
 
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
@@ -30,15 +32,24 @@ CREATE TABLE `category` (
 
 /*Data for the table `category` */
 
-insert  into `category`(`id`,`name`,`description`,`pic_url`) values 
-(14,'ALL','ALL','all.jpg'),
-(15,'3D','3D','3d.jpg'),
-(16,'BIPLANE','BIPLANE','biplane.jpg'),
-(17,'COPI','COPI','copi.jpeg'),
-(18,'FLYWING','FLYWING','flywing.jpg'),
-(19,'HIDROPLANE','HIDROPLANE','hidroplane.gif'),
-(20,'MULTIROTOR','MULTIROTOR','multirotor.jpg'),
-(21,'PLANER','PLANER','planer.png'),
+insert  into `category`(`id`,`name`,`description`,`pic_url`) values 
+
+(14,'ALL','ALL','all.jpg'),
+
+(15,'3D','3D','3d.jpg'),
+
+(16,'BIPLANE','BIPLANE','biplane.jpg'),
+
+(17,'COPI','COPI','copi.jpeg'),
+
+(18,'FLYWING','FLYWING','flywing.jpg'),
+
+(19,'HIDROPLANE','HIDROPLANE','hidroplane.gif'),
+
+(20,'MULTIROTOR','MULTIROTOR','multirotor.jpg'),
+
+(21,'PLANER','PLANER','planer.png'),
+
 (22,'TRINER','TRINER','triner.jpg');
 
 /*Table structure for table `image` */
@@ -113,7 +124,8 @@ CREATE TABLE `user` (
 
 /*Data for the table `user` */
 
-insert  into `user`(`id`,`name`,`surname`,`email`,`password`,`type`,`verify`) values 
+insert  into `user`(`id`,`name`,`surname`,`email`,`password`,`type`,`verify`) values 
+
 (4,'admin','admin','admin','admin','ADMIN',1);
 
 /*Table structure for table `video` */
