@@ -212,7 +212,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <a href="/model/${products.id}" class="item-name">
+                            <a href="/${products.category.name.toLowerCase()}/model?id=${products.id}" class="item-name">
                                 <h4>${products.name}</h4></a>
                             <p>${products.description}</p>
                         </div>
