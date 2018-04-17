@@ -2,8 +2,7 @@
 SQLyog Ultimate v12.2.6 (64 bit)
 MySQL - 5.7.21 : Database - gfly
 *********************************************************************
-*/
-
+*/
 
 /*!40101 SET NAMES utf8 */;
 
@@ -31,24 +30,15 @@ CREATE TABLE `category` (
 
 /*Data for the table `category` */
 
-insert  into `category`(`id`,`name`,`description`,`pic_url`) values 
-
-(14,'ALL','ALL','all.jpg'),
-
-(15,'3D','3D','3d.jpg'),
-
-(16,'BIPLANE','BIPLANE','biplane.jpg'),
-
-(17,'COPI','COPI','copi.jpeg'),
-
-(18,'FLYWING','FLYWING','flywing.jpg'),
-
-(19,'HIDROPLANE','HIDROPLANE','hidroplane.gif'),
-
-(20,'MULTIROTOR','MULTIROTOR','multirotor.jpg'),
-
-(21,'PLANER','PLANER','planer.png'),
-
+insert  into `category`(`id`,`name`,`description`,`pic_url`) values 
+(14,'ALL','ALL','all.jpg'),
+(15,'3D','3D','3d.jpg'),
+(16,'BIPLANE','BIPLANE','biplane.jpg'),
+(17,'COPI','COPI','copi.jpeg'),
+(18,'FLYWING','FLYWING','flywing.jpg'),
+(19,'HIDROPLANE','HIDROPLANE','hidroplane.gif'),
+(20,'MULTIROTOR','MULTIROTOR','multirotor.jpg'),
+(21,'PLANER','PLANER','planer.png'),
 (22,'TRINER','TRINER','triner.jpg');
 
 /*Table structure for table `image` */
@@ -62,11 +52,9 @@ CREATE TABLE `image` (
   PRIMARY KEY (`id`),
   KEY `product_id` (`product_id`),
   CONSTRAINT `image_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 /*Data for the table `image` */
-
-
 
 /*Table structure for table `post` */
 
@@ -86,8 +74,6 @@ CREATE TABLE `post` (
 
 /*Data for the table `post` */
 
-
-
 /*Table structure for table `product` */
 
 DROP TABLE IF EXISTS `product`;
@@ -101,17 +87,14 @@ CREATE TABLE `product` (
   `material` enum('DEPRON','BALSA') NOT NULL,
   `category_id` int(11) NOT NULL,
   `pic_url` varchar(255) NOT NULL,
-  `short_description` varchar(100) NOT NULL,
-  `description` text NOT NULL,
+  `description` varchar(100) NOT NULL,
   `video_url` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`),
   CONSTRAINT `product_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
 
 /*Data for the table `product` */
-
-
 
 /*Table structure for table `user` */
 
@@ -126,11 +109,12 @@ CREATE TABLE `user` (
   `type` enum('ADMIN','USER') NOT NULL,
   `verify` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `user` */
 
-
+insert  into `user`(`id`,`name`,`surname`,`email`,`password`,`type`,`verify`) values 
+(4,'admin','admin','admin','admin','ADMIN',1);
 
 /*Table structure for table `video` */
 

@@ -250,14 +250,6 @@
                                                          placeholder="Description" rows="3"/>
                                     </div>
                                 </div>
-                                 <div class="form-group">
-                                    <spring:label path="shortDescription"
-                                                  class="col-sm-2 control-label">Short Description</spring:label>
-                                    <div class="col-sm-10">
-                                        <spring:textarea path="shortDescription" class="form-control"
-                                                         placeholder="Short Description" rows="3"/>
-                                    </div>
-                                </div>
                                 <div class="form-group">
                                     <spring:label path="videoUrl"
                                                   class="col-sm-2 control-label">Video Url</spring:label>

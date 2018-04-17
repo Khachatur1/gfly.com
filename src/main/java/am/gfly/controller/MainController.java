@@ -74,13 +74,6 @@ public class MainController {
         return "undefined";
     }
 
-//    @GetMapping("/model/{id}")
-//    public String getProduct(@PathVariable("id") int id, ModelMap modelMap, HttpServletRequest request) {
-//        modelMap.addAttribute("product", productRepository.findOne(id));
-//        modelMap.addAttribute("images", imageRepository.getImagesByProductId(id));
-//        return "product";
-//    }
-
     @GetMapping("/{categoryName}/model")
     public String getProduct(@PathVariable("categoryName") String name, @RequestParam("id") int id, ModelMap modelMap, HttpServletRequest request) {
         Product product = productRepository.findOne(id);
@@ -148,8 +141,10 @@ public class MainController {
     @RequestMapping(value = "/loginSuccess", method = RequestMethod.GET)
     public String loginSuccess() {
         CurrentUser principal = (CurrentUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if (principal.getUser().getType() == UserType.USER) {
-            return "redirect:/login";
+        if (principal != null) {
+            if (principal.getUser().getType() == UserType.USER) {
+                return "redirect:/login";
+            }
         }
         return "redirect:/admin/home";
     }
