@@ -21,7 +21,7 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableWebMvc
 public class GflyApplication extends WebMvcConfigurerAdapter {
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(GflyApplication.class, args);
