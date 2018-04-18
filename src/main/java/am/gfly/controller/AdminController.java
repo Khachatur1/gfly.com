@@ -134,6 +134,7 @@ public class AdminController {
         return "redirect:/admin/forms";
     }
 
+
     @RequestMapping(value = "/savePost", method = RequestMethod.POST)
     public String savePost(@ModelAttribute(name = "post") Post post,
                            @RequestParam(value = "image") MultipartFile file) {
