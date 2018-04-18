@@ -45,19 +45,19 @@
                 <div class="box">
                     <div class="content-wrap">
                         <h6>Sign In</h6>
-                        <div class="social">
-                            <a class="face_login" href="#">
-	                                <span class="face_icon">
-	                                    <img src="../../static/admin/images/facebook.png" alt="fb">
-	                                </span>
-                                <span class="text">Sign in with Facebook</span>
-                            </a>
-                            <div class="division">
-                                <hr class="left">
-                                <span>or</span>
-                                <hr class="right">
-                            </div>
-                        </div>
+                        <%--<div class="social">--%>
+                            <%--<a class="face_login" href="#">--%>
+	                                <%--<span class="face_icon">--%>
+	                                    <%--<img src="../../static/admin/images/facebook.png" alt="fb">--%>
+	                                <%--</span>--%>
+                                <%--<span class="text">Sign in with Facebook</span>--%>
+                            <%--</a>--%>
+                            <%--<div class="division">--%>
+                                <%--<hr class="left">--%>
+                                <%--<span>or</span>--%>
+                                <%--<hr class="right">--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
                         <form action="<c:url value="/login"/> " method="post" name="loginForm">
                             <input class="form-control" type="text" placeholder="email" name="email"/>
                             <input class="form-control" type="password" placeholder="password" name="password"/>
