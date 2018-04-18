@@ -85,14 +85,14 @@
             <p class="lead"></p>
         </header>
         <div class="row">
-            <c:forEach items="${allPosts}" var="post">
+            <c:forEach items="${posts}" var="post">
                 <div class="col-sm-6">
                     <div class="post-item">
                         <div class="image"><a href="/blog/post?title=${post.title}"><img
                                 src="/post/image?fileName=${post.picUrl}" alt=""
                                 class="img-fluid"></a></div>
                         <h4><a href="/blog/post?title=${post.title}">${post.title}</a></h4>
-                        <p class="intro">${post.description}</p>
+                        <p class="intro">${post.description.substring(0,200)}</p>
                         <p class="read-more"><a href="/blog/post?title=${post.title}" class="btn btn-unique-outline">Կարդալ</a></p>
                     </div>
                 </div>

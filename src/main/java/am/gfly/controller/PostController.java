@@ -11,7 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 
@@ -30,7 +32,15 @@ public class PostController {
 
     @RequestMapping(value = "/blog/posts", method = RequestMethod.GET)
     public String searchPost(@RequestParam("title") String title, ModelMap map) {
-        List<Post> posts = postRepository.getPostsByTitle(title);
+        Set<Post> posts = new HashSet<>();
+        for (Post post : postRepository.findAll()) {
+            if (post.getTitle().toLowerCase().contains(title.toLowerCase())){
+                posts.add(post);
+            }
+            if (post.getDescription().toLowerCase().contains(title.toLowerCase())){
+                posts.add(post);
+            }
+        }
         map.addAttribute("posts", posts);
         return "blog";
     }
@@ -45,10 +55,10 @@ public class PostController {
         map.addAttribute("page", page);
         if (page == null || page < 1 || page > pagedListHolder.getPageCount()) {
             pagedListHolder.setPage(0);
-            map.addAttribute("allPosts", pagedListHolder.getPageList());
+            map.addAttribute("posts", pagedListHolder.getPageList());
         } else if (page <= pagedListHolder.getPageCount()) {
             pagedListHolder.setPage(page - 1);
-            map.addAttribute("allPosts", pagedListHolder.getPageList());
+            map.addAttribute("posts", pagedListHolder.getPageList());
         }
         return "blog";
     }

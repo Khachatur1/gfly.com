@@ -64,10 +64,12 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/tables", method = RequestMethod.GET)
-    public String tablesPage() {
+    public String tablesPage(ModelMap map) {
+        map.addAttribute("categories",categoryRepository.findAll());
+        map.addAttribute("products",productRepository.findAll());
+        map.addAttribute("posts",postRepository.findAll());
         return "admin/tables";
     }
-
 
     @RequestMapping(value = "/saveCategory", method = RequestMethod.POST)
     public String addBrand(@ModelAttribute(name = "category") Category category,

@@ -14,7 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 @Controller
@@ -76,12 +78,17 @@ public class MainController {
 
     @GetMapping("/{categoryName}/model")
     public String getProduct(@PathVariable("categoryName") String name, @RequestParam("id") int id, ModelMap modelMap, HttpServletRequest request) {
-        Product product = productRepository.findOne(id);
-        List<Product> productsByCategoryId = productRepository.getProductsByCategoryId(product.getCategory().getId());
-        modelMap.addAttribute("products", productsByCategoryId.subList(productsByCategoryId.size() - 4, productsByCategoryId.size()));
-        modelMap.addAttribute("product", product);
-        modelMap.addAttribute("images", imageRepository.getImagesByProductId(id));
-        modelMap.addAttribute("category", categoryRepository.getCategoryByName(name));
+        try {
+            Product product = productRepository.findOne(id);
+            List<Product> productsByCategoryId = productRepository.getProductsByCategoryId(product.getCategory().getId());
+            modelMap.addAttribute("products", productsByCategoryId.subList(productsByCategoryId.size() - 4, productsByCategoryId.size()));
+            modelMap.addAttribute("product", product);
+            modelMap.addAttribute("images", imageRepository.getImagesByProductId(id));
+            modelMap.addAttribute("category", categoryRepository.getCategoryByName(name));
+        } catch (Exception e) {
+            return "undefined";
+        }
+
         return "product";
     }
 
@@ -121,7 +128,15 @@ public class MainController {
 
     @RequestMapping(value = "/models/search", method = RequestMethod.GET)
     public String searchProduct(@RequestParam("name") String name, ModelMap map) {
-        List<Product> products = productRepository.getProductsByName(name);
+        Set<Product> products = new HashSet<>();
+        for (Product product : productRepository.findAll()) {
+            if (product.getName().toLowerCase().contains(name.toLowerCase())){
+                products.add(product);
+            }
+            if (product.getDescription().toLowerCase().contains(name.toLowerCase())){
+                products.add(product);
+            }
+        }
         map.addAttribute("searchProducts", products);
         return "search";
     }
